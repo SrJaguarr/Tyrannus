@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a737b2a6c51137c448ff3a58b77ccc88, type: 3}
+  m_Name: RQST_BusLanes
+  m_EditorClassIdentifier: 
+  requestName: "Carriles de Autob\xFAs"
+  description: "Construcci\xF3n de carriles espec\xEDficos solo para uso de autobuses.
+    Acortar\xE1 los trayectos de transporte p\xFAblico aumentando su uso. Tendr\xE1
+    costes de mantenimiento, y los conductores habituales podr\xEDan molestarse si
+    aumentan los atascos."
+  icon: {fileID: 21300000, guid: 3c094923bec0b9142b33bf1651ebac89, type: 3}
+  level: 2
+  costPerLevel: 0000000002000000050000000a0000000f000000
+  approvalRequest:
+  - Aumentar nivel
+  abolitionRequest:
+  - Reducir nivel

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
+  m_Name: SC_Youth
+  m_EditorClassIdentifier: 
+  categoryName: Jovenes
+  categoryDescription: Aquellos que son lo suficientemente adultos como para votar,
+    pero que aun siguen estudiando o lo han estado haciendo hasta hace poco.
+  categorySprite: {fileID: 21300000, guid: 5ae087d88b37e594d91251aa320d9552, type: 3}
+  populationPercentage: 22
+  requestsToApprove:
+  - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
+  RequestsToAbolish:
+  - {fileID: 11400000, guid: f1cfb2a98d8c9404daea12351440f802, type: 2}
+  - {fileID: 11400000, guid: 290fab35805c69648ab368967723088b, type: 2}
+  happiness: 50

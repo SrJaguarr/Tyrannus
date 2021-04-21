@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
+  m_Name: SC_StateWorker
+  m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  categoryName: Funcionarios
+  categoryDescription: "Cualquier ciudadano trabajador de una industria o servicio
+    propiedad del estado forma parte de este grupo. Incluye educadores y m\xE9dicos
+    del estado, pero tambi\xE9n a la polic\xEDa, militares y trabajadores del gobierno.
+    No hay nadie m\xE1s a favor de los servicios p\xFAblicos que aquellos que viven
+    de ellos. "
+  categorySprite: {fileID: 21300000, guid: e3b37e3201faad2408adbec1256dc36b, type: 3}
+  populationPercentage: 36
+  requestsToApprove:
+  - {fileID: 11400000, guid: accb6887203db4b4c8b3037cac619204, type: 2}
+  - {fileID: 11400000, guid: e995db5d9aa92234b8a345ace794c176, type: 2}
+  - {fileID: 11400000, guid: c1a46ed7da7afe04594601460f740570, type: 2}
+  RequestsToAbolish:
+  - {fileID: 11400000, guid: 63b800a29cf5f834da2e0d741f04e7bb, type: 2}
+  happiness: 50

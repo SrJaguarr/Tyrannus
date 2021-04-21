@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
+  m_Name: SC_Parent
+  m_EditorClassIdentifier: 
+  categoryName: Padres
+  categoryDescription: "Este grupo social engloba a todas aquellas personas que tienen
+    ni\xF1os de los que cuidar, independientemente de la cantidad que tengan y lo
+    j\xF3venes que sean. Suelen buscar medidas de educaci\xF3n y seguridad."
+  categorySprite: {fileID: 21300000, guid: 92d0769b8e4a2bf46bdeba3664f95ec7, type: 3}
+  populationPercentage: 27
+  requestsToApprove:
+  - {fileID: 11400000, guid: babf0fb75720c574e829f78bc1c3cee7, type: 2}
+  - {fileID: 11400000, guid: 9a30f4de6dd38a54fabc71c415f5eb25, type: 2}
+  - {fileID: 11400000, guid: c822392b8fdae8e478b506fbbaa89550, type: 2}
+  RequestsToAbolish:
+  - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
+  - {fileID: 11400000, guid: 22554a843d1566f47b7a7bed84431090, type: 2}
+  happiness: 50

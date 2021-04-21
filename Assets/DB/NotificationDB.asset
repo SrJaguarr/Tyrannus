@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b65623357f47d584cba1b6a2ace2cde5, type: 3}
+  m_Name: NotificationDB
+  m_EditorClassIdentifier: 
+  notifications:
+  - {fileID: 11400000, guid: bd3fcf0d264a7dd41974753456dce772, type: 2}
+  - {fileID: 11400000, guid: 64b348c94d4198a4c9354e73a7ed715c, type: 2}
+  - {fileID: 11400000, guid: 2ca7f97af58f533408059b174aeb2441, type: 2}
