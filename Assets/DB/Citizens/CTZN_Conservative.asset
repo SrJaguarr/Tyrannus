@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6e1ac9d76bd334987bd5b259dcc3d7, type: 3}
+  m_Name: CTZN_Conservative
+  m_EditorClassIdentifier: 
+  fullName: Carlota
+  description: Descripcion del personaje que puede mostrar como se siente.
+  sprite: {fileID: 21300000, guid: a5381401e94b62742bcef02a76402b2c, type: 3}
+  socialCategories:
+  - {fileID: 11400000, guid: 7a090f811f211304385d84c0db65da16, type: 2}
+  spriteHead: {fileID: 21300000, guid: 39dceb9554e10194e96cbc1a92c383a1, type: 3}
+  age: 46
+  citizenHappiness: 50

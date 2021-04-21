@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ae0ed75c7b5dd4685c8ae73f09d7e5, type: 3}
+  m_Name: Angela
+  m_EditorClassIdentifier: 
+  fullName: Angela
+  isHungry: 1
+  daysHungry: 0
+  maxDaysHungry: 3
+  isCold: 1
+  daysCold: 0
+  maxDaysCold: 3
+  illProbability: 0.05
+  isIll: 0
+  daysIll: 0
+  maxDaysIll: 3
+  feed: 0
+  heat: 0
+  heal: 0
+  avatarHead: {fileID: 21300000, guid: dfc75c18130c3024c9bfed2e21927549, type: 3}
+  prefab: {fileID: 288204136674391144, guid: 05f3106cc606b20408f8a8d56df0b9ce, type: 3}

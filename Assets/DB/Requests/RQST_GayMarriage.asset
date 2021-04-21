@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a737b2a6c51137c448ff3a58b77ccc88, type: 3}
+  m_Name: RQST_GayMarriage
+  m_EditorClassIdentifier: 
+  requestName: Matrimonio Homosexual
+  description: "Tradicionalmente, la mayor\xEDa de religiones solo apoyaba las relaciones
+    entre hombre y mujer, cada vez m\xE1s se va normalizando el matrimonio entre
+    personas del mismo g\xE9nero, es competencia del estado decidir hasta qu\xE9
+    punto ser\xE1n permitidas."
+  icon: {fileID: 21300000, guid: c8ccbea0a0f6a7c48b6b3f49facb3038, type: 3}
+  level: 2
+  costPerLevel: 
+  approvalRequest:
+  - Aumentar nivel
+  abolitionRequest:
+  - Reducir nivel

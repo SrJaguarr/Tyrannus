@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a737b2a6c51137c448ff3a58b77ccc88, type: 3}
+  m_Name: RQST_PoliceForce
+  m_EditorClassIdentifier: 
+  requestName: Fuerza Policial
+  description: "Con esta medida se establece la cantidad de fondos destinados a la
+    fuerza policial. Algunos creen que la polic\xEDa no deber\xEDa actuar salvo casos
+    aislados, otros creen que la naci\xF3n ser\xEDa m\xE1s segura con un agente en
+    cada esquina."
+  icon: {fileID: 21300000, guid: d12f941c418a82044bac20a2cc1bafc5, type: 3}
+  level: 2
+  costPerLevel: 0a00000019000000320000005000000082000000
+  approvalRequest:
+  - Aumentar nivel
+  abolitionRequest:
+  - Reducir nivel

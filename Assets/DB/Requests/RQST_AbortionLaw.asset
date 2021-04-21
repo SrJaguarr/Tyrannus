@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a737b2a6c51137c448ff3a58b77ccc88, type: 3}
+  m_Name: RQST_AbortionLaw
+  m_EditorClassIdentifier: 
+  requestName: Ley del Aborto
+  description: "Alrededor de esta medida, se crean dos bandos. El bando \u2018pro-vida\u2019
+    reivindica los derechos del ni\xF1o no nato, usualmente desde un punto de vista
+    religioso. El bando \u2018pro-elecci\xF3n\u2019 cree que el estado no deber\xEDa
+    tener derecho a decidir lo que una mujer hace con su cuerpo."
+  icon: {fileID: 21300000, guid: 80126c327027f7b48991d8dccdce558c, type: 3}
+  level: 2
+  costPerLevel: 
+  approvalRequest:
+  - "Creo que las mujeres deber\xEDan poder elegir libremente si desean o no traer
+    un bebe al mundo./nAumentar nivel."
+  abolitionRequest:
+  - "Creo que abortar es acabar con una vida, no deber\xEDamos permitir esto.\\nReducir
+    Nivel"

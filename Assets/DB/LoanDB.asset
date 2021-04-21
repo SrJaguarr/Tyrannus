@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04552a9abfdb539418d1d413ddd3693e, type: 3}
+  m_Name: LoanDB
+  m_EditorClassIdentifier: 
+  loans:
+  - {fileID: 11400000, guid: 58f14bc5568f9904c8153c445689f7f5, type: 2}
+  - {fileID: 11400000, guid: 0e94a2e449ed2724ba09303861bd8840, type: 2}
+  - {fileID: 11400000, guid: ee301908c7f08614f93c6eab5ecffe38, type: 2}

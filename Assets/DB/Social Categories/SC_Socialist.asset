@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
+  m_Name: SC_Socialist
+  m_EditorClassIdentifier: 
+  categoryName: Socialistas
+  categoryDescription: "Los socialistas creen en la redistribuci\xF3n de las riquezas
+    de los ricos a los pobres para luchar contra la desigualdad del libre mercado.
+    Fundamentalmente, creen en el pensamiento de \u201CCada cual seg\xFAn sus capacidades,
+    a cada cual seg\xFAn sus necesidades\u201D"
+  categorySprite: {fileID: 21300000, guid: 81199e11dc981684e85d691798acdf59, type: 3}
+  populationPercentage: 45
+  requestsToApprove:
+  - {fileID: 11400000, guid: babf0fb75720c574e829f78bc1c3cee7, type: 2}
+  - {fileID: 11400000, guid: c1a46ed7da7afe04594601460f740570, type: 2}
+  - {fileID: 11400000, guid: 0a8f28a05a532df459b48a61268c3a3c, type: 2}
+  - {fileID: 11400000, guid: e995db5d9aa92234b8a345ace794c176, type: 2}
+  - {fileID: 11400000, guid: c4533c7d687f09f4abe4dfb1c344b08b, type: 2}
+  RequestsToAbolish:
+  - {fileID: 11400000, guid: 22554a843d1566f47b7a7bed84431090, type: 2}
+  - {fileID: 11400000, guid: f1cfb2a98d8c9404daea12351440f802, type: 2}
+  happiness: 53

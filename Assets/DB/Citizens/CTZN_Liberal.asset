@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca6e1ac9d76bd334987bd5b259dcc3d7, type: 3}
+  m_Name: CTZN_Liberal
+  m_EditorClassIdentifier: 
+  fullName: "Agust\xEDn"
+  description: Descripcion del personaje que puede mostrar como se siente.
+  sprite: {fileID: 21300000, guid: 5bba453db9da2c94fbf56f96847f588c, type: 3}
+  socialCategories:
+  - {fileID: 11400000, guid: 734d6dddb052d3b42999421c4d53e2a0, type: 2}
+  spriteHead: {fileID: 21300000, guid: 97b977b29b92eaf4d93bced8a149fb9e, type: 3}
+  age: 21
+  citizenHappiness: 50
