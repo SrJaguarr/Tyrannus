@@ -239,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73721abb4df7de2409c1c52127ce0a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  request: {fileID: 0}
   TXT_Percentage: {fileID: 3274896604534027395}
   TXT_SocialCategory: {fileID: 9027837298858441076}
   IMG_Emoji: {fileID: 6275250039206173719}

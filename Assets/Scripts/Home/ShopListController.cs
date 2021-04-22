@@ -10,6 +10,9 @@ public class ShopListController : MonoBehaviour
 
     public Toggle toggleHeating, toggleRent;
 
+    [SerializeField] Sprite spriteHeatOn, spriteHeatOff;
+    [SerializeField] Image IMG_HeatImage;
+
     [SerializeField]
     private TextMeshProUGUI TXT_RentPrice, TXT_HeatingPrice, TXT_ShopResult, TXT_Saves;
 
@@ -122,12 +125,16 @@ public class ShopListController : MonoBehaviour
         {
             TXT_HeatingPrice.color = Color.black;
             TXT_HeatingPrice.text = heatingPrice.ToString() + "€";
+            IMG_HeatImage.sprite = spriteHeatOff;
+
             SetShopPrice(-heatingPrice);
         }
         else
         {
             TXT_HeatingPrice.color = Color.red;
             TXT_HeatingPrice.text = "-" + heatingPrice.ToString() + "€";
+            IMG_HeatImage.sprite = spriteHeatOn;
+
             SetShopPrice(heatingPrice);
         }
 

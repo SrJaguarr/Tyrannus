@@ -23,6 +23,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_MainMenu;
     [SerializeField] private GameObject PNL_PauseMenu;
     [SerializeField] private GameObject PNL_Credits;
+    [SerializeField] private GameObject PNL_Familiar;
 
     [Header("Main Menu")]
     [SerializeField] private Button BTN_NewGame;
@@ -43,6 +44,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button BTN_CloseCitizenRequest;
     [SerializeField] private Button BTN_AcceptCitizenRequest;
     [SerializeField] private Button BTN_DenyCitizenRequest;
+
+    [Header("Familiar View")]
+    [SerializeField] private Button BTN_CloseFamiliar;
 
     [Header("Request Manager")]
     [SerializeField] private Button BTN_RequestManager;
@@ -138,6 +142,8 @@ public class CanvasManager : MonoBehaviour
         BTN_AcceptCitizenRequest.onClick.AddListener(delegate { AcceptCitizenRequest(); gameManager.statsViewerManager.UpdateStats(); });
         BTN_DenyCitizenRequest.onClick.AddListener(delegate { DenyCitizenRequest(); });
 
+        BTN_CloseFamiliar.onClick.AddListener(delegate { HandleFamiliarPanel(); });
+
         BTN_Loans.onClick.AddListener(delegate { HandleLoans(); });
         BTN_CloseLoans.onClick.AddListener(delegate { HandleLoans(); });
 
@@ -228,6 +234,13 @@ public class CanvasManager : MonoBehaviour
     private void SwitchCitizen(int n) { GameManager._instance.contactsManager.SwitchCitizen(n); }
     #endregion
 
+    #region
+    public void HandleFamiliarPanel()
+    {
+        PNL_Familiar.SetActive(!PNL_Familiar.activeSelf);
+    }
+
+    #endregion
     public void SetHappinessEmoji(Sprite s)
     {
         happinessEmoji.sprite = s;

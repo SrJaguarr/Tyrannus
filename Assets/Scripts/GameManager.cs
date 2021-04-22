@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public StatsViewerManager statsViewerManager;
     public RequestStats requestStats;
     public ScriptableObjectController scriptableObjectController;
+    public FamilyHappiness familyHappiness;
 
     [Header("Databases")]
     public RequestDB requestDB;

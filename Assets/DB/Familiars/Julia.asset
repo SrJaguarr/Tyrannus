@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ae0ed75c7b5dd4685c8ae73f09d7e5, type: 3}
-  m_Name: Ricky
+  m_Name: Julia
   m_EditorClassIdentifier: 
-  fullName: Ricky
+  fullName: Julia
+  happiness: 56
+  enjoyedCompany: 0
+  actions: {fileID: 11400000, guid: c4283dd5012a7834c826a1ad12381ac5, type: 2}
   isHungry: 1
   daysHungry: 0
-  maxDaysHungry: 2
+  maxDaysHungry: 3
   isCold: 1
   daysCold: 0
-  maxDaysCold: 2
+  maxDaysCold: 3
   illProbability: 0.05
   isIll: 0
   daysIll: 0
-  maxDaysIll: 2
+  maxDaysIll: 3
   feed: 0
   heat: 0
   heal: 0
-  avatarHead: {fileID: 21300000, guid: 7e0bc0ba648f456488a1c36641389d73, type: 3}
-  prefab: {fileID: 7753945312345085465, guid: 258e8f76f54c0c041bde50fbc14f2286, type: 3}
+  avatarHead: {fileID: 21300000, guid: dfc75c18130c3024c9bfed2e21927549, type: 3}
+  prefab: {fileID: 288204136674391144, guid: 05f3106cc606b20408f8a8d56df0b9ce, type: 3}

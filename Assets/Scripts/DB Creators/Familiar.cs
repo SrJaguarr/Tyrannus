@@ -6,6 +6,9 @@ using UnityEngine;
 public class Familiar : ScriptableObject
 {
     public string fullName;
+    public int happiness = 100;
+    public bool enjoyedCompany = false;
+    public FamiliarActions actions;
 
     public bool isHungry = false;
     public int daysHungry = 0;

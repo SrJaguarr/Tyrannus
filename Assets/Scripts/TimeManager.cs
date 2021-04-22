@@ -131,4 +131,10 @@ public class TimeManager : MonoBehaviour
         radialBar.fillAmount = (dayRemainingTime / dayTime);
     }
 
+    public void RestTime(int time)
+    {
+        dayRemainingTime -= time;
+        UpdateTimeBar();
+    }
+
 }

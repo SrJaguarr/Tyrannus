@@ -13,6 +13,9 @@ MonoBehaviour:
   m_Name: Claudia
   m_EditorClassIdentifier: 
   fullName: Claudia
+  happiness: 50
+  enjoyedCompany: 0
+  actions: {fileID: 11400000, guid: ea6fc5dcefaf7004fa7484abe07ee6ee, type: 2}
   isHungry: 1
   daysHungry: 0
   maxDaysHungry: 4

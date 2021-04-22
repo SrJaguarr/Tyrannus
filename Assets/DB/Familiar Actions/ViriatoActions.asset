@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2627e796cc5eabe4da7c49d4ec69da9f, type: 3}
+  m_Name: ViriatoActions
+  m_EditorClassIdentifier: 
+  actions:
+  - {fileID: 11400000, guid: 2976049a70449414695d937cadb4ae3b, type: 2}
+  - {fileID: 11400000, guid: 389e1efb419cd2849aaca6cd55fa4843, type: 2}
+  - {fileID: 11400000, guid: dd00bb2c5338ca4499506c5e57eadf1b, type: 2}
