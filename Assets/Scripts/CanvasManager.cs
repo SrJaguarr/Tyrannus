@@ -20,16 +20,21 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_SocialCategoryViewer;
     [SerializeField] private GameObject PNL_SocialCategoryStats;
     [SerializeField] private GameObject PNL_RequestViewer;
-    [SerializeField] private GameObject PNL_MainMenu;
+    [SerializeField] private GameObject PNL_MainMenu_Continue;
+    [SerializeField] private GameObject PNL_MainMenu_NewGame;
     [SerializeField] private GameObject PNL_PauseMenu;
     [SerializeField] private GameObject PNL_Credits;
     [SerializeField] private GameObject PNL_Familiar;
 
     [Header("Main Menu")]
-    [SerializeField] private Button BTN_NewGame;
-    [SerializeField] private Button BTN_Continue;
-    [SerializeField] private Button BTN_Credits_01;
-    [SerializeField] private Button BTN_Credits_02;
+    [SerializeField] private Button BTN_MMC_NewGame;
+    [SerializeField] private Button BTN_MMC_Continue;
+    [SerializeField] private Button BTN_MMC_Credits;
+    [SerializeField] private Button BTN_MMC_Exit;
+    [SerializeField] private Button BTN_MMNG_NewGame;
+    [SerializeField] private Button BTN_MMNG_Credits;
+    [SerializeField] private Button BTN_MMNG_Exit;
+
     [SerializeField] private Button BTN_BackCredits;
 
     [Header("Pause Menu")]
@@ -105,14 +110,18 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
-        BTN_NewGame.onClick.AddListener(delegate { HandleMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
-        BTN_Credits_01.onClick.AddListener(delegate { HandleCreditsScreen(); });
-        BTN_Credits_02.onClick.AddListener(delegate { HandleCreditsScreen(); });
+        BTN_MMC_Continue.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); currentState = StateMachine.Game; });
+        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
+        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
+        BTN_MMC_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
+        BTN_MMNG_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
+        BTN_MMC_Exit.onClick.AddListener(delegate { Application.Quit(); });
+        BTN_MMNG_Exit.onClick.AddListener(delegate { Application.Quit(); });
         BTN_BackCredits.onClick.AddListener(delegate { HandleCreditsScreen();});
 
         BTN_Resume.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; });
         BTN_Resume2.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; });
-        BTN_PauseExit.onClick.AddListener(delegate { HandleMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; });
+        BTN_PauseExit.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; });
 
         BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); });
         BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateGlobalHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); });
@@ -166,10 +175,16 @@ public class CanvasManager : MonoBehaviour
 
     #region Menus
 
-    private void HandleMainMenuScreen()
+    private void HandleContinueMainMenuScreen()
     {
-        PNL_MainMenu.SetActive(!PNL_MainMenu.activeSelf);
+        PNL_MainMenu_Continue.SetActive(!PNL_MainMenu_Continue.activeSelf);
     }
+
+    private void HandleNewGameMainMenuScreen()
+    {
+        PNL_MainMenu_NewGame.SetActive(!PNL_MainMenu_NewGame.activeSelf);
+    }
+
     private void HandlePauseScreen()
     {
         PNL_PauseMenu.SetActive(!PNL_PauseMenu.activeSelf);
