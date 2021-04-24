@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 3416212555998017077
     second: Shop_Hover_0
+  - first:
+      213: -2717202405487078434
+    second: Shop_Hover_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -93,10 +96,10 @@ TextureImporter:
       name: Shop_Hover_0
       rect:
         serializedVersion: 2
-        x: 1647
+        x: 1610
         y: 0
-        width: 273
-        height: 221
+        width: 310
+        height: 298
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,8 +107,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 536bd754833d86f20800000000000000
-      internalID: 3416212555998017077
+      spriteID: ed31b1efece8a4ad0800000000000000
+      internalID: -2717202405487078434
       vertices: []
       indices: 
       edges: []
