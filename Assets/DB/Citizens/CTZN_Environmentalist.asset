@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CTZN_Environmentalist
   m_EditorClassIdentifier: 
   fullName: "Ed\xE9n"
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Su familia siempre ha cr\xEDado ganado para alimentarse, y cultivado
+    sus propias cosechas. \nGran defensora de la fauna y la naturaleza."
   sprite: {fileID: 21300000, guid: 3456ba35e123bd7428c3960342a81d60, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 608f4a2c476a88c4eb923e4312a7cfce, type: 2}

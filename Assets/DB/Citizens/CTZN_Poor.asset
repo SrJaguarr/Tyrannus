@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_Poor
   m_EditorClassIdentifier: 
   fullName: Valeria
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "se cri\xF3 en un orfanato, nunca tuvo una familia. Trabaj\xF3 en
+    la f\xE1brica hasta que enferm\xF3. \nAhora sus ingresos dependen de las ayudas
+    del estado."
   sprite: {fileID: 21300000, guid: 6aeb893aac73547448869808a26699b1, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 35ac30410e2322d4c8ff3757613aca64, type: 2}

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CTZN_Capitalist
   m_EditorClassIdentifier: 
   fullName: Abraham
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "El director del banco de Mynaia, siempre ha fardado de pasta. \nBastante
+    egoc\xE9ntrico, pero nos interesa tenerlo de nuestra parte."
   sprite: {fileID: 21300000, guid: 68eddf1eb3a294145b76ac7871c34e8b, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: c01056b8705a9394d9037a45fdc0c0d3, type: 2}

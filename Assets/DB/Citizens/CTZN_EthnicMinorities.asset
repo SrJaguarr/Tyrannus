@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_EthnicMinorities
   m_EditorClassIdentifier: 
   fullName: Mogambo
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Simplemente apareci\xF3 un d\xEDa con sus hijos buscando trabajo.
+    Probablemente una de las personas m\xE1s buenas de Mynaia. \nAunque no todos
+    est\xE9n de acuerdo.."
   sprite: {fileID: 21300000, guid: 808b47f9863fff744a885f5bc4563da7, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 43cb0c1929950774c8886da71681f5db, type: 2}

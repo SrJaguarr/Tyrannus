@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_Young
   m_EditorClassIdentifier: 
   fullName: Carlos
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Amigo de Julia desde que eran beb\xE9s. Siempre se ha portado bien
+    con ella, pero no est\xE1 teniendo buenas influencias.\nSigue con tus estudios
+    Carlos.."
   sprite: {fileID: 21300000, guid: 5ae087d88b37e594d91251aa320d9552, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: c5a9ac555b8414e4cb968ad40c143f21, type: 2}

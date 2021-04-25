@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_Patriot
   m_EditorClassIdentifier: 
   fullName: Abigail
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "se rumorea que expulsaron a abigail de las Fuerzas Armadas. \nAhora
+    es parte del cuerpo de seguridad de Mynaia, tiene mal car\xE1cter, pero cumple
+    su labor con creces."
   sprite: {fileID: 21300000, guid: ffe1d68d63bd96f4eb80a2a85412e8da, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 036a17a4bd5002e4fb5ef6e7e338278e, type: 2}

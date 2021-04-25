@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_Parent
   m_EditorClassIdentifier: 
   fullName: Sofia
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Era contable, creo. Desde que la despidieron se ha dedicado unicamente
+    al cuidado de sus dos hijos.\nLucha por un pueblo seguro en el que sus peque\xF1os
+    puedan crecer."
   sprite: {fileID: 21300000, guid: 92d0769b8e4a2bf46bdeba3664f95ec7, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 0c9fdf83fd773ee4baf49c6455f8a29a, type: 2}

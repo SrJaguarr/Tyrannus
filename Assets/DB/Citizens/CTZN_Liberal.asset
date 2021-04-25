@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CTZN_Liberal
   m_EditorClassIdentifier: 
   fullName: "Agust\xEDn"
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Se pasa los d\xEDas en el parque con sus colegas. \nCuando de libertad
+    se trata, es el m\xE1ximo exponente en las manifestaciones."
   sprite: {fileID: 21300000, guid: 5bba453db9da2c94fbf56f96847f588c, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 734d6dddb052d3b42999421c4d53e2a0, type: 2}

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: CTZN_StateWorker
   m_EditorClassIdentifier: 
   fullName: "Luc\xEDa"
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "La doctora del pueblo. Desde un resfriado hasta trasplante de coraz\xF3n,
+    todo pasa por ella, y la verdad es que la joven hace realmente bien su trabajo."
   sprite: {fileID: 21300000, guid: e3b37e3201faad2408adbec1256dc36b, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 987cd298c45b89f4da935a8765ebccef, type: 2}
   spriteHead: {fileID: 21300000, guid: 52a330681e844bf40bf5dc49deda0545, type: 3}
   age: 35
-  citizenHappiness: 56
+  citizenHappiness: 50

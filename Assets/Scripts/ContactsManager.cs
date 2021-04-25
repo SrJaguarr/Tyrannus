@@ -30,7 +30,7 @@ public class ContactsManager : MonoBehaviour
 
     public void SwitchCitizen(int n)
     {
-        if(knownCitizens.Count > 0)
+        if (knownCitizens.Count > 0)
         {
             actualCitizen += n;
 
@@ -41,7 +41,6 @@ public class ContactsManager : MonoBehaviour
                 actualCitizen = 0;
 
             ShowContact();
-
         }
     }
 
@@ -49,7 +48,6 @@ public class ContactsManager : MonoBehaviour
     {
         Citizen citizen = knownCitizens[actualCitizen];
         int emoji = 2;
-
         IMG_Picture.sprite = citizen.spriteHead;
         TXT_Name.text = citizen.fullName;
         TXT_Description.text = citizen.description;

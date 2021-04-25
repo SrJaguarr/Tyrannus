@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: CTZN_Religious
   m_EditorClassIdentifier: 
   fullName: Esteban
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "El padre Esteban es el p\xE1rroco del pueblo. M\xE1ximo exponente
+    religioso en Mynaia. Quiz\xE1 tenga unos pensamientos algo antiguados, pero ya
+    sabes, vivi\xF3 otra \xE9poca."
   sprite: {fileID: 21300000, guid: 31ed8df53a58ec34fbfcd7163cd6306a, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 430d81954bb45084a8f4f4bd2edcb5e6, type: 2}
   spriteHead: {fileID: 21300000, guid: 02eb2383e0a25b842843497f44687629, type: 3}
-  age: 68
+  age: 78
   citizenHappiness: 50

@@ -6,7 +6,9 @@ using UnityEngine;
 public class Citizen : ScriptableObject
 {
     public string fullName;
-    public string description;
+
+    [TextArea(0, 300)] public string description;
+
     public Sprite sprite;
     public SociaCategory[] socialCategories;
     public Sprite spriteHead;

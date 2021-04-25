@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: CTZN_Retired
   m_EditorClassIdentifier: 
   fullName: Zacarias
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Panadero del pueblo. Incluso despu\xE9s de su jubilaci\xF3n, hasta
+    que.. dej\xF3 de ser \xFAtil.\nAhora dedica sus d\xEDas a ver como progresan
+    las obras de Mynaia.\n"
   sprite: {fileID: 21300000, guid: e32e700a19734f640b9930d733045750, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 892fadf097284134ab44bd2ce0f03b28, type: 2}

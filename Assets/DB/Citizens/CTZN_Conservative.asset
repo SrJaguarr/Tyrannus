@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: CTZN_Conservative
   m_EditorClassIdentifier: 
   fullName: Carlota
-  description: Descripcion del personaje que puede mostrar como se siente.
+  description: "Trabaja en la farmacia del pueblo. Acude a la Iglesia todos los domigos.
+    \nAunque a veces se muestra algo soberbia, todos sabemos que tiene un buen coraz\xF3n."
   sprite: {fileID: 21300000, guid: a5381401e94b62742bcef02a76402b2c, type: 3}
   socialCategories:
   - {fileID: 11400000, guid: 7a090f811f211304385d84c0db65da16, type: 2}
