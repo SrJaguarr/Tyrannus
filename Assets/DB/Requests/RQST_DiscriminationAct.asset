@@ -19,6 +19,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 000000000100000002000000050000000a000000
   approvalRequest:
-  - Aumentar nivel
+  - Necesitamos reducir el racismo en Mynaia, creo que esta es una buena forma de
+    hacerlo.
   abolitionRequest:
-  - Reducir nivel
+  - No hay ayudas para los propios habitantes de Mynaia, no comprendo porque las
+    hay para ellos.

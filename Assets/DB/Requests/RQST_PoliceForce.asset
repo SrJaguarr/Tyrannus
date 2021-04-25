@@ -21,6 +21,6 @@ MonoBehaviour:
   level: 2
   costPerLevel: 0a00000019000000320000005000000082000000
   approvalRequest:
-  - Aumentar nivel
+  - "Con un buen cuerpo policial reduciremos el \xEDndice de criminalidad."
   abolitionRequest:
-  - Reducir nivel
+  - "La polic\xEDa abusa de tanto poder, debemos ponerles l\xEDmites."

@@ -21,6 +21,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 
   approvalRequest:
-  - Aumentar nivel
+  - "Necesitamos que nuestos j\xF3venes tengan fe, y sigan predicando la Iglesia"
   abolitionRequest:
-  - Reducir nivel
+  - "Nuestros j\xF3venes deben aprender ciencia, si a alguien le intersa la religi\xF3n
+    que vaya a la iglesia."

@@ -22,6 +22,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 000000001e0000003c0000005a00000078000000
   approvalRequest:
-  - Aumentar nivel
+  - "No a todo el mundo le va tan bien como a nosotros, deber\xEDamos contribuir
+    en ayudar a los menos favorecidos."
   abolitionRequest:
-  - Reducir nivel
+  - "Primero Mynaia, desp\xFAes el resto, ese dinero deber\xEDa ir destinado a las
+    personas de nuestro pueblo."

@@ -20,6 +20,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 00000000050000000a0000000f00000014000000
   approvalRequest:
-  - Aumentar nivel
+  - "Si aumentamos el la seguridad en la frontera reduciremos la inmigraci\xF3n ilegal."
   abolitionRequest:
-  - Reducir nivel
+  - "Debemos ser m\xE1s permisivos con las personas que entran a Mynaia, podr\xEDa
+    ser beneficioso."

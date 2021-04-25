@@ -21,8 +21,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 00000000f6ffffffecffffffddffffffceffffff
   approvalRequest:
-  - "Creo que las mujeres deber\xEDan poder elegir libremente si desean o no traer
-    un bebe al mundo./nAumentar nivel."
+  - "Los veh\xEDculos son un peligro para los ciudadanos, deber\xEDamos restringir
+    la velocidad a la que conducen."
   abolitionRequest:
-  - "Creo que abortar es acabar con una vida, no deber\xEDamos permitir esto.\\nReducir
-    Nivel"
+  - "Yo respeto los l\xEDmites de velocidad, colocar c\xE1maras es absurdo y lo hacen
+    para sacarle el dinero a los conductores"

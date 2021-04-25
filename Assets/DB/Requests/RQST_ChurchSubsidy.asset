@@ -20,6 +20,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 0000000014000000280000003c00000050000000
   approvalRequest:
-  - Aumentar nivel
+  - "La Iglesia es lo m\xE1s importante, el estado deber\xEDa participar en su crecimiento."
   abolitionRequest:
-  - Reducir nivel
+  - No todos somos creyentes en Mynaia, si la Iglesia quiere crecer, que les ayude
+    su Dios.

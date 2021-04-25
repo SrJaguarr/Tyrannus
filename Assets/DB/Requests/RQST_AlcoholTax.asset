@@ -20,6 +20,9 @@ MonoBehaviour:
   level: 2
   costPerLevel: 00000000e7ffffffceffffffbaffffffa6ffffff
   approvalRequest:
-  - Aumentar nivel
+  - "El alcohol es perjudicial para la salud, la gente lo consumir\xE1 m\xE1s si
+    es tan barato."
+  - Si queremos reducir la ingesta de alcohol y criminalidad, debemos subir su impuesto.
   abolitionRequest:
-  - Reducir nivel
+  - El impuesto sobre el alcohol es injusto, es un producto legal como cualquier
+    otro.

@@ -21,6 +21,6 @@ MonoBehaviour:
   level: 2
   costPerLevel: 0000000002000000050000000a0000000f000000
   approvalRequest:
-  - Aumentar nivel
+  - "Necesitamos m\xE1s lineas de autob\xFAs, as\xED reduciremos el uso de los veh\xEDculos."
   abolitionRequest:
-  - Reducir nivel
+  - Tantos autobuses causan atascos en la carretera. No necesitamos tantos.

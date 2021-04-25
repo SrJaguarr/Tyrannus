@@ -19,6 +19,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 640000007800000096000000b4000000dc000000
   approvalRequest:
-  - Aumentar nivel
+  - "Los que no tenemos ingresos necesitamos ayuda para vivir nuestro d\xEDa a d\xEDa."
   abolitionRequest:
-  - Reducir nivel
+  - "Debemos cosechar para despu\xE9s recoger, es injusto que yo deba pagar por el
+    resto."

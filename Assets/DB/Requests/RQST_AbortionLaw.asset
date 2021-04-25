@@ -22,7 +22,8 @@ MonoBehaviour:
   costPerLevel: 
   approvalRequest:
   - "Creo que las mujeres deber\xEDan poder elegir libremente si desean o no traer
-    un bebe al mundo./nAumentar nivel."
+    un bebe al mundo."
+  - Las mujeres paren, las mujeres deciden.
   abolitionRequest:
-  - "Creo que abortar es acabar con una vida, no deber\xEDamos permitir esto.\\nReducir
-    Nivel"
+  - "Creo que abortar es acabar con una vida, no deber\xEDamos permitir esto."
+  - Solo Dios debe tener el poder de decidir si la criatura debe nacer.

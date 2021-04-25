@@ -21,6 +21,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 000000000a000000140000001e00000028000000
   approvalRequest:
-  - Aumentar nivel
+  - "Si construimos carreteras llegaremos antes a los sitios y habr\xE1 menos congesti\xF3n
+    de coches."
   abolitionRequest:
-  - Reducir nivel
+  - "Construir carreteras contamina demasiado, las que tenemos son m\xE1s que suficientes."

@@ -19,6 +19,6 @@ MonoBehaviour:
   level: 2
   costPerLevel: 9cffffff83ffffff06ffffffbbfeffff0cfeffff
   approvalRequest:
-  - Aumentar nivel
+  - El estado debe cobrar una parte del terreno que ocupamos.
   abolitionRequest:
-  - Reducir nivel
+  - "Por que deber\xEDa pagar al estado por una casa que es m\xEDa?"

@@ -20,6 +20,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 1400000064000000aa000000dc0000004a010000
   approvalRequest:
-  - Aumentar nivel
+  - "Sin una buena sanidad p\xFAblica, las personas que no puedan permitirse sus
+    tratamientos morir\xE1n."
   abolitionRequest:
-  - Reducir nivel
+  - "Que cada uno se pague sus tratamientos, yo ya pago los m\xEDo, por que deber\xEDa
+    pagar los del resto?"

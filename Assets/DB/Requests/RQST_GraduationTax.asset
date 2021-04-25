@@ -21,6 +21,6 @@ MonoBehaviour:
   level: 2
   costPerLevel: 00000000ecffffffd8ffffffc4ffffffb0ffffff
   approvalRequest:
-  - Aumentar nivel
+  - "Necesitamos ingresos para el estado, estudiar no deber\xEDa ser gratis."
   abolitionRequest:
-  - Reducir nivel
+  - Impuestos por terminar mis estudios? No le veo el sentido.

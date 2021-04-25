@@ -21,6 +21,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 00000000b5ffffff6affffff1fffffffe8feffff
   approvalRequest:
-  - Aumentar nivel
+  - "Los coches contaminan mucho, si aumentamos los impuestos la gente optar\xE1
+    por el transporte p\xFAblico."
   abolitionRequest:
-  - Reducir nivel
+  - "No hay derecho a estos impuestos por circular, algunos necesitamos nuestros
+    veh\xEDculos para trabajar."

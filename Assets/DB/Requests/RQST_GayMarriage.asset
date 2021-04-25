@@ -21,6 +21,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 
   approvalRequest:
-  - Aumentar nivel
+  - "Un matrimonio es un matrimonio, que importancia tienen sus g\xE9neros?"
   abolitionRequest:
-  - Reducir nivel
+  - "La Iglesia no deber\xEDa permitir el matrimonio entre dos personas del mismo
+    g\xE9nero, no es natural."

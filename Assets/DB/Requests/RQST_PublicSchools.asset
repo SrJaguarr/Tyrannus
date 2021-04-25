@@ -20,6 +20,8 @@ MonoBehaviour:
   level: 2
   costPerLevel: 0a0000003200000064000000b4000000e6000000
   approvalRequest:
-  - Aumentar nivel
+  - "Necesitamos que los j\xF3venes tengan un m\xEDnimo de educaci\xF3n, y no todos
+    pueden pagar por ella."
   abolitionRequest:
-  - Reducir nivel
+  - "Mis hijos no estudiar\xE1n en un colegio p\xFAblico, por que deber\xEDa yo de
+    pagar por los hijos de los dem\xE1s?"

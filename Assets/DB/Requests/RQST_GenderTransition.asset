@@ -21,6 +21,6 @@ MonoBehaviour:
   level: 2
   costPerLevel: 000000000200000005000000080000000a000000
   approvalRequest:
-  - Aumentar nivel
+  - "Creo que cada cual deber\xEDa hacer lo que se le antoje con su cuerpo."
   abolitionRequest:
-  - Reducir nivel
+  - "No es natural que una persona decida cambiar de g\xE9nero."

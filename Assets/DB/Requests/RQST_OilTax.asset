@@ -20,6 +20,7 @@ MonoBehaviour:
   level: 2
   costPerLevel: 0000000083ffffff06ffffffbbfeffff0cfeffff
   approvalRequest:
-  - Aumentar nivel
+  - "El p\xE9trole es un gran contaminante, deberiamos reducir su uso mediante impuestos."
   abolitionRequest:
-  - Reducir nivel
+  - "Estos impuestos sobre el petr\xF3leo me parecen excesivos, necesito utilizar
+    mi coche."
