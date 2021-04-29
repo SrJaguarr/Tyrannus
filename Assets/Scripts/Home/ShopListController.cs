@@ -16,6 +16,7 @@ public class ShopListController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI TXT_RentPrice, TXT_HeatingPrice, TXT_ShopResult, TXT_Saves;
 
+
     [SerializeField]
     private Transform shopListContainer;
 
@@ -50,7 +51,6 @@ public class ShopListController : MonoBehaviour
     private void Start()
     {
         AddToggle(toggleHeating, heatingPrice);
-
 
         TXT_HeatingPrice.text = heatingPrice.ToString() + "€";
         TXT_RentPrice.text = rentPrice.ToString() + "€"; 

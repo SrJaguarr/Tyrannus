@@ -6,23 +6,37 @@ using UnityEngine.UI;
 
 public class FamilyHappiness : MonoBehaviour
 {
-    [SerializeField] private Image IMG_Head, IMG_Emoji;
 
+
+    [Header("Family Info")]
+    [SerializeField] private Image IMG_Head;
+    [SerializeField] private Image IMG_Emoji;
     [SerializeField] private Button enjoyCompanyButton;
+    [SerializeField] private TextMeshProUGUI TXT_EnjoyText;
+    [SerializeField] private TextMeshProUGUI TXT_TimeCost;
+    [SerializeField] private TextMeshProUGUI TXT_FamiliarName;
+    [SerializeField] private RectTransform foodBar;
+    [SerializeField] private RectTransform heatBar;
+    [SerializeField] private RectTransform pillBar;
+    [SerializeField] private float enjoyMultiplier;
 
-    [SerializeField] private TextMeshProUGUI TXT_EnjoyText, TXT_TimeCost, TXT_FamiliarName;
+    [Header("President Info")]
+    [SerializeField] private RectTransform presidentFoodBar;
+    [SerializeField] private RectTransform presidentHeatBar;
+    [SerializeField] private RectTransform presidentPillBar;
 
-    [SerializeField] private RectTransform foodBar, heatBar, pillBar;
+    private Vector2 presidentTotalBarSize;
     private Vector2 totalBarSize;
 
     private Familiar actualFamiliar;
     private FamiliarAction actualAction;
 
-    [SerializeField] private float enjoyMultiplier;
+
 
     private void Start()
     {
         totalBarSize = foodBar.sizeDelta;
+        presidentTotalBarSize = presidentFoodBar.sizeDelta;
         enjoyCompanyButton.onClick.AddListener(delegate { EnjoyCompany(); });
     }
 
@@ -39,8 +53,12 @@ public class FamilyHappiness : MonoBehaviour
             enjoyCompanyButton.interactable = true;
         }
 
+        int happiness = familiar.happiness;
 
-        CalculateFamiliarHappiness();
+        if (!actualFamiliar.enjoyedCompany)
+            happiness = Mathf.RoundToInt(happiness / enjoyMultiplier);
+
+        actualFamiliar.happiness = happiness;
 
         IMG_Emoji.sprite = Tyrannus.GetCorrectEmoji(actualFamiliar.happiness);
 
@@ -54,44 +72,30 @@ public class FamilyHappiness : MonoBehaviour
         TXT_EnjoyText.text = actualAction.action;
         TXT_TimeCost.text = actualAction.timeCost.ToString() + "h";
 
-        UpdateBars(foodBar, actualFamiliar.maxDaysHungry, actualFamiliar.daysHungry);
-        UpdateBars(heatBar, actualFamiliar.maxDaysCold, actualFamiliar.daysCold);
-        UpdateBars(pillBar, actualFamiliar.maxDaysIll, actualFamiliar.daysIll);
+        UpdateBars(totalBarSize, foodBar, actualFamiliar.maxDaysHungry, actualFamiliar.daysHungry);
+        UpdateBars(totalBarSize, heatBar, actualFamiliar.maxDaysCold, actualFamiliar.daysCold);
+        UpdateBars(totalBarSize, pillBar, actualFamiliar.maxDaysIll, actualFamiliar.daysIll);
 
     }
 
-    private void UpdateBars(RectTransform bar, int max, int actual)
+    public void UpdatePresidentInfo()
     {
-        Vector2 size = totalBarSize;
+        Familiar president = GameManager._instance.president;
+
+        UpdateBars(presidentTotalBarSize, presidentFoodBar, president.maxDaysHungry, president.daysHungry);
+        UpdateBars(presidentTotalBarSize, presidentHeatBar, president.maxDaysCold, president.daysCold);
+        UpdateBars(presidentTotalBarSize, presidentPillBar, president.maxDaysIll, president.daysIll);
+    }
+
+    private void UpdateBars(Vector2 totalBar, RectTransform bar, int max, int actual)
+    {
+        Vector2 size = totalBar;
 
         float multiplier = ((float)(max - actual) / max);
 
         size.y = multiplier * totalBarSize.y;
 
         bar.sizeDelta = size;
-    }
-
-    private void CalculateFamiliarHappiness()
-    {
-        float foodHappiness = 33;
-        float heatHappiness = 33;
-        float illnessHappiness = 34;
-
-        if(actualFamiliar.daysHungry > 0)
-            foodHappiness *= ((float)actualFamiliar.daysHungry/ actualFamiliar.maxDaysHungry);
-
-        if(actualFamiliar.daysCold > 0)
-            heatHappiness *= ((float)actualFamiliar.daysCold / actualFamiliar.maxDaysCold);
-
-        if(actualFamiliar.daysIll > 0)
-            illnessHappiness *= ((float)actualFamiliar.daysIll / actualFamiliar.maxDaysIll);
-
-        int happiness = Mathf.RoundToInt(foodHappiness + heatHappiness + illnessHappiness);
-
-        if (!actualFamiliar.enjoyedCompany)
-            happiness = Mathf.RoundToInt(happiness / enjoyMultiplier);
-
-        actualFamiliar.happiness = happiness;
     }
 
     public void EnjoyCompany()

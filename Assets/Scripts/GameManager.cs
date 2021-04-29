@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public LoanDB loanDB;
     public EmojiDB emojiDB;
     public NotificationDB notificationDB;
+    public Familiar president;
 
     public int negativeStateMoneyCount;
     public int currentDay = 1;
@@ -72,15 +73,17 @@ public class GameManager : MonoBehaviour
 
         moneyManager.ResetTips();
         citizenRequest.CitizenSelector();
-        happinessManager.CalculateGlobalHappiness();
 
-        moneyManager.CalculateSalary(happinessManager.globalHappiness);
+        happinessManager.CalculateGlobalHappiness();
+        moneyManager.CalculateSalary(happinessManager.cityHappiness);
         moneyManager.SetStateMoney();
 
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
         familyController.UpdateNeeds();
+
+
     }
 
     private void CheckStateMoney()

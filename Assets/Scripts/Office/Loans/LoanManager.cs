@@ -26,7 +26,7 @@ public class LoanManager : MonoBehaviour
         loan.isActive = true;
         moneyManager.ReceiveLoan(loan);
         GameManager._instance.happinessManager.AddLoanPenalty(loan.penalty);
-        GameManager._instance.happinessManager.CalculateGlobalHappiness();
+        GameManager._instance.happinessManager.CalculateCityHappiness();
         loan.paidAmount = 0;
         loan.passedDays = 0;
     }

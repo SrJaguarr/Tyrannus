@@ -25,8 +25,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_PauseMenu;
     [SerializeField] private GameObject PNL_Credits;
     [SerializeField] private GameObject PNL_Familiar;
+    [SerializeField] private GameObject PNL_Happiness;
 
-    [Header("Main Menu")]
+[Header("Main Menu")]
     [SerializeField] private Button BTN_MMC_NewGame;
     [SerializeField] private Button BTN_MMC_Continue;
     [SerializeField] private Button BTN_MMC_Credits;
@@ -90,7 +91,8 @@ public class CanvasManager : MonoBehaviour
 
 
     [Header("Happiness")]
-    [SerializeField] private Image happinessEmoji;
+    [SerializeField] private Button BTN_OpenHappinessPanel;
+    [SerializeField] private Button BTN_CloseHappinessPanel;
 
 
     private GameManager gameManager;
@@ -110,6 +112,9 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
+        BTN_OpenHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); GameManager._instance.familyHappiness.UpdatePresidentInfo(); });
+        BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
+
         BTN_MMC_Continue.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); currentState = StateMachine.Game; });
         BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
         BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
@@ -124,7 +129,7 @@ public class CanvasManager : MonoBehaviour
         BTN_PauseExit.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; });
 
         BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); });
-        BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateGlobalHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); });
+        BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateCityHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); });
         BTN_ClearChanges.onClick.AddListener(delegate { gameManager.requestStats.ClearChanges(); });
         BTN_BackSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(true); ShowSCategoryStats(false); gameManager.requestStats.CleanRequests(); });
         BTN_BackSCStats.onClick.AddListener(delegate { ShowRequestViewer(false); ShowSCategoryStats(true); gameManager.requestStats.CleanCategories(); });
@@ -249,17 +254,18 @@ public class CanvasManager : MonoBehaviour
     private void SwitchCitizen(int n) { GameManager._instance.contactsManager.SwitchCitizen(n); }
     #endregion
 
-    #region
+    #region Happiness
+
+    private void HandleHappinessPanel()
+    {
+        PNL_Happiness.SetActive(!PNL_Happiness.activeSelf);
+    }
     public void HandleFamiliarPanel()
     {
         PNL_Familiar.SetActive(!PNL_Familiar.activeSelf);
     }
 
     #endregion
-    public void SetHappinessEmoji(Sprite s)
-    {
-        happinessEmoji.sprite = s;
-    }
 
 
     #region New Request System

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FamilyDB
   m_EditorClassIdentifier: 
   familiars:
+  - {fileID: 11400000, guid: 08c2a1b8d322dc24398415d6598e4c2b, type: 2}
   - {fileID: 11400000, guid: ca0cd01b356973042b25bb609d57c036, type: 2}
   - {fileID: 11400000, guid: bf558a46b2777f74a8296fb93b5a60d4, type: 2}
   - {fileID: 11400000, guid: 17a3b9559ac937142b6ff7262eecc682, type: 2}

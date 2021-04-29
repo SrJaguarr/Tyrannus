@@ -28,7 +28,10 @@ public class FamilyController : MonoBehaviour
         for (int i = 0; i < familyDB.familiars.Length; i++)
         {
             familiars.Add(familyDB.familiars[i], Instantiate(familyDB.familiars[i].prefab, familiarContainer));    //Instanciamos todos los familiares determinados 
+            
+            if(i != 0)
             familiars[familyDB.familiars[i]].GetComponent<FamiliarButton>().InitializeSelf(familyDB.familiars[i]);
+
             shopListController.AddFamiliarToShopList(familyDB.familiars[i]);
         }
     }

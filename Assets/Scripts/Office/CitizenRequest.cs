@@ -289,7 +289,7 @@ public class CitizenRequest : MonoBehaviour
         }
 
         dailyRequests[actualCitizen].level += sum;
-        happinessManager.CalculateGlobalHappiness();
+        happinessManager.CalculateCityHappiness();
         happinessManager.UpdateCitizenHappiness(dailyCitizens[actualCitizen]);
         NextCitizen();
 

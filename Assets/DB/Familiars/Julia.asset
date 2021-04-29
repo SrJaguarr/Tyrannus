@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Julia
   m_EditorClassIdentifier: 
   fullName: Julia
-  happiness: 56
+  happiness: 28
   enjoyedCompany: 0
   actions: {fileID: 11400000, guid: c4283dd5012a7834c826a1ad12381ac5, type: 2}
   isHungry: 1
@@ -30,4 +30,4 @@ MonoBehaviour:
   heat: 0
   heal: 0
   avatarHead: {fileID: 21300000, guid: dfc75c18130c3024c9bfed2e21927549, type: 3}
-  prefab: {fileID: 288204136674391144, guid: 05f3106cc606b20408f8a8d56df0b9ce, type: 3}
+  prefab: {fileID: 5498322221564752230, guid: fd45382264e8af245b80b2ec3903994c, type: 3}
