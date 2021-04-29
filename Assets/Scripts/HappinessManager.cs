@@ -149,18 +149,20 @@ public class HappinessManager : MonoBehaviour
 
     public int GetFamiliarHappiness(Familiar actualFamiliar)
     {
+
+        if (actualFamiliar.daysCold == actualFamiliar.maxDaysCold || actualFamiliar.daysHungry == actualFamiliar.maxDaysHungry || actualFamiliar.daysIll == actualFamiliar.maxDaysIll)
+        {
+            return 0;
+        }
+
         float foodHappiness = 33;
         float heatHappiness = 33;
         float illnessHappiness = 34;
 
-        if (actualFamiliar.daysHungry > 0)
-            foodHappiness *= ((float)actualFamiliar.daysHungry / actualFamiliar.maxDaysHungry);
+            foodHappiness *= ((float)(actualFamiliar.maxDaysHungry - actualFamiliar.daysHungry) / actualFamiliar.maxDaysHungry);
+            heatHappiness *= ((float)(actualFamiliar.maxDaysCold - actualFamiliar.daysCold) / actualFamiliar.maxDaysCold);
+            illnessHappiness *= ((float)(actualFamiliar.maxDaysIll - actualFamiliar.daysIll) / actualFamiliar.maxDaysIll);
 
-        if (actualFamiliar.daysCold > 0)
-            heatHappiness *= ((float)actualFamiliar.daysCold / actualFamiliar.maxDaysCold);
-
-        if (actualFamiliar.daysIll > 0)
-            illnessHappiness *= ((float)actualFamiliar.daysIll / actualFamiliar.maxDaysIll);
 
         int happiness = Mathf.RoundToInt(foodHappiness + heatHappiness + illnessHappiness);
 
@@ -173,7 +175,8 @@ public class HappinessManager : MonoBehaviour
 
         for(int i = 1; i < family.Length; i++)
         {
-            familyHappiness += GetFamiliarHappiness(family[i]);
+            family[i].happiness = GetFamiliarHappiness(family[i]);
+            familyHappiness += family[i].happiness;
         }
 
         familyHappiness = familyHappiness / (family.Length - 1);
@@ -194,6 +197,13 @@ public class HappinessManager : MonoBehaviour
         familyHappiness = CalculateFamilyHappiness();
 
         int needsAmount = Mathf.RoundToInt(GetFamiliarHappiness(president) * 0.34f);
+
+        if(president.daysCold == president.maxDaysCold || president.daysHungry == president.maxDaysHungry || president.daysIll == president.maxDaysIll || president.happiness <= GameManager._instance.minimumHappiness)
+        {
+            GameManager._instance.GameOver();
+            return;
+        }
+
         int familyAmount = Mathf.RoundToInt(familyHappiness * 0.33f);
         int cityAmount = Mathf.RoundToInt(cityHappiness * 0.33f);
 

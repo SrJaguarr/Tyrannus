@@ -24,6 +24,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_MainMenu_NewGame;
     [SerializeField] private GameObject PNL_PauseMenu;
     [SerializeField] private GameObject PNL_Credits;
+    [SerializeField] private GameObject PNL_GameOver;
     [SerializeField] private GameObject PNL_Familiar;
     [SerializeField] private GameObject PNL_Happiness;
 
@@ -44,6 +45,9 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button BTN_PauseExit;
     [SerializeField] private Button BTN_Options;
 
+    [Header("Game Over")]
+    [SerializeField] private Button BTN_EndGame;
+    [SerializeField] private Button BTN_Restart;
 
     [Header("Citizen Request")]
     [SerializeField] private Button BTN_CitizenRequest;
@@ -112,6 +116,9 @@ public class CanvasManager : MonoBehaviour
 
     private void Start()
     {
+        BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); });
+        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); });
+
         BTN_OpenHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); GameManager._instance.familyHappiness.UpdatePresidentInfo(); });
         BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
 
@@ -199,19 +206,24 @@ public class CanvasManager : MonoBehaviour
     {
         PNL_Credits.SetActive(!PNL_Credits.activeSelf);
     }
+
+    public void HandleGameOver()
+    {
+        PNL_GameOver.SetActive(!PNL_GameOver.activeSelf);
+    }
+
+
     #endregion
 
     #region Loans
     private void HandleLoans() { PNL_Loans.SetActive(!PNL_Loans.activeSelf); }
 
     #endregion
-
     #region Shop List
 
     private void HandleShopList() { PNL_ShopList.SetActive(!PNL_ShopList.activeSelf); }
 
     #endregion
-
     #region Citizen Request
     private void HandleCitizenRequest() { PNL_Request.SetActive(!PNL_Request.activeSelf); }
 
@@ -228,7 +240,6 @@ public class CanvasManager : MonoBehaviour
     }
 
     #endregion
-
     #region Scene Handler
 
     private void LeaveHome() 
@@ -248,12 +259,10 @@ public class CanvasManager : MonoBehaviour
     }
 
     #endregion
-
     #region Contacts
     private void HandleContacts() { PNL_Contacts.SetActive(!PNL_Contacts.activeSelf); }
     private void SwitchCitizen(int n) { GameManager._instance.contactsManager.SwitchCitizen(n); }
     #endregion
-
     #region Happiness
 
     private void HandleHappinessPanel()
@@ -266,9 +275,7 @@ public class CanvasManager : MonoBehaviour
     }
 
     #endregion
-
-
-    #region New Request System
+    #region Request System
     public void ShowSCategoryViewer(bool b)
     {
         PNL_SocialCategoryViewer.SetActive(b);

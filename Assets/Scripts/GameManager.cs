@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     public int negativeStateMoneyCount;
     public int currentDay = 1;
-
+    public int minimumHappiness;
     private void Awake()
     {
         if(_instance == null)
@@ -74,16 +74,21 @@ public class GameManager : MonoBehaviour
         moneyManager.ResetTips();
         citizenRequest.CitizenSelector();
 
+        familyController.UpdateNeeds();
         happinessManager.CalculateGlobalHappiness();
+
         moneyManager.CalculateSalary(happinessManager.cityHappiness);
         moneyManager.SetStateMoney();
 
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
-        familyController.UpdateNeeds();
+    }
 
-
+    public void GameOver()
+    {
+        timeManager.pauseTime = !timeManager.pauseTime;
+        canvasManager.HandleGameOver();
     }
 
     private void CheckStateMoney()
