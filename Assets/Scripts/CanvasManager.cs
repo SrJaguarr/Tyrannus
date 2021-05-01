@@ -109,10 +109,12 @@ public class CanvasManager : MonoBehaviour
 
     private int currentMenuOption = 0;
     private GameManager gameManager;
+    private MusicManager musicManager;
 
     private void Awake()
     {
         gameManager = GameManager._instance;
+        musicManager = gameManager.musicManager;
     }
 
     private void Update()
@@ -181,6 +183,8 @@ public class CanvasManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 HandlePauseScreen();
+                currentState = StateMachine.PauseMenu;
+                StateMachineHandler();
             }
         }
         else if(currentState == StateMachine.PauseMenu)
@@ -199,6 +203,8 @@ public class CanvasManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 HandlePauseScreen();
+                currentState = StateMachine.Game;
+                StateMachineHandler();
             }
 
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
@@ -206,7 +212,6 @@ public class CanvasManager : MonoBehaviour
                 EnterMenuOption(pauseMenuOptions);
             }
         }
-
     }
 
     private void Start()
@@ -214,24 +219,27 @@ public class CanvasManager : MonoBehaviour
         ResetMenuOption(newGameMenuOptions);
         ResetMenuOption(continueMenuOptions);
 
-        BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); });
-        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); currentState = StateMachine.Game; });
+        #region Menu
+        BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); });
+        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
 
         BTN_OpenHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); GameManager._instance.familyHappiness.UpdatePresidentInfo(); });
         BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
 
-        BTN_MMC_Continue.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); currentState = StateMachine.Game; });
-        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
-        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; });
+        BTN_MMC_Continue.onClick.AddListener(delegate {HandleContinueMainMenuScreen(); currentState = StateMachine.Game; musicManager.RestoreMusic(); StateMachineHandler(); });
+        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
+        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
         BTN_MMC_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
         BTN_MMNG_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
         BTN_MMC_Exit.onClick.AddListener(delegate { Application.Quit(); });
         BTN_MMNG_Exit.onClick.AddListener(delegate { Application.Quit(); });
         BTN_BackCredits.onClick.AddListener(delegate { HandleCreditsScreen();});
 
-        BTN_Resume.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; });
-        BTN_Resume2.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; });
-        BTN_PauseExit.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; });
+        BTN_Resume.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); });
+        BTN_Resume2.onClick.AddListener(delegate {  HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); });
+        BTN_PauseExit.onClick.AddListener(delegate { musicManager.SaveCurrentMusic(); HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); });
+
+        #endregion
 
         BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); });
         BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateCityHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); });
@@ -285,30 +293,51 @@ public class CanvasManager : MonoBehaviour
 
     #region Menus
 
+    private void StateMachineHandler()
+    {
+        switch (currentState)
+        {
+            case StateMachine.Game:
+                gameManager.ResumeGame();
+            break;
+            case StateMachine.MainMenu:
+                gameManager.PauseGame();
+            break;
+            case StateMachine.PauseMenu:
+                gameManager.PauseGame();
+            break;
+
+        }
+    }
 
     private void HandleContinueMainMenuScreen()
     {
         PNL_MainMenu_Continue.SetActive(!PNL_MainMenu_Continue.activeSelf);
         ResetMenuOption(continueMenuOptions);
+
+        if (PNL_MainMenu_Continue.activeSelf)
+        {
+            musicManager.SetMusic("menu");
+        }
     }
 
     private void HandleNewGameMainMenuScreen()
     {
         PNL_MainMenu_NewGame.SetActive(!PNL_MainMenu_NewGame.activeSelf);
         ResetMenuOption(newGameMenuOptions);
+
+        if (PNL_MainMenu_NewGame.activeSelf)
+        {
+            musicManager.SetMusic("menu");
+        }
     }
 
     private void HandlePauseScreen()
     {
         PNL_PauseMenu.SetActive(!PNL_PauseMenu.activeSelf);
-        gameManager.PauseGame();
-
-        if (PNL_PauseMenu.activeSelf) {
-            currentState = StateMachine.PauseMenu;
-            ResetMenuOption(pauseMenuOptions);
-        }
-
+        ResetMenuOption(pauseMenuOptions);
     }
+
     private void HandleCreditsScreen()
     {
         PNL_Credits.SetActive(!PNL_Credits.activeSelf);
@@ -320,7 +349,6 @@ public class CanvasManager : MonoBehaviour
 
         if (PNL_GameOver.activeSelf)
         {
-            currentState = StateMachine.MainMenu;
             ResetMenuOption(gameOverMenuOptions);
         }
     }

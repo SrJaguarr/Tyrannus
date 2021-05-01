@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public RequestStats requestStats;
     public ScriptableObjectController scriptableObjectController;
     public FamilyHappiness familyHappiness;
+    public MusicManager musicManager;
 
     [Header("Databases")]
     public RequestDB requestDB;
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
         loanManager.NewGame();
         scriptableObjectController.RestoreValues();
@@ -68,7 +70,12 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
-        timeManager.pauseTime = !timeManager.pauseTime;
+        timeManager.pauseTime = true;
+    }
+
+    public void ResumeGame()
+    {
+        timeManager.pauseTime = false;
     }
 
     public void NextDay()
@@ -88,13 +95,22 @@ public class GameManager : MonoBehaviour
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
-        //shopListController.PayRent();
+        if(happinessManager.globalHappiness < 50)
+        {
+            musicManager.SetMusic("sad");
+        }
+        else
+        {
+            musicManager.SetMusic("happy");
+        }
+
     }
 
     public void GameOver()
     {
         timeManager.pauseTime = !timeManager.pauseTime;
         canvasManager.HandleGameOver();
+        musicManager.SetMusic("sad");
     }
 
     private void CheckStateMoney()
