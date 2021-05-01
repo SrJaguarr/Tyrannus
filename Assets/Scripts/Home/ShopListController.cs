@@ -32,6 +32,8 @@ public class ShopListController : MonoBehaviour
     private int money;
     private int balance;
 
+    private bool paidRent;
+
     private MoneyManager moneyManager;
 
     private void Awake()
@@ -46,6 +48,8 @@ public class ShopListController : MonoBehaviour
     {
         Tyrannus.CleanParent(shopListContainer);
         familiarContainers.Clear();
+        shopPrice = rentPrice;
+        paidRent = false;
     }
 
     private void Start()
@@ -150,9 +154,10 @@ public class ShopListController : MonoBehaviour
     public void Buy()
     {
         moneyManager.Shop(shopPrice);
-        shopPrice = rentPrice;
-        UpdateSalary();
         BuyNeeds();
+        shopPrice = 0;
+        UpdateSalary();
+        paidRent = true;
     }
     private void ResetToggles()
     {
@@ -169,7 +174,17 @@ public class ShopListController : MonoBehaviour
         CheckToggles();
 
         shopPrice = rentPrice;
+        CheckRent();
         UpdateSalary();
+        paidRent = false;
+    }
+
+    private void CheckRent()
+    {
+        if (!paidRent)
+        {
+            moneyManager.salary -= rentPrice;
+        }
     }
 
     #endregion

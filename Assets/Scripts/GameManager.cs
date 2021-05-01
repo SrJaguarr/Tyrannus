@@ -88,6 +88,7 @@ public class GameManager : MonoBehaviour
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
+        //shopListController.PayRent();
     }
 
     public void GameOver()

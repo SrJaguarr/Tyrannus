@@ -18450,7 +18450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b637e787b95484d84a373b793d41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayTime: 10
+  dayTime: 30
   weekDays: 0
   TXT_Day: {fileID: 1822240641}
   TXT_WeekDay: {fileID: 1648050608}
@@ -25065,7 +25065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 794, y: 459}
+  m_AnchoredPosition: {x: 9, y: 459}
   m_SizeDelta: {x: -1615.9598, y: -938.1226}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783569061
