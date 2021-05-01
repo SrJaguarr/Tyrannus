@@ -130,7 +130,7 @@ public class ShopListController : MonoBehaviour
             TXT_HeatingPrice.color = Color.black;
             TXT_HeatingPrice.text = heatingPrice.ToString() + "€";
             IMG_HeatImage.sprite = spriteHeatOff;
-
+            GameManager._instance.fxManager.PlaySound("unfire");
             SetShopPrice(-heatingPrice);
         }
         else
@@ -138,7 +138,7 @@ public class ShopListController : MonoBehaviour
             TXT_HeatingPrice.color = Color.red;
             TXT_HeatingPrice.text = "-" + heatingPrice.ToString() + "€";
             IMG_HeatImage.sprite = spriteHeatOn;
-
+            GameManager._instance.fxManager.PlaySound("fire");
             SetShopPrice(heatingPrice);
         }
 

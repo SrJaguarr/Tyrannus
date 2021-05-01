@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
-    private enum StateMachine { MainMenu, PauseMenu, Game };
+    private enum StateMachine { MainMenu, Credits, PauseMenu, Game };
     private StateMachine currentState = StateMachine.MainMenu;
 
 
@@ -110,11 +110,13 @@ public class CanvasManager : MonoBehaviour
     private int currentMenuOption = 0;
     private GameManager gameManager;
     private MusicManager musicManager;
+    private FXManager fxManager;
 
     private void Awake()
     {
         gameManager = GameManager._instance;
         musicManager = gameManager.musicManager;
+        fxManager = gameManager.fxManager;
     }
 
     private void Update()
@@ -184,6 +186,7 @@ public class CanvasManager : MonoBehaviour
             {
                 HandlePauseScreen();
                 currentState = StateMachine.PauseMenu;
+                fxManager.PlaySound("paper_open");
                 StateMachineHandler();
             }
         }
@@ -220,34 +223,35 @@ public class CanvasManager : MonoBehaviour
         ResetMenuOption(continueMenuOptions);
 
         #region Menu
-        BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); });
-        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
+        BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); fxManager.PlaySound("option_enter"); });
+        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("option_enter"); });
 
         BTN_OpenHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); GameManager._instance.familyHappiness.UpdatePresidentInfo(); });
         BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
 
-        BTN_MMC_Continue.onClick.AddListener(delegate {HandleContinueMainMenuScreen(); currentState = StateMachine.Game; musicManager.RestoreMusic(); StateMachineHandler(); });
-        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
-        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); });
-        BTN_MMC_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
-        BTN_MMNG_Credits.onClick.AddListener(delegate { HandleCreditsScreen(); });
+        BTN_MMC_Continue.onClick.AddListener(delegate {HandleContinueMainMenuScreen(); currentState = StateMachine.Game; musicManager.RestoreMusic(); StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMC_Credits.onClick.AddListener(delegate { currentState = StateMachine.Credits; HandleCreditsScreen(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMNG_Credits.onClick.AddListener(delegate { currentState = StateMachine.Credits; HandleCreditsScreen(); fxManager.PlaySound("wood_option_enter"); });
         BTN_MMC_Exit.onClick.AddListener(delegate { Application.Quit(); });
         BTN_MMNG_Exit.onClick.AddListener(delegate { Application.Quit(); });
-        BTN_BackCredits.onClick.AddListener(delegate { HandleCreditsScreen();});
+        BTN_BackCredits.onClick.AddListener(delegate { currentState = StateMachine.MainMenu; fxManager.PlaySound("option_enter"); HandleCreditsScreen();});
 
-        BTN_Resume.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); });
-        BTN_Resume2.onClick.AddListener(delegate {  HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); });
-        BTN_PauseExit.onClick.AddListener(delegate { musicManager.SaveCurrentMusic(); HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); });
+        BTN_Resume.onClick.AddListener(delegate { HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("paper_close"); });
+        BTN_Resume2.onClick.AddListener(delegate {  HandlePauseScreen(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("option_enter"); fxManager.PlaySound("paper_close"); });
+        BTN_PauseExit.onClick.AddListener(delegate { musicManager.SaveCurrentMusic(); HandleContinueMainMenuScreen(); HandlePauseScreen(); currentState = StateMachine.MainMenu; StateMachineHandler(); fxManager.PlaySound("option_enter"); });
 
         #endregion
 
-        BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); });
-        BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateCityHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); });
-        BTN_ClearChanges.onClick.AddListener(delegate { gameManager.requestStats.ClearChanges(); });
-        BTN_BackSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(true); ShowSCategoryStats(false); gameManager.requestStats.CleanRequests(); });
-        BTN_BackSCStats.onClick.AddListener(delegate { ShowRequestViewer(false); ShowSCategoryStats(true); gameManager.requestStats.CleanCategories(); });
-        BTN_CloseSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); });
-        BTN_CloseSCStats.onClick.AddListener(delegate { ShowSCategoryStats(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); });
+        BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); fxManager.PlaySound("paper_open"); });
+        BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateCityHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); fxManager.PlaySound("paper_close"); });
+        BTN_ClearChanges.onClick.AddListener(delegate { gameManager.requestStats.ClearChanges(); fxManager.PlaySound("paper_close"); });
+        BTN_BackSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(true); ShowSCategoryStats(false); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("option_select"); });
+        BTN_BackSCStats.onClick.AddListener(delegate { ShowRequestViewer(false); ShowSCategoryStats(true); gameManager.requestStats.CleanCategories(); fxManager.PlaySound("option_select"); });
+       
+        BTN_CloseSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("paper_close"); });
+        BTN_CloseSCStats.onClick.AddListener(delegate { ShowSCategoryStats(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("paper_close"); });
         BTN_CloseRequestViewer.onClick.AddListener( delegate {
 
             if (gameManager.requestStats.HasChanges())
@@ -261,34 +265,35 @@ public class CanvasManager : MonoBehaviour
                 gameManager.requestStats.CleanRequests();
             }
 
+            fxManager.PlaySound("paper_close");
         });
 
 
-        BTN_CitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); gameManager.citizenRequest.MeetCitizen(); });
-        BTN_CloseCitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); });
-        BTN_AcceptCitizenRequest.onClick.AddListener(delegate { AcceptCitizenRequest(); gameManager.statsViewerManager.UpdateStats(); });
-        BTN_DenyCitizenRequest.onClick.AddListener(delegate { DenyCitizenRequest(); });
+        BTN_CitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); gameManager.citizenRequest.MeetCitizen(); fxManager.PlaySound("paper_open"); });
+        BTN_CloseCitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); fxManager.PlaySound("paper_close"); });
+        BTN_AcceptCitizenRequest.onClick.AddListener(delegate { AcceptCitizenRequest(); gameManager.statsViewerManager.UpdateStats(); fxManager.PlaySound("happy_citizen"); });
+        BTN_DenyCitizenRequest.onClick.AddListener(delegate { DenyCitizenRequest(); fxManager.PlaySound("angry_citizen"); });
 
-        BTN_CloseFamiliar.onClick.AddListener(delegate { HandleFamiliarPanel(); });
+        BTN_CloseFamiliar.onClick.AddListener(delegate { HandleFamiliarPanel(); fxManager.PlaySound("paper_close"); });
 
-        BTN_Loans.onClick.AddListener(delegate { HandleLoans(); });
-        BTN_CloseLoans.onClick.AddListener(delegate { HandleLoans(); });
+        BTN_Loans.onClick.AddListener(delegate { HandleLoans(); fxManager.PlaySound("paper_open"); });
+        BTN_CloseLoans.onClick.AddListener(delegate { HandleLoans(); fxManager.PlaySound("paper_close"); });
 
         BTN_LeaveHome.onClick.AddListener(delegate { LeaveHome(); });
         BTN_EndOfficeDay.onClick.AddListener(delegate { LeaveOffice(); });
 
-        BTN_OpenShopList.onClick.AddListener(delegate { HandleShopList(); });
-        BTN_CloseShopList.onClick.AddListener(delegate { HandleShopList(); });
-        BTN_ConfirmShopList.onClick.AddListener(delegate { gameManager.shopListController.Buy(); HandleShopList(); gameManager.familyController.CheckNeeds();  });
+        BTN_OpenShopList.onClick.AddListener(delegate { HandleShopList(); fxManager.PlaySound("paper_open"); });
+        BTN_CloseShopList.onClick.AddListener(delegate { HandleShopList(); fxManager.PlaySound("paper_close"); });
+        BTN_ConfirmShopList.onClick.AddListener(delegate { gameManager.shopListController.Buy(); HandleShopList(); gameManager.familyController.CheckNeeds(); fxManager.PlaySound("buy"); });
 
-        BTN_OpenContacts.onClick.AddListener(delegate { HandleContacts(); gameManager.contactsManager.OpenMobile(); });
-        BTN_CloseContacts.onClick.AddListener(delegate { HandleContacts(); });
+        BTN_OpenContacts.onClick.AddListener(delegate { HandleContacts(); gameManager.contactsManager.OpenMobile(); fxManager.PlaySound("paper_open"); });
+        BTN_CloseContacts.onClick.AddListener(delegate { HandleContacts(); fxManager.PlaySound("paper_close"); });
         BTN_NextContact.onClick.AddListener(delegate { SwitchCitizen(1); });
         BTN_PreviousContact.onClick.AddListener(delegate { SwitchCitizen(-1); });
 
-        BTN_NotificationAccept.onClick.AddListener(delegate { gameManager.notificationManager.Accept(); });
-        BTN_NotificationDeny.onClick.AddListener(delegate { gameManager.notificationManager.Deny(); });
-        BTN_NotificationClose.onClick.AddListener(delegate { gameManager.notificationManager.CloseNotification(); });
+        BTN_NotificationAccept.onClick.AddListener(delegate { gameManager.notificationManager.Accept(); fxManager.PlaySound("paper_close"); });
+        BTN_NotificationDeny.onClick.AddListener(delegate { gameManager.notificationManager.Deny(); fxManager.PlaySound("paper_close"); });
+        BTN_NotificationClose.onClick.AddListener(delegate { gameManager.notificationManager.CloseNotification(); fxManager.PlaySound("paper_close"); });
     }
 
     #region Menus

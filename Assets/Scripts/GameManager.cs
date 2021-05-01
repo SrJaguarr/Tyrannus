@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public ScriptableObjectController scriptableObjectController;
     public FamilyHappiness familyHappiness;
     public MusicManager musicManager;
+    public FXManager fxManager;
 
     [Header("Databases")]
     public RequestDB requestDB;
