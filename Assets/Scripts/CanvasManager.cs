@@ -2,12 +2,20 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
     private enum StateMachine { MainMenu, PauseMenu, Game };
     private StateMachine currentState = StateMachine.MainMenu;
+
+
+    [Header("Menus Number Of Options")]
+    [SerializeField] private GameObject[] newGameMenuOptions;
+    [SerializeField] private GameObject[] continueMenuOptions;
+    [SerializeField] private GameObject[] pauseMenuOptions;
+    [SerializeField] private GameObject[] gameOverMenuOptions;
 
     [Header("Panels")]
     [SerializeField] private GameObject PNL_Office;
@@ -28,7 +36,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_Familiar;
     [SerializeField] private GameObject PNL_Happiness;
 
-[Header("Main Menu")]
+    [Header("Main Menu")]
     [SerializeField] private Button BTN_MMC_NewGame;
     [SerializeField] private Button BTN_MMC_Continue;
     [SerializeField] private Button BTN_MMC_Credits;
@@ -99,6 +107,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private Button BTN_CloseHappinessPanel;
 
 
+    private int currentMenuOption = 0;
     private GameManager gameManager;
 
     private void Awake()
@@ -108,16 +117,105 @@ public class CanvasManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !(currentState == StateMachine.MainMenu))
+        CheckInputs();
+    }
+
+    private void CheckInputs()
+    {
+        if(currentState == StateMachine.MainMenu)
         {
-            HandlePauseScreen();
+            if (PNL_MainMenu_Continue.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    PreviousMenuOption(continueMenuOptions);
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                {
+                    NextMenuOption(continueMenuOptions);
+                }
+
+                if(Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    EnterMenuOption(continueMenuOptions);
+                }
+            }
+            else if (PNL_MainMenu_NewGame.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    PreviousMenuOption(newGameMenuOptions);
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                {
+                    NextMenuOption(newGameMenuOptions);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    EnterMenuOption(newGameMenuOptions);
+                }
+            }
+            else if (PNL_GameOver.activeSelf)
+            {
+                if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+                {
+                    PreviousMenuOption(gameOverMenuOptions);
+                }
+
+                if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+                {
+                    NextMenuOption(gameOverMenuOptions);
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    EnterMenuOption(gameOverMenuOptions);
+                }
+            }
         }
+        else if(currentState == StateMachine.Game)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HandlePauseScreen();
+            }
+        }
+        else if(currentState == StateMachine.PauseMenu)
+        {
+
+            if(Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
+            {
+                PreviousMenuOption(pauseMenuOptions);
+            }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                NextMenuOption(pauseMenuOptions);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                HandlePauseScreen();
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            {
+                EnterMenuOption(pauseMenuOptions);
+            }
+        }
+
     }
 
     private void Start()
     {
+        ResetMenuOption(newGameMenuOptions);
+        ResetMenuOption(continueMenuOptions);
+
         BTN_EndGame.onClick.AddListener(delegate { HandleGameOver(); HandleNewGameMainMenuScreen(); });
-        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); });
+        BTN_Restart.onClick.AddListener(delegate { HandleGameOver(); GameManager._instance.NewGame(); currentState = StateMachine.Game; });
 
         BTN_OpenHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); GameManager._instance.familyHappiness.UpdatePresidentInfo(); });
         BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
@@ -191,17 +289,25 @@ public class CanvasManager : MonoBehaviour
     private void HandleContinueMainMenuScreen()
     {
         PNL_MainMenu_Continue.SetActive(!PNL_MainMenu_Continue.activeSelf);
+        ResetMenuOption(continueMenuOptions);
     }
 
     private void HandleNewGameMainMenuScreen()
     {
         PNL_MainMenu_NewGame.SetActive(!PNL_MainMenu_NewGame.activeSelf);
+        ResetMenuOption(newGameMenuOptions);
     }
 
     private void HandlePauseScreen()
     {
         PNL_PauseMenu.SetActive(!PNL_PauseMenu.activeSelf);
         gameManager.PauseGame();
+
+        if (PNL_PauseMenu.activeSelf) {
+            currentState = StateMachine.PauseMenu;
+            ResetMenuOption(pauseMenuOptions);
+        }
+
     }
     private void HandleCreditsScreen()
     {
@@ -211,8 +317,77 @@ public class CanvasManager : MonoBehaviour
     public void HandleGameOver()
     {
         PNL_GameOver.SetActive(!PNL_GameOver.activeSelf);
+
+        if (PNL_GameOver.activeSelf)
+        {
+            currentState = StateMachine.MainMenu;
+            ResetMenuOption(gameOverMenuOptions);
+        }
     }
 
+    public void ClearNewGameMenu()
+    {
+        ClearMenuSelections(newGameMenuOptions);
+    }
+
+    public void ClearContinueGameMenu()
+    {
+        ClearMenuSelections(continueMenuOptions);
+    }
+
+    public void ClearPauseMenu()
+    {
+        ClearMenuSelections(pauseMenuOptions);
+    }
+
+    public void ClearGameOverMenu()
+    {
+        ClearMenuSelections(gameOverMenuOptions);
+    }
+
+    private void ClearMenuSelections(GameObject[] currentMenu)
+    {
+        for(int i = 0; i < currentMenu.Length; i++)
+        {
+            currentMenu[i].GetComponent<EventTrigger>().OnPointerExit(null);
+        }
+    }
+
+    private void ResetMenuOption(GameObject[] currentMenu)
+    {
+        ClearMenuSelections(currentMenu);
+        currentMenuOption = 0;
+        currentMenu[currentMenuOption].GetComponent<EventTrigger>().OnPointerEnter(null);
+    }
+
+    private void NextMenuOption(GameObject[] currentMenu)
+    {
+        currentMenu[currentMenuOption].GetComponent<EventTrigger>().OnPointerExit(null);
+
+        currentMenuOption++;
+
+        if (currentMenuOption == currentMenu.Length)
+            currentMenuOption = 0;
+
+        currentMenu[currentMenuOption].GetComponent<EventTrigger>().OnPointerEnter(null);
+    }
+
+    private void PreviousMenuOption(GameObject[] currentMenu)
+    {
+        currentMenu[currentMenuOption].GetComponent<EventTrigger>().OnPointerExit(null);
+
+        currentMenuOption--;
+
+        if (currentMenuOption < 0)
+            currentMenuOption = currentMenu.Length - 1;
+
+        currentMenu[currentMenuOption].GetComponent<EventTrigger>().OnPointerEnter(null);
+    }
+
+    private void EnterMenuOption(GameObject[] currentMenu)
+    {
+        currentMenu[currentMenuOption].GetComponent<Button>().onClick.Invoke();
+    }
 
     #endregion
 
