@@ -187,6 +187,7 @@ public class CanvasManager : MonoBehaviour
 
     #region Menus
 
+
     private void HandleContinueMainMenuScreen()
     {
         PNL_MainMenu_Continue.SetActive(!PNL_MainMenu_Continue.activeSelf);

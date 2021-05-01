@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     public int negativeStateMoneyCount;
     public int currentDay = 1;
     public int minimumHappiness;
+
+    [SerializeField] private int startMoney;
+
     private void Awake()
     {
         if(_instance == null)
@@ -51,6 +54,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        moneyManager.salary = startMoney;
         loanManager.NewGame();
         scriptableObjectController.RestoreValues();
         moneyManager.NewGame();
@@ -59,6 +63,7 @@ public class GameManager : MonoBehaviour
         shopListController.NewGame();
         familyController.NewGame();
         happinessManager.NewGame();
+        shopListController.UpdateSalary();
     }
 
     public void PauseGame()

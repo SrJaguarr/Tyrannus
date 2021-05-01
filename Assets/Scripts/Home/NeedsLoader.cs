@@ -39,15 +39,29 @@ public class NeedsLoader : MonoBehaviour
         needs.Add(Instantiate(needPrefab, parent));
     }
 
+    private GameObject GetNeed(string name)
+    {
+        foreach (GameObject n in needs)
+        {
+            if (n.name.Contains(name))
+            {
+                return n;
+            }
+        }
+
+        return null;
+    }
+
     public void RemoveNeed(string name, string need)
     {
         string needString = name + "_" + need;
 
-        GameObject needPrefab = needs.Where(x => x.name.Contains(needString)).Single();
-
-        needs.Remove(needPrefab);
-
-        Destroy(needPrefab);
+        GameObject prefab = GetNeed(needString);
+        if (prefab != null)
+        {
+            needs.Remove(prefab);
+            Destroy(prefab);
+        }
     }
 
 }
