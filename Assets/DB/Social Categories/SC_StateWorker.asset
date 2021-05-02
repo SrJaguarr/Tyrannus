@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_StateWorker
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: state_workers
   categoryName: Funcionarios
   categoryDescription: "Cualquier ciudadano trabajador de una industria o servicio
     propiedad del estado forma parte de este grupo. Incluye educadores y m\xE9dicos

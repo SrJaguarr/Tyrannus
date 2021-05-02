@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Driver
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: drivers
   categoryName: Conductores
   categoryDescription: "Este grupo engloba a todo votante que conduce un veh\xEDculo
     en su d\xEDa a d\xEDa, desde entusiastas de los coches hasta los que lo utilizan

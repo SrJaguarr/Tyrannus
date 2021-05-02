@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Environmentalist
   m_EditorClassIdentifier: 
+  id: environmentalists
   categoryName: Ecologistas
   categoryDescription: "Los ecologistas pueden pertenecer a cualquier otro grupo
     social, sin embargo comparten su opini\xF3n acerca de la contaminaci\xF3n, cambio
@@ -19,10 +20,10 @@ MonoBehaviour:
   categorySprite: {fileID: 21300000, guid: 3456ba35e123bd7428c3960342a81d60, type: 3}
   populationPercentage: 18
   requestsToApprove:
-  - {fileID: 11400000, guid: 93d12669aa9ab0f41a2dd2b2effeaf00, type: 2}
   - {fileID: 11400000, guid: 119e6fa109bb9aa4896042c7a446f55f, type: 2}
   - {fileID: 11400000, guid: 62b59f3d26ac91847a4e702b18718394, type: 2}
   - {fileID: 11400000, guid: fceaa956e2bd55f4f823c0a058278e3e, type: 2}
+  - {fileID: 11400000, guid: 93d12669aa9ab0f41a2dd2b2effeaf00, type: 2}
   - {fileID: 11400000, guid: 468d2fda905f30048b242e0abe29f4e5, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: 26d79f861605c5047ac39094d8378a1c, type: 2}

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Capitalist
   m_EditorClassIdentifier: 
+  id: capitalists
   categoryName: Capitalistas
   categoryDescription: "El principio b\xE1sico de los capitalistas es que las personas
     deber\xEDan sacar provecho de su propio trabajo, y que el estado deber\xEDa mantenerse

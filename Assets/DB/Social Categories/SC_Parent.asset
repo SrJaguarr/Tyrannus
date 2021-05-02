@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Parent
   m_EditorClassIdentifier: 
+  id: parents
   categoryName: Padres
   categoryDescription: "Este grupo social engloba a todas aquellas personas que tienen
     ni\xF1os de los que cuidar, independientemente de la cantidad que tengan y lo

@@ -14,13 +14,14 @@ public class NotificationManager : MonoBehaviour
 
     private Notification[] notificationDB;
 
+    private bool answer = false;
     private void Awake()
     {
         gameManager = GameManager._instance;
         notificationDB = gameManager.notificationDB.notifications;
     }
 
-    public void ShowNotification(string notificationID)
+    public IEnumerator ShowNotification(string notificationID)
     {
         currentNotification = GetNotificationByID(notificationID);
 
@@ -38,8 +39,10 @@ public class NotificationManager : MonoBehaviour
                 TXT_Deny.text = currentNotification.denyText;
             }
 
-
+            print(TXT_Title.text);
             PNL_Notification.SetActive(true);
+
+            yield return new WaitForSeconds(10);
         }
     }
 
@@ -70,8 +73,9 @@ public class NotificationManager : MonoBehaviour
                 gameManager.requestStats.CleanRequests();
                 break;
         }
-
+        GameManager._instance.Resume();
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 
     public void Deny()
@@ -84,9 +88,13 @@ public class NotificationManager : MonoBehaviour
                 gameManager.requestStats.CleanCategories(); 
                 gameManager.requestStats.CleanRequests();
                 break;
-        }
+            case "ethnic_minorities":
 
+                break;
+        }
+        GameManager._instance.Resume();
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 
     public void CloseNotification()
@@ -99,5 +107,6 @@ public class NotificationManager : MonoBehaviour
         }
 
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 }
