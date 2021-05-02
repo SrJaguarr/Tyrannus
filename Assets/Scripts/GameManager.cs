@@ -56,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        Resume();
         requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
@@ -69,16 +70,6 @@ public class GameManager : MonoBehaviour
         happinessManager.NewGame();
         shopListController.UpdateSalary();
         statsViewerManager.UpdateStats();
-    }
-
-    public void PauseGame()
-    {
-        timeManager.pauseTime = true;
-    }
-
-    public void ResumeGame()
-    {
-        timeManager.pauseTime = false;
     }
 
     public void NextDay()
@@ -114,7 +105,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        timeManager.pauseTime = !timeManager.pauseTime;
+        Pause();
         canvasManager.HandleGameOver();
         musicManager.SetMusic("sad");
     }

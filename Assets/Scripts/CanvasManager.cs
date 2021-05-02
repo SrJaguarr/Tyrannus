@@ -303,13 +303,13 @@ public class CanvasManager : MonoBehaviour
         switch (currentState)
         {
             case StateMachine.Game:
-                gameManager.ResumeGame();
+                gameManager.Resume();
             break;
             case StateMachine.MainMenu:
-                gameManager.PauseGame();
+                gameManager.Pause();
             break;
             case StateMachine.PauseMenu:
-                gameManager.PauseGame();
+                gameManager.Pause();
             break;
 
         }

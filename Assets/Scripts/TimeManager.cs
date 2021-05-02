@@ -16,18 +16,11 @@ public class TimeManager : MonoBehaviour
 
     private int dayOfWeek;
     private int day;
-    public bool pauseTime;
-
-    private void Start()
-    {
-        pauseTime = true;
-    }
 
     public void NewGame()
     {
         dayOfWeek = 1;
         day = 1;
-        pauseTime = false;
 
         dayRemainingTime = dayTime;
         TXT_Day.text = day.ToString();
@@ -36,8 +29,6 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
-        if (!pauseTime)
-        {
             if (dayRemainingTime > 0)
             {
                 UpdateTime();
@@ -46,7 +37,6 @@ public class TimeManager : MonoBehaviour
             {
                 NewDay();
             }
-        }
     }
 
     private void NewDay()
@@ -55,7 +45,7 @@ public class TimeManager : MonoBehaviour
 
         if (dayOfWeek > 7)
         {
-            pauseTime = true;
+            GameManager._instance.Pause();
             GameManager._instance.notificationManager.ShowNotification("end_week");
         }
         else
@@ -80,7 +70,7 @@ public class TimeManager : MonoBehaviour
     {
         dayOfWeek = 0;
         NewDay();
-        pauseTime = false;
+        GameManager._instance.Resume();
     }
 
     private void HandleColor()

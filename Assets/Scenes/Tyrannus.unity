@@ -19367,13 +19367,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b637e787b95484d84a373b793d41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayTime: 20
+  dayTime: 2
   weekDays: 0
   TXT_Day: {fileID: 1822240641}
   TXT_WeekDay: {fileID: 1648050608}
   radialBar: {fileID: 1949432909}
   radialLayout: {fileID: 904251199}
-  pauseTime: 0
 --- !u!114 &1290118613
 MonoBehaviour:
   m_ObjectHideFlags: 0
