@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Retired
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: retireds
   categoryName: Jubilados
   categoryDescription: "Este grupo tiene tiempo libre suficiente como para encontrar
     pegas a tu forma de gobernar, pero tambi\xE9n para apoyarte si les das lo que

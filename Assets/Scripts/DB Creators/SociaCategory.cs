@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Tyrannus/Social Category")]
 public class SociaCategory : ScriptableObject
 {
+    public string id;
     public string categoryName;
     public string categoryDescription;
     public Sprite categorySprite;
