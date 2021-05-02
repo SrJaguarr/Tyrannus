@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public FamilyHappiness familyHappiness;
     public MusicManager musicManager;
     public FXManager fxManager;
+    public ConsequencesManager consequencesManager;
 
     [Header("Databases")]
     public RequestDB requestDB;

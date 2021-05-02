@@ -61,7 +61,6 @@ public class NotificationManager : MonoBehaviour
 
     public void Accept()
     {
-
         switch (currentNotification.id)
         {
             case "request_confirm":
