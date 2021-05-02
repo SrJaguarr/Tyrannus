@@ -29,7 +29,7 @@ public class FamilyController : MonoBehaviour
     }
 
     //President = 0, Claudia = 1, Julia = 2, Viriato = 3, Kalinka = 4
-    private void AddFamiliar(int n)
+    public void AddFamiliar(int n)
     {
         familiars.Add(familyDB.familiars[n], Instantiate(familyDB.familiars[n].prefab, familiarContainer));    //Instanciamos todos los familiares determinados 
 
