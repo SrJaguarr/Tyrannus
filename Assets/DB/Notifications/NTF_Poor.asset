@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Poor
   m_EditorClassIdentifier: 
   id: poors
-  title: Envitons
+  title: Poor
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

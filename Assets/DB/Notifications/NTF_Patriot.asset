@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Patriot
   m_EditorClassIdentifier: 
   id: patriots
-  title: Envitons
+  title: Patrio
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

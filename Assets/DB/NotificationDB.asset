@@ -13,7 +13,19 @@ MonoBehaviour:
   m_Name: NotificationDB
   m_EditorClassIdentifier: 
   notifications:
-  - {fileID: 11400000, guid: bd3fcf0d264a7dd41974753456dce772, type: 2}
-  - {fileID: 11400000, guid: 64b348c94d4198a4c9354e73a7ed715c, type: 2}
+  - {fileID: 11400000, guid: c67af6e3fc102fe4faef40760c73bfcb, type: 2}
+  - {fileID: 11400000, guid: 0a8dbda25ddecc84e8b8c810600dc694, type: 2}
+  - {fileID: 11400000, guid: 06b48475a17fba34db4d89423bf1f716, type: 2}
   - {fileID: 11400000, guid: 2ca7f97af58f533408059b174aeb2441, type: 2}
+  - {fileID: 11400000, guid: c3084817b832a104e9f79f44de9c92d0, type: 2}
+  - {fileID: 11400000, guid: bd3fcf0d264a7dd41974753456dce772, type: 2}
+  - {fileID: 11400000, guid: 35393d4f1c061754f9633d9ff89bea6b, type: 2}
+  - {fileID: 11400000, guid: d5289447307e32540939e17ffb21e5af, type: 2}
+  - {fileID: 11400000, guid: 8a8f477682a276b4086e9b428ffa9025, type: 2}
+  - {fileID: 11400000, guid: 91d62b9041f9a9a4882fe372a9326b99, type: 2}
+  - {fileID: 11400000, guid: 8bbb3bde675a9a84295f5c79768c1311, type: 2}
+  - {fileID: 11400000, guid: 64b348c94d4198a4c9354e73a7ed715c, type: 2}
+  - {fileID: 11400000, guid: 0a1983a7437b82744b277e61ebf54783, type: 2}
+  - {fileID: 11400000, guid: 050c7d7b788038c409cef37a322d3df7, type: 2}
+  - {fileID: 11400000, guid: c78fd99dc6998914e90e34abfd371a66, type: 2}
   - {fileID: 11400000, guid: 5369a2e06f84c3542a80242b457a9e6c, type: 2}

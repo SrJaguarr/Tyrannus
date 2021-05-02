@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
-  m_Name: NTF_Youth
+  m_Name: NTF_StateWorkers
   m_EditorClassIdentifier: 
-  id: youth
-  title: "J\xD3VENES"
+  id: state_workers
+  title: STATEWO
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

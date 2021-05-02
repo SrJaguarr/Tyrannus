@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Religious
   m_EditorClassIdentifier: 
   id: religious
-  title: Envitons
+  title: Reli
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

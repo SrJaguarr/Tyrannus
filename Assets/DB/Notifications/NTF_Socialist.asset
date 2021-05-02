@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Socialist
   m_EditorClassIdentifier: 
   id: socialists
-  title: "J\xD3VENES"
+  title: SOCIA
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

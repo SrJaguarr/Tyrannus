@@ -15,13 +15,38 @@ public class NotificationManager : MonoBehaviour
     private Notification[] notificationDB;
 
     private bool answer = false;
+
+    private SocialCategoryDB categories;
+    [SerializeField] private int happinessThreshold;
+
     private void Awake()
     {
         gameManager = GameManager._instance;
+        categories = gameManager.socialCategoryDB;
         notificationDB = gameManager.notificationDB.notifications;
     }
 
-    public IEnumerator ShowNotification(string notificationID)
+    public IEnumerator CheckHappinessThreshold()
+    {
+        foreach (SociaCategory socialCategory in categories.categories)
+        {
+            GameManager._instance.Pause();
+            if (socialCategory.happiness <= happinessThreshold)
+            {
+                ShowNotification(socialCategory.id);
+
+                while (!answer)
+                {
+                    yield return null;
+                }
+
+                answer = false;
+            }
+            GameManager._instance.Resume();
+        }
+    }
+
+    public void ShowNotification(string notificationID)
     {
         currentNotification = GetNotificationByID(notificationID);
 
@@ -39,10 +64,7 @@ public class NotificationManager : MonoBehaviour
                 TXT_Deny.text = currentNotification.denyText;
             }
 
-            print(TXT_Title.text);
             PNL_Notification.SetActive(true);
-
-            yield return new WaitForSeconds(10);
         }
     }
 

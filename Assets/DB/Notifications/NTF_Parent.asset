@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Parent
   m_EditorClassIdentifier: 
   id: parents
-  title: Envitons
+  title: Pare
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar

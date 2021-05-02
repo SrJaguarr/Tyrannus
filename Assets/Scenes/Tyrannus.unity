@@ -18964,7 +18964,6 @@ GameObject:
   - component: {fileID: 1290118600}
   - component: {fileID: 1290118616}
   - component: {fileID: 1290118615}
-  - component: {fileID: 1290118617}
   - component: {fileID: 1290118601}
   - component: {fileID: 1290118604}
   - component: {fileID: 1290118612}
@@ -19052,7 +19051,6 @@ MonoBehaviour:
   familyHappiness: {fileID: 1290118601}
   musicManager: {fileID: 1290118615}
   fxManager: {fileID: 1290118616}
-  consequencesManager: {fileID: 1290118617}
   requestDB: {fileID: 11400000, guid: 8701c67edd9f89040aaf1e0471ef0495, type: 2}
   socialCategoryDB: {fileID: 11400000, guid: f6166f1fb3fe6d54a8295ac85090b992, type: 2}
   familyDB: {fileID: 11400000, guid: 1eda7278dec1107448015b8fe9bc4808, type: 2}
@@ -19356,6 +19354,7 @@ MonoBehaviour:
   PNL_Notification: {fileID: 365536179}
   PNL_Decision: {fileID: 487512299}
   BTN_NoDecision: {fileID: 1106737292}
+  happinessThreshold: 35
 --- !u!114 &1290118612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19459,19 +19458,6 @@ MonoBehaviour:
   addItemFX: {fileID: 8300000, guid: 8bee61ccfe4988e4f8e7134e5104dcfb, type: 3}
   timeEndingFX: {fileID: 8300000, guid: 939b9080c4857e54586ae605a35e3d19, type: 3}
   timeUpFX: {fileID: 8300000, guid: 3beb8e0864636ca45bffd176e1885513, type: 3}
---- !u!114 &1290118617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1290118597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf79b986882a5984a888c05eb8fde555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  happinessThreshold: 30
 --- !u!1 &1292021670
 GameObject:
   m_ObjectHideFlags: 0

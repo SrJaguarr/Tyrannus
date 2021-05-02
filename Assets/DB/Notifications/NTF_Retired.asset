@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: NTF_Retired
   m_EditorClassIdentifier: 
   id: retireds
-  title: Envitons
+  title: Retir
   description: LOS JOVENES
   acceptText: Adoptar
   denyText: No adoptar
