@@ -20,9 +20,9 @@ MonoBehaviour:
   categorySprite: {fileID: 21300000, guid: 92d0769b8e4a2bf46bdeba3664f95ec7, type: 3}
   populationPercentage: 27
   requestsToApprove:
-  - {fileID: 11400000, guid: babf0fb75720c574e829f78bc1c3cee7, type: 2}
   - {fileID: 11400000, guid: 9a30f4de6dd38a54fabc71c415f5eb25, type: 2}
   - {fileID: 11400000, guid: c822392b8fdae8e478b506fbbaa89550, type: 2}
+  - {fileID: 11400000, guid: babf0fb75720c574e829f78bc1c3cee7, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
   - {fileID: 11400000, guid: 22554a843d1566f47b7a7bed84431090, type: 2}

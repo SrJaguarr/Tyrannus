@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: NTF_Retired
   m_EditorClassIdentifier: 
   id: retireds
-  title: Retir
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: La tercera edad
+  description: "Los jubilados se han cansado de no hacer nada, han decidio actuar
+    haciendo barrera en la puerta de tu despacho, parece que el resto de ciudadanos
+    no podr\xE1 realizar sus peticiones.\nSi no hacemos algo pronto, todo el mundo
+    se nos echar\xE1 encima."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

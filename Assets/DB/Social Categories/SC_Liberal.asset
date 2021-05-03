@@ -22,14 +22,14 @@ MonoBehaviour:
   requestsToApprove:
   - {fileID: 11400000, guid: ab080ccb711c8e64292ae74a92a7bb76, type: 2}
   - {fileID: 11400000, guid: 237675657ed688147ad8a0298c55ac7f, type: 2}
-  - {fileID: 11400000, guid: d5fff8451bd1f0344aabd7e1da013308, type: 2}
-  - {fileID: 11400000, guid: 49096ee20f50a4b44b48e7a791d9e0eb, type: 2}
   - {fileID: 11400000, guid: c4533c7d687f09f4abe4dfb1c344b08b, type: 2}
+  - {fileID: 11400000, guid: 49096ee20f50a4b44b48e7a791d9e0eb, type: 2}
+  - {fileID: 11400000, guid: d5fff8451bd1f0344aabd7e1da013308, type: 2}
   - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
   RequestsToAbolish:
-  - {fileID: 11400000, guid: 63b800a29cf5f834da2e0d741f04e7bb, type: 2}
-  - {fileID: 11400000, guid: d7a2c4234be46834f8bbdcab29038e46, type: 2}
-  - {fileID: 11400000, guid: accb6887203db4b4c8b3037cac619204, type: 2}
   - {fileID: 11400000, guid: 290fab35805c69648ab368967723088b, type: 2}
   - {fileID: 11400000, guid: cf63bd8b694f8a740bfba21cb9f7a4cf, type: 2}
+  - {fileID: 11400000, guid: d7a2c4234be46834f8bbdcab29038e46, type: 2}
+  - {fileID: 11400000, guid: accb6887203db4b4c8b3037cac619204, type: 2}
+  - {fileID: 11400000, guid: 63b800a29cf5f834da2e0d741f04e7bb, type: 2}
   happiness: 50

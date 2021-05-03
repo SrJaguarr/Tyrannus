@@ -21,6 +21,6 @@ MonoBehaviour:
   requestsToApprove:
   - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
   RequestsToAbolish:
-  - {fileID: 11400000, guid: 290fab35805c69648ab368967723088b, type: 2}
   - {fileID: 11400000, guid: f1cfb2a98d8c9404daea12351440f802, type: 2}
+  - {fileID: 11400000, guid: 290fab35805c69648ab368967723088b, type: 2}
   happiness: 50

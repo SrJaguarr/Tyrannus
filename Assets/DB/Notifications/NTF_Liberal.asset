@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
   m_Name: NTF_Liberal
   m_EditorClassIdentifier: 
-  id: liberal
-  title: Libe
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  id: liberals
+  title: Libre de Impuestos
+  description: "Los liberales, cansados de unas medidas que les oprimen, han decidido
+    dejar de pagar sus impuestos hasta que mejore su situaci\xF3n. Es una gran p\xE9rdida
+    de dinero, debemos tomar medidas r\xE1pido."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

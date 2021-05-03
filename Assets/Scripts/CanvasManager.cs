@@ -230,8 +230,8 @@ public class CanvasManager : MonoBehaviour
         BTN_CloseHappinessPanel.onClick.AddListener(delegate { HandleHappinessPanel(); });
 
         BTN_MMC_Continue.onClick.AddListener(delegate {HandleContinueMainMenuScreen(); currentState = StateMachine.Game; musicManager.RestoreMusic(); StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
-        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
-        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); gameManager.NewGame(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMNG_NewGame.onClick.AddListener(delegate { HandleNewGameMainMenuScreen(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
+        BTN_MMC_NewGame.onClick.AddListener(delegate { HandleContinueMainMenuScreen(); currentState = StateMachine.Game; StateMachineHandler(); fxManager.PlaySound("wood_option_enter"); });
         BTN_MMC_Credits.onClick.AddListener(delegate { currentState = StateMachine.Credits; HandleCreditsScreen(); fxManager.PlaySound("wood_option_enter"); });
         BTN_MMNG_Credits.onClick.AddListener(delegate { currentState = StateMachine.Credits; HandleCreditsScreen(); fxManager.PlaySound("wood_option_enter"); });
         BTN_MMC_Exit.onClick.AddListener(delegate { Application.Quit(); });

@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Drivers
   m_EditorClassIdentifier: 
   id: drivers
-  title: DRUIVERS
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: "R\xE1pidos y Furiosos"
+  description: "Los conductores est\xE1n muy descontentos con tus decisiones.\n\xDAltimas
+    noticias informan que est\xE1n bloqueando con sus veh\xEDculos las entradas y
+    salidas de la ciudad.\nEsto impedir\xE1 la entrada al turismo y negociaciones."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

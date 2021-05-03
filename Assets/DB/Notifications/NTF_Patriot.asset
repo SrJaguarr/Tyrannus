@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Patriot
   m_EditorClassIdentifier: 
   id: patriots
-  title: Patrio
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Terror Patriota
+  description: "La insatisfacci\xF3n de los patriotas les ha llevado a organizar
+    manifestaciones violentas, llevando a cabo persecuciones de personas extranjeras.
+    Si no hacemos algo perderemos tambi\xE9n el apoyo de las minor\xEDas \xE9tnicas."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

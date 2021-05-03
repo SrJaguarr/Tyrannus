@@ -7,6 +7,7 @@ public class Notification : ScriptableObject
 {
     public string id;
     public string title;
+    [TextArea]
     public string description;
     public string acceptText;
     public string denyText;
