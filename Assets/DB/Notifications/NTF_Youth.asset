@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Youth
   m_EditorClassIdentifier: 
   id: youth
-  title: "J\xD3VENES"
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Arde la red
+  description: "Los j\xF3venes saben como hacerse o\xEDr, las redes sociales arden
+    con insultos hacia ti, si no hacemos algo, todos los habitantes perder\xE1n la
+    confianza en ti."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

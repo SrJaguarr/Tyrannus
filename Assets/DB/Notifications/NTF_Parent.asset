@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: NTF_Parent
   m_EditorClassIdentifier: 
   id: parents
-  title: Pare
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Problemas en el cole
+  description: "Parece que los padres est\xE1n muy disgustados, los chicos est\xE1n
+    bastante tristes, dicen que en el colegio todos los ni\xF1os les odian..."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

@@ -24,7 +24,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7a2c4234be46834f8bbdcab29038e46, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: d5fff8451bd1f0344aabd7e1da013308, type: 2}
+  - {fileID: 11400000, guid: 49096ee20f50a4b44b48e7a791d9e0eb, type: 2}
   - {fileID: 11400000, guid: c4533c7d687f09f4abe4dfb1c344b08b, type: 2}
   - {fileID: 11400000, guid: 99c7511fe43639745be59842d3a82789, type: 2}
-  - {fileID: 11400000, guid: 49096ee20f50a4b44b48e7a791d9e0eb, type: 2}
   happiness: 50

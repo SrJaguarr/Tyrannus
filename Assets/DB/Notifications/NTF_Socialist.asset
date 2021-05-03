@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Socialist
   m_EditorClassIdentifier: 
   id: socialists
-  title: SOCIA
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Tenemos rivales
+  description: "Los socialistas comienzan a reclutar gente, ofrecien, seg\xFAn dicen,
+    unas medidas mejores que las tuyas.\nPlanean montar un partido y quitarte de
+    en medio, si no hacemos algo ya, probablemente consigan derrocarte..."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

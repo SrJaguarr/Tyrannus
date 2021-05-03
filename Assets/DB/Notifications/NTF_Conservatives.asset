@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Conservatives
   m_EditorClassIdentifier: 
   id: conservatives
-  title: CONSERVARREOS
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Nosotras parimos, nosotras..
+  description: "Los conservadores no aguant\xE1n m\xE1s, est\xE1n organizando piquetes
+    en la puerta de cl\xEDnicas m\xE9dicas donde se llevan acabo abortos.\nPronto
+    notaremos el malestar de liberales, funcionarios y j\xF3venes."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

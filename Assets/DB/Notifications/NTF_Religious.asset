@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Religious
   m_EditorClassIdentifier: 
   id: religious
-  title: Reli
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Ira Divina
+  description: "La Iglesia est\xE1 hasta el cuello, ha decidio dejar de colaborar
+    con el Gobierno, as\xED como con agencias de ayuda social.\nLos pobres ser\xE1n
+    los primeros en sufrir las consecuencias"
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

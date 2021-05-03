@@ -22,8 +22,8 @@ MonoBehaviour:
   requestsToApprove:
   - {fileID: 11400000, guid: 26d79f861605c5047ac39094d8378a1c, type: 2}
   RequestsToAbolish:
-  - {fileID: 11400000, guid: fceaa956e2bd55f4f823c0a058278e3e, type: 2}
-  - {fileID: 11400000, guid: 3eaec255df791c54d917b5e699911893, type: 2}
-  - {fileID: 11400000, guid: 62b59f3d26ac91847a4e702b18718394, type: 2}
   - {fileID: 11400000, guid: c822392b8fdae8e478b506fbbaa89550, type: 2}
+  - {fileID: 11400000, guid: fceaa956e2bd55f4f823c0a058278e3e, type: 2}
+  - {fileID: 11400000, guid: 62b59f3d26ac91847a4e702b18718394, type: 2}
+  - {fileID: 11400000, guid: 3eaec255df791c54d917b5e699911893, type: 2}
   happiness: 50

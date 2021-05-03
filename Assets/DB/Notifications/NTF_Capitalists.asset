@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: NTF_Capitalists
   m_EditorClassIdentifier: 
   id: capitalists
-  title: CAPITALISTAS
-  description: LOS JOVENES
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  title: Despidos Masivos
+  description: "Las grandes empresas empiezan a perder dinero, tus medidas les aprietan
+    demasiado, por lo que se est\xE1n llevando a cabo despidos masivos.\nSe palpa
+    el malestar en el ambiente, muchas personas est\xE1n perdiendo su empleo."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

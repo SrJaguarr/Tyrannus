@@ -49,7 +49,7 @@ public class NotificationManager : MonoBehaviour
             }
             else
             {
-                if (!currentNotification.oneTimeNotification)
+                if (currentNotification != null && !currentNotification.oneTimeNotification)
                 {
                     currentNotification.hasAppeared = false;
                 }

@@ -19,8 +19,8 @@ MonoBehaviour:
   categorySprite: {fileID: 21300000, guid: 808b47f9863fff744a885f5bc4563da7, type: 3}
   populationPercentage: 18
   requestsToApprove:
-  - {fileID: 11400000, guid: ab080ccb711c8e64292ae74a92a7bb76, type: 2}
   - {fileID: 11400000, guid: c4533c7d687f09f4abe4dfb1c344b08b, type: 2}
+  - {fileID: 11400000, guid: ab080ccb711c8e64292ae74a92a7bb76, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: cf63bd8b694f8a740bfba21cb9f7a4cf, type: 2}
   happiness: 50
