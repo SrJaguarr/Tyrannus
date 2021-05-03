@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class TimeManager : MonoBehaviour
 {
     [Header("Day Time in secs")]
-    [SerializeField] private int dayTime, weekDays;
+    [SerializeField] private int dayTime;
+    [SerializeField] private int weekDays;
 
     [SerializeField] TextMeshProUGUI TXT_Day, TXT_WeekDay;
     [SerializeField] Image radialBar, radialLayout;
@@ -29,6 +30,8 @@ public class TimeManager : MonoBehaviour
 
     private void Update()
     {
+        if (!GameManager._instance.paused)
+        {
             if (dayRemainingTime > 0)
             {
                 UpdateTime();
@@ -37,13 +40,14 @@ public class TimeManager : MonoBehaviour
             {
                 NewDay();
             }
+        }
     }
 
     private void NewDay()
     {
         dayOfWeek++;
 
-        if (dayOfWeek > 7)
+        if (dayOfWeek > weekDays)
         {
             GameManager._instance.Pause();
             GameManager._instance.notificationManager.ShowNotification("end_week");

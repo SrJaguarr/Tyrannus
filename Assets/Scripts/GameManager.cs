@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public int currentDay = 1;
     public int minimumHappiness;
 
+    public bool paused;
+
     [SerializeField] private int startMoney;
 
     private void Awake()
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        Pause();
     }
 
 
@@ -143,12 +147,12 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        Time.timeScale = 0;
+        paused = true;
     }
 
     public void Resume()
     {
-        Time.timeScale = 1;
+        paused = false;
     }
 
 }
