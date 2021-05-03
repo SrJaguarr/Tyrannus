@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Youth
   m_EditorClassIdentifier: 
-  categoryName: Jovenes
+  id: youth
+  categoryName: "J\xF3venes"
   categoryDescription: Aquellos que son lo suficientemente adultos como para votar,
     pero que aun siguen estudiando o lo han estado haciendo hasta hace poco.
   categorySprite: {fileID: 21300000, guid: 5ae087d88b37e594d91251aa320d9552, type: 3}

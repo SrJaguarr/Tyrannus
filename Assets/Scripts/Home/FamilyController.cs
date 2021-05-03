@@ -25,15 +25,18 @@ public class FamilyController : MonoBehaviour
     {
         familiars.Clear();
 
-        for (int i = 0; i < familyDB.familiars.Length; i++)
-        {
-            familiars.Add(familyDB.familiars[i], Instantiate(familyDB.familiars[i].prefab, familiarContainer));    //Instanciamos todos los familiares determinados 
-            
-            if(i != 0)
-            familiars[familyDB.familiars[i]].GetComponent<FamiliarButton>().InitializeSelf(familyDB.familiars[i]);
+        AddFamiliar(0); //Metemos al presidente unicamente
+    }
 
-            shopListController.AddFamiliarToShopList(familyDB.familiars[i]);
-        }
+    //President = 0, Claudia = 1, Julia = 2, Viriato = 3, Kalinka = 4
+    public void AddFamiliar(int n)
+    {
+        familiars.Add(familyDB.familiars[n], Instantiate(familyDB.familiars[n].prefab, familiarContainer));    //Instanciamos todos los familiares determinados 
+
+        if (n != 0)
+            familiars[familyDB.familiars[n]].GetComponent<FamiliarButton>().InitializeSelf(familyDB.familiars[n]);
+
+        shopListController.AddFamiliarToShopList(familyDB.familiars[n]);
     }
 
     public void CheckNeeds()

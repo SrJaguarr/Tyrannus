@@ -36,7 +36,10 @@ public class RequestStats : MonoBehaviour
     {
         socialCategoryDB = GameManager._instance.socialCategoryDB;
         requestSlider.onValueChanged.AddListener(delegate { UpdateSlider(); });
+    }
 
+    public void NewDay()
+    {
         remainingChanges = totalChanges;
     }
 

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Patriot
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: patriots
   categoryName: Patriotas
   categoryDescription: "Grandes defensores de su identidad como naci\xF3n, buscan
     una buena defensa militar, as\xED como unas fronteras impenetrables. A menudo
@@ -21,6 +22,6 @@ MonoBehaviour:
   requestsToApprove:
   - {fileID: 11400000, guid: cf63bd8b694f8a740bfba21cb9f7a4cf, type: 2}
   RequestsToAbolish:
-  - {fileID: 11400000, guid: ab080ccb711c8e64292ae74a92a7bb76, type: 2}
   - {fileID: 11400000, guid: c4533c7d687f09f4abe4dfb1c344b08b, type: 2}
+  - {fileID: 11400000, guid: ab080ccb711c8e64292ae74a92a7bb76, type: 2}
   happiness: 50

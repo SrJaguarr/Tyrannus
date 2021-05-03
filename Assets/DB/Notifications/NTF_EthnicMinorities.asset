@@ -13,9 +13,13 @@ MonoBehaviour:
   m_Name: NTF_EthnicMinorities
   m_EditorClassIdentifier: 
   id: ethnic_minorities
-  title: MINORIAS ETNICAS
-  description: "TE HAN DEJADO UN CRIO NEGRO EN LA PUERTA DE CASA \\n\xBFLO ADOPTAS
-    O LO DEJAS TIRAO?"
+  title: Kalinka
+  description: "Al llegar a casa ves una cesta tapada por una manta, te acercas para
+    descubir que es un beb\xE9, en la cesta hay una nota.\n\"No podemos seguir en
+    Mynaia, tendremos que marchar a nuestro pa\xEDs, donde nuestro peque\xF1o Kalinka
+    no sobrevivir\xE1, por favor, cuide de \xE9l\""
   acceptText: Adoptar
   denyText: No adoptar
   isDecision: 1
+  hasAppeared: 0
+  oneTimeNotification: 1

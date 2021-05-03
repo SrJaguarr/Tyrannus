@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8ae0ed75c7b5dd4685c8ae73f09d7e5, type: 3}
+  m_Name: Kalinka
+  m_EditorClassIdentifier: 
+  fullName: Kalinka
+  happiness: 50
+  enjoyedCompany: 0
+  actions: {fileID: 11400000, guid: 42eb30ab0a6d7284cb4b3b1d2d6179a6, type: 2}
+  isHungry: 1
+  daysHungry: 0
+  maxDaysHungry: 2
+  isCold: 1
+  daysCold: 0
+  maxDaysCold: 2
+  illProbability: 0.05
+  isIll: 0
+  daysIll: 0
+  maxDaysIll: 2
+  feed: 0
+  heat: 0
+  heal: 0
+  avatarHead: {fileID: 21300000, guid: b66c66c733b3c79458e6bf0a0eebf80c, type: 3}
+  prefab: {fileID: 8713401565441397457, guid: 18fa1207d05711043a12ba3b42914ceb, type: 3}

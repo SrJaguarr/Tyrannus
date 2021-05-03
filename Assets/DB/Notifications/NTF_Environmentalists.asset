@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
+  m_Name: NTF_Environmentalists
+  m_EditorClassIdentifier: 
+  id: environmentalists
+  title: La naturaleza contraataca
+  description: "Los ecologistas, descontentos con las decisiones que est\xE1s tomando,
+    est\xE1n interrumpiendo todas las construcciones, at\xE1ndose a los \xE1rboles
+    y acampando en los campos que ser\xE1n nuevas carreteras.\nCapitalistas y conductores
+    no tardar\xE1n en verse afectados."
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

@@ -14,16 +14,60 @@ public class NotificationManager : MonoBehaviour
 
     private Notification[] notificationDB;
 
+    private bool answer = false;
+
+    private SocialCategoryDB categories;
+    [SerializeField] private int happinessThreshold;
+
     private void Awake()
     {
         gameManager = GameManager._instance;
+        categories = gameManager.socialCategoryDB;
         notificationDB = gameManager.notificationDB.notifications;
     }
 
-    public void ShowNotification(string notificationID)
+    public IEnumerator CheckHappinessThreshold()
     {
-        currentNotification = GetNotificationByID(notificationID);
+        foreach (SociaCategory socialCategory in categories.categories)
+        {
+            GameManager._instance.Pause();
+            if (socialCategory.happiness <= happinessThreshold)
+            {
+                currentNotification = GetNotificationByID(socialCategory.id);
 
+                if (!currentNotification.hasAppeared)
+                {
+                    ShowNotification();
+                    currentNotification.hasAppeared = true;
+                    while (!answer)
+                    {
+                        yield return null;
+                    }
+                }
+
+                answer = false;
+            }
+            else
+            {
+                if (currentNotification != null && !currentNotification.oneTimeNotification)
+                {
+                    currentNotification.hasAppeared = false;
+                }
+            }
+            
+            GameManager._instance.Resume();
+        }
+    }
+
+    public void ShowNotification(string id)
+    {
+        currentNotification = GetNotificationByID(id);
+        ShowNotification();
+    }
+
+
+    public void ShowNotification()
+    {
         if(currentNotification != null)
         {
             TXT_Title.text = currentNotification.title;
@@ -37,7 +81,6 @@ public class NotificationManager : MonoBehaviour
                 TXT_Accept.text = currentNotification.acceptText;
                 TXT_Deny.text = currentNotification.denyText;
             }
-
 
             PNL_Notification.SetActive(true);
         }
@@ -61,7 +104,6 @@ public class NotificationManager : MonoBehaviour
 
     public void Accept()
     {
-
         switch (currentNotification.id)
         {
             case "request_confirm":
@@ -70,9 +112,13 @@ public class NotificationManager : MonoBehaviour
                 gameManager.requestStats.CleanCategories();
                 gameManager.requestStats.CleanRequests();
                 break;
+            case "ethnic_minorities":
+                gameManager.familyController.AddFamiliar(4);
+                break;
         }
-
+        GameManager._instance.Resume();
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 
     public void Deny()
@@ -85,9 +131,13 @@ public class NotificationManager : MonoBehaviour
                 gameManager.requestStats.CleanCategories(); 
                 gameManager.requestStats.CleanRequests();
                 break;
-        }
+            case "ethnic_minorities":
+                break;
 
+        }
+        GameManager._instance.Resume();
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 
     public void CloseNotification()
@@ -97,8 +147,35 @@ public class NotificationManager : MonoBehaviour
             case "end_week":
                 gameManager.timeManager.NewWeek();
                 break;
+            case "capitalists":
+                break;
+            case "conservatives":
+                break;
+            case "drivers":
+                break;
+            case "liberals":
+                break;
+            case "patriots":
+                break;
+            case "poors":
+                break;
+            case "religious":
+                break;
+            case "retireds":
+                break;
+            case "state_workers":
+                break;
+            case "youth":
+                break;
+            case "socialists":
+                break;
+            case "parents":
+                break;
+            case "environmentalists":
+                break;
         }
 
         PNL_Notification.SetActive(false);
+        answer = true;
     }
 }

@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        Resume();
+        requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
         loanManager.NewGame();
@@ -67,20 +69,12 @@ public class GameManager : MonoBehaviour
         familyController.NewGame();
         happinessManager.NewGame();
         shopListController.UpdateSalary();
-    }
-
-    public void PauseGame()
-    {
-        timeManager.pauseTime = true;
-    }
-
-    public void ResumeGame()
-    {
-        timeManager.pauseTime = false;
+        statsViewerManager.UpdateStats();
     }
 
     public void NextDay()
     {
+        requestStats.NewDay();
         loanManager.PassDay();
         CheckStateMoney();
 
@@ -105,11 +99,13 @@ public class GameManager : MonoBehaviour
             musicManager.SetMusic("happy");
         }
 
+        StartCoroutine(notificationManager.CheckHappinessThreshold());
+
     }
 
     public void GameOver()
     {
-        timeManager.pauseTime = !timeManager.pauseTime;
+        Pause();
         canvasManager.HandleGameOver();
         musicManager.SetMusic("sad");
     }
@@ -145,5 +141,14 @@ public class GameManager : MonoBehaviour
         happinessManager.ClearPenalties();
     }
 
+    public void Pause()
+    {
+        Time.timeScale = 0;
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+    }
 
 }

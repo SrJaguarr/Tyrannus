@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_EthnicMinorities
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
-  categoryName: Minorias Etnicas
+  id: ethnic_minorities
+  categoryName: "Minor\xEDas \xC9tnicas"
   categoryDescription: "Se re\xFAne en este grupo a aquellos ciudadanos que son discriminados
     por su raza. Aprecian los actos en contra del racismo y las ayudas extranjeras."
   categorySprite: {fileID: 21300000, guid: 808b47f9863fff744a885f5bc4563da7, type: 3}

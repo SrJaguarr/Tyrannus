@@ -8,25 +8,38 @@ public class ScriptableObjectController : MonoBehaviour
     private List<Familiar> familiars;
     private List<Request> requests;
     private List<Loan> loans;
+    private List<Notification> notifications;
 
     private Request[] requestsToSave;
     private Familiar[] familiarsToSave;
     private Loan[] loansToSave;
+    private Notification[] notificationsToSave;
 
     private void Start()
     {
         familiars = new List<Familiar>();
         requests = new List<Request>();
         loans = new List<Loan>();
+        notifications = new List<Notification>();
 
         requestsToSave = GameManager._instance.requestDB.requests;
         familiarsToSave = GameManager._instance.familyDB.familiars;
         loansToSave = GameManager._instance.loanDB.loans;
+        notificationsToSave = GameManager._instance.notificationDB.notifications;
 
         SaveFamiliars();
         SaveRequests();
         SaveLoans();
+        SaveNotifications();
 
+    }
+
+    private void SaveNotifications()
+    {
+        for (int i = 0; i < notificationsToSave.Length; i++)
+        {
+            notifications.Add(Instantiate(notificationsToSave[i]));
+        }
     }
 
     private void SaveFamiliars()
@@ -92,6 +105,14 @@ public class ScriptableObjectController : MonoBehaviour
         }
     }
 
+    private void RestoreNotifications()
+    {
+        for (int i = 0; i < notificationsToSave.Length; i++)
+        {
+            notificationsToSave[i].hasAppeared = notifications[i].hasAppeared;
+        }
+    }
+
     private void OnApplicationQuit()
     {
         RestoreValues();
@@ -102,5 +123,6 @@ public class ScriptableObjectController : MonoBehaviour
         RestoreFamiliars();
         RestoreRequests();
         RestoreLoans();
+        RestoreNotifications();
     }
 }

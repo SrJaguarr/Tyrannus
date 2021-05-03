@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_StateWorker
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: state_workers
   categoryName: Funcionarios
   categoryDescription: "Cualquier ciudadano trabajador de una industria o servicio
     propiedad del estado forma parte de este grupo. Incluye educadores y m\xE9dicos
@@ -21,9 +22,9 @@ MonoBehaviour:
   categorySprite: {fileID: 21300000, guid: e3b37e3201faad2408adbec1256dc36b, type: 3}
   populationPercentage: 36
   requestsToApprove:
+  - {fileID: 11400000, guid: c1a46ed7da7afe04594601460f740570, type: 2}
   - {fileID: 11400000, guid: accb6887203db4b4c8b3037cac619204, type: 2}
   - {fileID: 11400000, guid: e995db5d9aa92234b8a345ace794c176, type: 2}
-  - {fileID: 11400000, guid: c1a46ed7da7afe04594601460f740570, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: 63b800a29cf5f834da2e0d741f04e7bb, type: 2}
   happiness: 50

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3e8e9279b341545b0efbae915635d6, type: 3}
   m_Name: SC_Religious
   m_EditorClassIdentifier: Assembly-CSharp::SociaCategory
+  id: religious
   categoryName: Religiosos
   categoryDescription: "Aquellos que tienen una fe fuerte. Apoyan a la iglesia y
     las festividades religiosas. Tienen una visi\xF3n negativa sobre el aborto y
@@ -23,6 +24,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7a2c4234be46834f8bbdcab29038e46, type: 2}
   RequestsToAbolish:
   - {fileID: 11400000, guid: 237675657ed688147ad8a0298c55ac7f, type: 2}
-  - {fileID: 11400000, guid: d5fff8451bd1f0344aabd7e1da013308, type: 2}
   - {fileID: 11400000, guid: 49096ee20f50a4b44b48e7a791d9e0eb, type: 2}
+  - {fileID: 11400000, guid: d5fff8451bd1f0344aabd7e1da013308, type: 2}
   happiness: 50
