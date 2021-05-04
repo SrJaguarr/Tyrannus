@@ -29,6 +29,6 @@ public class Familiar : ScriptableObject
     public bool heal;
 
     public Sprite avatarHead;
-
+    public float schoolPenalty;
     public GameObject prefab;
 }

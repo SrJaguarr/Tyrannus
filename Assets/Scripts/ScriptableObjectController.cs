@@ -78,6 +78,7 @@ public class ScriptableObjectController : MonoBehaviour
             familiarsToSave[i].isHungry = familiars[i].isHungry;
             familiarsToSave[i].illProbability = familiars[i].illProbability;
             familiarsToSave[i].enjoyedCompany = familiars[i].enjoyedCompany;
+            familiarsToSave[i].schoolPenalty = familiars[i].schoolPenalty;
 
             familiarsToSave[i].feed = familiars[i].feed;
             familiarsToSave[i].heal = familiars[i].heal;

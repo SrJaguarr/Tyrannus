@@ -16,7 +16,8 @@ MonoBehaviour:
   title: "R\xE1pidos y Furiosos"
   description: "Los conductores est\xE1n muy descontentos con tus decisiones.\n\xDAltimas
     noticias informan que est\xE1n bloqueando con sus veh\xEDculos las entradas y
-    salidas de la ciudad.\nEsto impedir\xE1 la entrada al turismo y negociaciones."
+    salidas de la ciudad.\nEsto impedir\xE1 la entrada al turismo y negociaciones,
+    causando especial malestar entre capitalistas y jubilados."
   acceptText: 
   denyText: 
   isDecision: 0

@@ -31,6 +31,8 @@ public class CitizenRequest : MonoBehaviour
     private List<Request> dailyRequests;
     private List<SociaCategory> dailySocialCategories;
 
+    public bool canRequest = true;
+
     [SerializeField] [Range(1, 10)] private int maxTip;
     private int tip;
 
@@ -63,15 +65,21 @@ public class CitizenRequest : MonoBehaviour
     {
         actualCitizen = 0;
 
-        BTN_Citizen.gameObject.SetActive(true);
+        BTN_Citizen.gameObject.SetActive(false);
 
         dailyCitizens.Clear();
         dailyRequests.Clear();
         dailySocialCategories.Clear();
 
-        PickCitizens();
-        PickRequests();
-        ShowCitizen();
+        if (canRequest)
+        {
+            BTN_Citizen.gameObject.SetActive(true);
+
+            PickCitizens();
+            PickRequests();
+            ShowCitizen();
+        }
+
     }
 
     #region Pick Section
@@ -167,61 +175,63 @@ public class CitizenRequest : MonoBehaviour
     #region Show Actual Citizen
     private void ShowCitizen()                                  //Se muestra el ciudadano actual, asi como su peticion
     {
-        string categories = "";
-        Citizen citizen = dailyCitizens[actualCitizen];
-        Request request = dailyRequests[actualCitizen];
-
-        tip = UnityEngine.Random.Range(1, maxTip);
-
-        headContainer.sprite = citizen.spriteHead;
-        BTN_Citizen.image.sprite = citizen.sprite;
-        TXT_CitizenName.text = citizen.fullName;
-        TXT_Age.text = citizen.age.ToString() + " años";
-        TXT_Tip.text = tip.ToString() + "€";
-
-        for (int i = 0; i < citizen.socialCategories.Length; i++)
+        if (canRequest)
         {
-            categories = categories + citizen.socialCategories[i].categoryName;
-            if (i < citizen.socialCategories.Length - 1)
-                categories = categories + ", ";
+            string categories = "";
+            Citizen citizen = dailyCitizens[actualCitizen];
+            Request request = dailyRequests[actualCitizen];
+
+            tip = UnityEngine.Random.Range(1, maxTip);
+
+            headContainer.sprite = citizen.spriteHead;
+            BTN_Citizen.image.sprite = citizen.sprite;
+            TXT_CitizenName.text = citizen.fullName;
+            TXT_Age.text = citizen.age.ToString() + " años";
+            TXT_Tip.text = tip.ToString() + "€";
+
+            for (int i = 0; i < citizen.socialCategories.Length; i++)
+            {
+                categories = categories + citizen.socialCategories[i].categoryName;
+                if (i < citizen.socialCategories.Length - 1)
+                    categories = categories + ", ";
+            }
+            TXT_Categories.text = categories;
+
+            TXT_Request.text = request.requestName;
+            TXT_Description.text = request.description;
+
+            int lvl = request.level;
+            bool isApproval;
+
+            if (Tyrannus.IsApproval(dailySocialCategories[actualCitizen], dailyRequests[actualCitizen]))
+            {
+                TXT_Description.text = request.approvalRequest[0];
+                TXT_Bubble.text = "+";
+                lvl++;
+                isApproval = true;
+            }
+            else
+            {
+                TXT_Description.text = request.abolitionRequest[0];
+                TXT_Bubble.text = "-";
+                lvl--;
+                isApproval = false;
+            }
+
+            emojiBefore.sprite = Tyrannus.GetCorrectEmoji(isApproval, request.level);
+            emojiAfter.sprite = Tyrannus.GetCorrectEmoji(isApproval, lvl);
+
+            sliderBefore.value = request.level;
+            sliderAfter.value = lvl;
+
+            SetLevelColor(levelsBefore, request.level);
+            SetLevelColor(levelsAfter, lvl);
+
+            requestIcon.sprite = request.icon;
+            bubbleIcon.sprite = request.icon;
+
+            CalculateConditions();
         }
-        TXT_Categories.text = categories;
-
-        TXT_Request.text = request.requestName;
-        TXT_Description.text = request.description;
-
-        int lvl = request.level;
-        bool isApproval;
-
-        if (Tyrannus.IsApproval(dailySocialCategories[actualCitizen], dailyRequests[actualCitizen]))
-        {
-            TXT_Description.text = request.approvalRequest[0];
-            TXT_Bubble.text = "+";
-            lvl++;
-            isApproval = true;
-        }
-        else
-        {
-            TXT_Description.text = request.abolitionRequest[0];
-            TXT_Bubble.text = "-";
-            lvl--;
-            isApproval = false;
-        }
-
-        emojiBefore.sprite = Tyrannus.GetCorrectEmoji(isApproval, request.level);
-        emojiAfter.sprite = Tyrannus.GetCorrectEmoji(isApproval, lvl);
-
-        sliderBefore.value = request.level;
-        sliderAfter.value = lvl;
-
-        SetLevelColor(levelsBefore, request.level);
-        SetLevelColor(levelsAfter, lvl);
-
-        requestIcon.sprite = request.icon;
-        bubbleIcon.sprite = request.icon;
-
-        CalculateConditions();
-
     }
 
     private void SetLevelColor(Transform parent, int id)

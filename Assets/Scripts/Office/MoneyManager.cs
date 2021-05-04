@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class MoneyManager : MonoBehaviour
-{    
+{
     public int stateMoney;
 
     [SerializeField]
@@ -24,6 +24,7 @@ public class MoneyManager : MonoBehaviour
     private int incomingLoans;
     private List<Loan> activeLoans;
     private int tips;
+    private float penalty;
 
     [SerializeField] private Sprite yellowWarning, redWarning;
 
@@ -60,6 +61,9 @@ public class MoneyManager : MonoBehaviour
                 money -= requests[i].costPerLevel[requests[i].level];
         }
 
+        if (penalty > 0)
+            money = (int)(incoming * penalty);
+
         incoming = money;
     }
 
@@ -67,9 +71,9 @@ public class MoneyManager : MonoBehaviour
     {
         incomingLoans = 0;
 
-        for(int i = 0; i < activeLoans.Count; i++)
+        for (int i = 0; i < activeLoans.Count; i++)
         {
-            if(activeLoans[i].paidAmount + (activeLoans[i].totalAmount / activeLoans[i].days) <= activeLoans[i].totalAmount)
+            if (activeLoans[i].paidAmount + (activeLoans[i].totalAmount / activeLoans[i].days) <= activeLoans[i].totalAmount)
             {
                 incomingLoans += activeLoans[i].totalAmount / activeLoans[i].days;
             }
@@ -80,6 +84,16 @@ public class MoneyManager : MonoBehaviour
         }
 
         incoming -= incomingLoans;
+    }
+
+    public void AddMoneyPenalty(float p)
+    {
+        penalty = p;
+    }
+
+    public void RemovePenalty()
+    {
+        penalty = 0;
     }
 
     public void CalculateSalary(int globalHappiness)

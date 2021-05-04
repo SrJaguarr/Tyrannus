@@ -25,6 +25,9 @@ public class FamilyController : MonoBehaviour
     {
         familiars.Clear();
         AddFamiliar(0); //Metemos al presidente unicamente
+        AddFamiliar(2);
+        AddFamiliar(3);
+        AddFamiliar(4);
     }
 
     //President = 0, Claudia = 1, Julia = 2, Viriato = 3, Kalinka = 4
@@ -36,6 +39,16 @@ public class FamilyController : MonoBehaviour
             familiars[familyDB.familiars[n]].GetComponent<FamiliarButton>().InitializeSelf(familyDB.familiars[n]);
 
         shopListController.AddFamiliarToShopList(familyDB.familiars[n]);
+    }
+
+    public void AddSchoolPenalty(float penalty)
+    {
+        familyDB.familiars[2].schoolPenalty = familyDB.familiars[3].schoolPenalty = familyDB.familiars[4].schoolPenalty = penalty;
+    }
+
+    public void RemoveSchoolPenalty()
+    {
+        familyDB.familiars[2].schoolPenalty = familyDB.familiars[3].schoolPenalty = familyDB.familiars[4].schoolPenalty = 0;
     }
 
     public void CheckNeeds()

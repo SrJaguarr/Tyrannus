@@ -47,6 +47,9 @@ public class NotificationManager : MonoBehaviour
                     }
                 }
 
+                if (socialCategory.id == "socialists")
+                    gameManager.expulsionCounter++;
+
                 answer = false;
 
             }
@@ -56,12 +59,32 @@ public class NotificationManager : MonoBehaviour
                 {
                     happinessManager.RemovePenalty(socialCategory.id);
                     currentNotification.hasAppeared = false;
+
+                    switch (currentNotification.id)
+                    {
+                        case "retireds":
+                            gameManager.citizenRequest.canRequest = true;
+                            break;
+                        case "parents":
+                            gameManager.familyController.RemoveSchoolPenalty();
+                            break;
+                        case "liberals":
+                            gameManager.moneyManager.RemovePenalty();
+                            break;
+                        case "socialists":
+                            gameManager.expulsionCounter = 0;
+                            break;
+                    }
                 }
             }
 
-
             GameManager._instance.Resume();
         }
+
+        happinessManager.CalculateGlobalHappiness();
+        gameManager.citizenRequest.CitizenSelector();
+        gameManager.moneyManager.CalculateIncoming();
+        gameManager.CheckLoose();
     }
 
     public void ShowNotification(string id)
@@ -152,38 +175,64 @@ public class NotificationManager : MonoBehaviour
             case "end_week":
                 gameManager.timeManager.NewWeek();
                 break;
-            case "capitalists":
-
+            case "capitalists": //Add penalización del X% a todas las categorias sociales menos a la suya
+                PenaltyAllButMe(currentNotification.id, 0.8f);
                 break;
             case "conservatives":
+                happinessManager.GetSocialCategoryByID("liberals").happinessPenalty.Add(currentNotification.id, 0.80f);
+                happinessManager.GetSocialCategoryByID("state_workers").happinessPenalty.Add(currentNotification.id, 0.80f);
+                happinessManager.GetSocialCategoryByID("youth").happinessPenalty.Add(currentNotification.id, 0.80f);
                 break;
             case "drivers":
+                happinessManager.GetSocialCategoryByID("retireds").happinessPenalty.Add(currentNotification.id, 0.8f);
+                happinessManager.GetSocialCategoryByID("capitalists").happinessPenalty.Add(currentNotification.id, 0.6f);
                 break;
             case "liberals":
+                gameManager.moneyManager.AddMoneyPenalty((100 - happinessManager.GetSocialCategoryByID(currentNotification.id).populationPercentage) / 100.0f);
                 break;
             case "patriots":
-                happinessManager.GetSocialCategoryByID("ethnic_minorities").happinessPenalty.Add(currentNotification.id, 0.75f);
+                happinessManager.GetSocialCategoryByID("ethnic_minorities").happinessPenalty.Add(currentNotification.id, 0.6f);
                 break;
             case "poors":
+                happinessManager.GetSocialCategoryByID("socialists").happinessPenalty.Add(currentNotification.id, 0.80f);
+                happinessManager.GetSocialCategoryByID("religious").happinessPenalty.Add(currentNotification.id, 0.70f);
+                happinessManager.GetSocialCategoryByID("liberals").happinessPenalty.Add(currentNotification.id, 0.80f);
                 break;
             case "religious":
+                happinessManager.GetSocialCategoryByID("poors").happinessPenalty.Add(currentNotification.id, 0.6f);
                 break;
             case "retireds":
+                gameManager.citizenRequest.canRequest = false;
+                PenaltyAllButMe(currentNotification.id, 0.85f);
                 break;
             case "state_workers":
+                PenaltyAllButMe(currentNotification.id, 0.75f);
                 break;
             case "youth":
+                PenaltyAllButMe(currentNotification.id, 0.9f);
                 break;
             case "socialists":
+                PenaltyAllButMe(currentNotification.id, 0.85f);
                 break;
             case "parents":
+                gameManager.familyController.AddSchoolPenalty(0.5f);
                 break;
             case "environmentalists":
+                happinessManager.GetSocialCategoryByID("drivers").happinessPenalty.Add(currentNotification.id, 0.6f);
+                happinessManager.GetSocialCategoryByID("capitalists").happinessPenalty.Add(currentNotification.id, 0.6f);
                 break;
         }
 
-        happinessManager.CalculateGlobalHappiness();
         PNL_Notification.SetActive(false);
         answer = true;
+    }
+
+    private void PenaltyAllButMe(string myID, float penalty)
+    {
+        foreach (SociaCategory sc in gameManager.socialCategoryDB.categories)
+        {
+            if (sc.id != myID )
+                happinessManager.GetSocialCategoryByID(sc.id).happinessPenalty.Add(myID, penalty);
+        }
     }
 }

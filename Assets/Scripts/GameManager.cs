@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour
     public int currentDay = 1;
     public int minimumHappiness;
 
+    private int sadCounter;
+    public int expulsionCounter;
+
     public bool paused;
 
     [SerializeField] private int startMoney;
@@ -82,7 +85,6 @@ public class GameManager : MonoBehaviour
         CheckStateMoney();
 
         moneyManager.ResetTips();
-        citizenRequest.CitizenSelector();
 
         familyController.UpdateNeeds();
 
@@ -102,7 +104,6 @@ public class GameManager : MonoBehaviour
         }
 
         StartCoroutine(notificationManager.CheckHappinessThreshold());
-
     }
 
     public void GameOver()
@@ -151,6 +152,21 @@ public class GameManager : MonoBehaviour
     public void Resume()
     {
         paused = false;
+    }
+
+    public void CheckLoose()
+    {
+        print(expulsionCounter);
+
+        if(sadCounter == 3)
+        {
+            GameOver();
+        }
+
+        if(expulsionCounter == 4)
+        {
+            GameOver();
+        }
     }
 
 }

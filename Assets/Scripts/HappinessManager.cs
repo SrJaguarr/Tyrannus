@@ -198,6 +198,9 @@ public class HappinessManager : MonoBehaviour
 
         int happiness = Mathf.RoundToInt(foodHappiness + heatHappiness + illnessHappiness);
 
+        if (actualFamiliar.schoolPenalty != 0)
+            happiness = (int)(happiness * actualFamiliar.schoolPenalty);
+
         return happiness;
     }
 
