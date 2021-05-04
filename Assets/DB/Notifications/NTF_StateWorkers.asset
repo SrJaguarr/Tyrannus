@@ -17,8 +17,8 @@ MonoBehaviour:
   description: "Los funcionarios est\xE1n hartos, hospitales, bomberos, policia y
     milicia han entrado en huelga. \nSi no hacemos algo ya, todo ser\xE1 un caos,
     la situaci\xF3n es insostenible.\n\t\t\t\t\r\n\t\t\t\t\r\n"
-  acceptText: Adoptar
-  denyText: No adoptar
-  isDecision: 1
+  acceptText: 
+  denyText: 
+  isDecision: 0
   hasAppeared: 0
   oneTimeNotification: 0

@@ -14,4 +14,5 @@ public class Citizen : ScriptableObject
     public Sprite spriteHead;
     public int age;
     public int citizenHappiness;
+    public bool genre; //true = male // false = female
 }

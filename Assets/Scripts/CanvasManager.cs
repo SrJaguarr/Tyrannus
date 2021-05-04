@@ -271,8 +271,8 @@ public class CanvasManager : MonoBehaviour
 
         BTN_CitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); gameManager.citizenRequest.MeetCitizen(); fxManager.PlaySound("paper_open"); });
         BTN_CloseCitizenRequest.onClick.AddListener(delegate { HandleCitizenRequest(); fxManager.PlaySound("paper_close"); });
-        BTN_AcceptCitizenRequest.onClick.AddListener(delegate { AcceptCitizenRequest(); gameManager.statsViewerManager.UpdateStats(); fxManager.PlaySound("happy_citizen"); });
-        BTN_DenyCitizenRequest.onClick.AddListener(delegate { DenyCitizenRequest(); fxManager.PlaySound("angry_citizen"); });
+        BTN_AcceptCitizenRequest.onClick.AddListener(delegate { AcceptCitizenRequest(); gameManager.statsViewerManager.UpdateStats(); });
+        BTN_DenyCitizenRequest.onClick.AddListener(delegate { DenyCitizenRequest();});
 
         BTN_CloseFamiliar.onClick.AddListener(delegate { HandleFamiliarPanel(); fxManager.PlaySound("paper_close"); });
 

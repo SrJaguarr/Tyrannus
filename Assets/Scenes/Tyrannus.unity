@@ -19062,6 +19062,7 @@ MonoBehaviour:
   negativeStateMoneyCount: 0
   currentDay: 1
   minimumHappiness: 0
+  paused: 0
   startMoney: 55
 --- !u!114 &1290118601
 MonoBehaviour:
@@ -19368,7 +19369,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dayTime: 20
-  weekDays: 0
+  weekDays: 7
   TXT_Day: {fileID: 1822240641}
   TXT_WeekDay: {fileID: 1648050608}
   radialBar: {fileID: 1949432909}
@@ -19443,18 +19444,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1832126486}
-  woodOptionSelectFX: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046, type: 3}
-  woodOptionEnterFX: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4, type: 3}
-  optionSelectFX: {fileID: 8300000, guid: 175cea4c0cf601042bbddefc6e493f37, type: 3}
-  optionEnterFX: {fileID: 8300000, guid: 32d1d3bf48e924948beedc2b06ef4c01, type: 3}
-  happyCitizenFX: {fileID: 8300000, guid: 9b498f0ee9efcca41a664e2c5b20baa0, type: 3}
-  angryCitizenFX: {fileID: 8300000, guid: 57fa456bd9bdf3b4d9fd79240944a8a0, type: 3}
+  woodOptionSelectFX: {fileID: 8300000, guid: 1b14f6a93decebe4199d9329648fe08b, type: 3}
+  woodOptionEnterFX: {fileID: 8300000, guid: 1b14f6a93decebe4199d9329648fe08b, type: 3}
+  optionSelectFX: {fileID: 8300000, guid: 623121e21035c574f99d2311282d5319, type: 3}
+  optionEnterFX: {fileID: 8300000, guid: 9d952876efb4f9b4ba41f98565e686d7, type: 3}
+  angryManFX: {fileID: 8300000, guid: 91e0d3fb08b4e154287a303f52be022c, type: 3}
+  angryWomanFX: {fileID: 8300000, guid: 0ccd094e2b9be0b4ebfa561801705fa2, type: 3}
+  happyManFX: {fileID: 8300000, guid: b42ae23c3f0f6634fa7d478ea4826f94, type: 3}
+  happyWomanFX: {fileID: 8300000, guid: c45049fd812416d4e82a61b4ebe42ed3, type: 3}
   fireFX: {fileID: 8300000, guid: fdb78cd14921bcb4388fe482b68f01f6, type: 3}
   unfireFX: {fileID: 8300000, guid: 03d10576e88047a4995640d382d6d771, type: 3}
-  paperOpenFX: {fileID: 8300000, guid: 54979bffb1a45734bab338f62f95d8fe, type: 3}
-  paperCloseFX: {fileID: 8300000, guid: ddbfa2c3e3d865e4bbc6e083c02477ac, type: 3}
+  paperOpenFX: {fileID: 8300000, guid: a335d732dc56f754f8636d2f58520fe8, type: 3}
+  paperCloseFX: {fileID: 8300000, guid: 37928cb8f19f14a439268f8b40764366, type: 3}
   buyFX: {fileID: 8300000, guid: 5bb3f87397fd6394aac49a9eb79ff95d, type: 3}
-  addItemFX: {fileID: 8300000, guid: 8bee61ccfe4988e4f8e7134e5104dcfb, type: 3}
+  addItemFX: {fileID: 8300000, guid: 441b788337b0e4e4b906ac5064ba79c2, type: 3}
   timeEndingFX: {fileID: 8300000, guid: 939b9080c4857e54586ae605a35e3d19, type: 3}
   timeUpFX: {fileID: 8300000, guid: 3beb8e0864636ca45bffd176e1885513, type: 3}
 --- !u!1 &1292021670

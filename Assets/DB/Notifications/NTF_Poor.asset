@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: NTF_Poor
   m_EditorClassIdentifier: 
   id: poors
-  title: La pobreza inunda Mynaia
+  title: pobreza en Mynaia
   description: "Las personas pobres no pueden seguir as\xED, los comedores sociales
-    est\xE1 bajo m\xEDnimos, no hay espacio en los albergues.\nSi no hacemos algo
+    est\xE1 bajo m\xEDnimos, no hay espacio en los albergues.\nSi no hacemos algo,
     pronto notaremos el malestar de los socialistas, religiosos y liberales."
   acceptText: 
   denyText: 

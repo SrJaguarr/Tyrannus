@@ -22,3 +22,4 @@ MonoBehaviour:
   spriteHead: {fileID: 21300000, guid: 02eb2383e0a25b842843497f44687629, type: 3}
   age: 78
   citizenHappiness: 50
+  genre: 1

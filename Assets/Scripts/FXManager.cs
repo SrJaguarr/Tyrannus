@@ -5,7 +5,7 @@ using UnityEngine;
 public class FXManager : MonoBehaviour
 {
     [SerializeField] private AudioSource source;
-    [SerializeField] private AudioClip woodOptionSelectFX, woodOptionEnterFX, optionSelectFX, optionEnterFX, happyCitizenFX, angryCitizenFX, fireFX, unfireFX, paperOpenFX, paperCloseFX, buyFX, addItemFX, timeEndingFX, timeUpFX;
+    [SerializeField] private AudioClip woodOptionSelectFX, woodOptionEnterFX, optionSelectFX, optionEnterFX, angryManFX, angryWomanFX, happyManFX, happyWomanFX, fireFX, unfireFX, paperOpenFX, paperCloseFX, buyFX, addItemFX, timeEndingFX, timeUpFX;
 
     public void PlaySound(string sound)
     {
@@ -25,11 +25,17 @@ public class FXManager : MonoBehaviour
             case "option_enter":
                 soundToPlay = optionEnterFX;
                 break;
-            case "happy_citizen":
-                soundToPlay = happyCitizenFX;
+            case "happy_man":
+                soundToPlay = happyManFX;
                 break;
-            case "angry_citizen":
-                soundToPlay = angryCitizenFX;
+            case "happy_woman":
+                soundToPlay = happyWomanFX;
+                break;
+            case "angry_man":
+                soundToPlay = angryManFX;
+                break;
+            case "angry_woman":
+                soundToPlay = angryWomanFX;
                 break;
             case "fire":
                 soundToPlay = fireFX;

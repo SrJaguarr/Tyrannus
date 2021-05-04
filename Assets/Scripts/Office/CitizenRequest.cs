@@ -279,6 +279,15 @@ public class CitizenRequest : MonoBehaviour
     {
         int sum;
 
+        if (dailyCitizens[actualCitizen].genre)
+        {
+            GameManager._instance.fxManager.PlaySound("happy_man");
+        }
+        else
+        {
+            GameManager._instance.fxManager.PlaySound("happy_woman");
+        }
+
         if (Tyrannus.IsApproval(dailySocialCategories[actualCitizen], dailyRequests[actualCitizen]))
         {
             sum = 1;
@@ -298,6 +307,15 @@ public class CitizenRequest : MonoBehaviour
 
     public void DenyRequest()
     {
+        if (dailyCitizens[actualCitizen].genre)
+        {
+            GameManager._instance.fxManager.PlaySound("angry_man");
+        }
+        else
+        {
+            GameManager._instance.fxManager.PlaySound("angry_woman");
+        }
+
         NextCitizen();
     }
 
