@@ -43,6 +43,8 @@ public class HappinessManager : MonoBehaviour
     {
         for(int i = 0; i < categories.Length; i++)
         {
+            categories[i].happinessPenalty = new Dictionary<string, float>();
+
             totalPercentage += categories[i].populationPercentage;
         }
     }
@@ -66,6 +68,30 @@ public class HappinessManager : MonoBehaviour
 
     #endregion
 
+    public SociaCategory GetSocialCategoryByID(string id)
+    {
+        SociaCategory sc = null;
+
+        for (int i = 0; i < categories.Length; i++)
+        {
+            if (categories[i].id.Equals(id))
+            {
+                return categories[i];
+            }
+        }
+
+        return sc;
+    }
+
+    public void RemovePenalty(string id)
+    {
+        foreach(SociaCategory sc in categories)
+        {
+            if (sc.happinessPenalty.ContainsKey(id))
+                sc.happinessPenalty.Remove(id);
+        }
+    }
+
     public int CalculateSocialCategoryHappines(SociaCategory socialCategory)
     {
         int totalRequests = socialCategory.requestsToApprove.Length + socialCategory.RequestsToAbolish.Length;
@@ -83,8 +109,14 @@ public class HappinessManager : MonoBehaviour
             sum += requestHappiness;
         }
 
+        sum = sum / totalRequests;
 
-        return socialCategory.happiness = sum / totalRequests;
+
+        foreach(KeyValuePair<string, float> penalty in socialCategory.happinessPenalty)
+        {
+            sum = (int)(sum * penalty.Value);
+        }
+        return socialCategory.happiness = sum;
     }
 
     public void CalculateCityHappiness()
@@ -209,6 +241,7 @@ public class HappinessManager : MonoBehaviour
 
         globalHappiness = needsAmount + familyAmount + cityAmount;
 
+        GameManager._instance.statsViewerManager.UpdateStats();
         UpdateHappinessLabel();
 
     }

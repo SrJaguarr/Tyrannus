@@ -13,28 +13,30 @@ public class NotificationManager : MonoBehaviour
     private Notification currentNotification;
 
     private Notification[] notificationDB;
+    private HappinessManager happinessManager;
 
     private bool answer = false;
 
-    private SocialCategoryDB categories;
+
     [SerializeField] private int happinessThreshold;
 
     private void Awake()
     {
         gameManager = GameManager._instance;
-        categories = gameManager.socialCategoryDB;
+        happinessManager = gameManager.happinessManager;
         notificationDB = gameManager.notificationDB.notifications;
     }
 
     public IEnumerator CheckHappinessThreshold()
     {
-        foreach (SociaCategory socialCategory in categories.categories)
+        foreach (SociaCategory socialCategory in gameManager.socialCategoryDB.categories)
         {
             GameManager._instance.Pause();
+
+            currentNotification = GetNotificationByID(socialCategory.id);
+
             if (socialCategory.happiness <= happinessThreshold)
             {
-                currentNotification = GetNotificationByID(socialCategory.id);
-
                 if (!currentNotification.hasAppeared)
                 {
                     ShowNotification();
@@ -46,15 +48,18 @@ public class NotificationManager : MonoBehaviour
                 }
 
                 answer = false;
+
             }
             else
             {
                 if (currentNotification != null && !currentNotification.oneTimeNotification)
                 {
+                    happinessManager.RemovePenalty(socialCategory.id);
                     currentNotification.hasAppeared = false;
                 }
             }
-            
+
+
             GameManager._instance.Resume();
         }
     }
@@ -86,7 +91,7 @@ public class NotificationManager : MonoBehaviour
         }
     }
 
-    private Notification GetNotificationByID(string id)
+    public Notification GetNotificationByID(string id)
     {
         Notification notification = null;
 
@@ -148,6 +153,7 @@ public class NotificationManager : MonoBehaviour
                 gameManager.timeManager.NewWeek();
                 break;
             case "capitalists":
+
                 break;
             case "conservatives":
                 break;
@@ -156,6 +162,7 @@ public class NotificationManager : MonoBehaviour
             case "liberals":
                 break;
             case "patriots":
+                happinessManager.GetSocialCategoryByID("ethnic_minorities").happinessPenalty.Add(currentNotification.id, 0.75f);
                 break;
             case "poors":
                 break;
@@ -175,6 +182,7 @@ public class NotificationManager : MonoBehaviour
                 break;
         }
 
+        happinessManager.CalculateGlobalHappiness();
         PNL_Notification.SetActive(false);
         answer = true;
     }

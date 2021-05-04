@@ -13,4 +13,5 @@ public class SociaCategory : ScriptableObject
     public Request[] requestsToApprove;
     public Request[] RequestsToAbolish;
     [Range(0, 100)] public int happiness;
+    public Dictionary<string, float> happinessPenalty;
 }

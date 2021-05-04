@@ -57,7 +57,6 @@ public class GameManager : MonoBehaviour
         Pause();
     }
 
-
     public void NewGame()
     {
         Resume();
@@ -86,7 +85,6 @@ public class GameManager : MonoBehaviour
         citizenRequest.CitizenSelector();
 
         familyController.UpdateNeeds();
-        happinessManager.CalculateGlobalHappiness();
 
         moneyManager.CalculateSalary(happinessManager.cityHappiness);
         moneyManager.SetStateMoney();
