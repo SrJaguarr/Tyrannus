@@ -2619,7 +2619,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4,
+          m_ObjectArgument: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -6416,7 +6416,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4,
+          m_ObjectArgument: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -10196,7 +10196,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4,
+          m_ObjectArgument: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -10849,7 +10849,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 87455450b86df9e40a284b195d752e98, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e17431a9b9ba524aab576abe42be2e1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -14433,7 +14433,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a2c3bb97d72137a47971f6e120d957d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b4b81334f903166458f41fc14644fe9a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
@@ -17860,7 +17860,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4,
+          m_ObjectArgument: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -19373,7 +19373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b637e787b95484d84a373b793d41a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayTime: 5
+  dayTime: 15
   weekDays: 7
   TXT_Day: {fileID: 1822240641}
   TXT_WeekDay: {fileID: 1648050608}
@@ -19449,16 +19449,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 1832126486}
-  woodOptionSelectFX: {fileID: 8300000, guid: 1b14f6a93decebe4199d9329648fe08b, type: 3}
-  woodOptionEnterFX: {fileID: 8300000, guid: 1b14f6a93decebe4199d9329648fe08b, type: 3}
+  woodOptionSelectFX: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046, type: 3}
+  woodOptionEnterFX: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046, type: 3}
   optionSelectFX: {fileID: 8300000, guid: 623121e21035c574f99d2311282d5319, type: 3}
   optionEnterFX: {fileID: 8300000, guid: 9d952876efb4f9b4ba41f98565e686d7, type: 3}
   angryManFX: {fileID: 8300000, guid: 91e0d3fb08b4e154287a303f52be022c, type: 3}
   angryWomanFX: {fileID: 8300000, guid: 0ccd094e2b9be0b4ebfa561801705fa2, type: 3}
   happyManFX: {fileID: 8300000, guid: b42ae23c3f0f6634fa7d478ea4826f94, type: 3}
   happyWomanFX: {fileID: 8300000, guid: c45049fd812416d4e82a61b4ebe42ed3, type: 3}
-  fireFX: {fileID: 8300000, guid: fdb78cd14921bcb4388fe482b68f01f6, type: 3}
-  unfireFX: {fileID: 8300000, guid: 03d10576e88047a4995640d382d6d771, type: 3}
+  fireFX: {fileID: 8300000, guid: 8cad0855709bf214da6869d103b20654, type: 3}
+  unfireFX: {fileID: 8300000, guid: f6e4e4272052b7f4da43d88f75565159, type: 3}
   paperOpenFX: {fileID: 8300000, guid: a335d732dc56f754f8636d2f58520fe8, type: 3}
   paperCloseFX: {fileID: 8300000, guid: 37928cb8f19f14a439268f8b40764366, type: 3}
   buyFX: {fileID: 8300000, guid: 5bb3f87397fd6394aac49a9eb79ff95d, type: 3}
@@ -23954,7 +23954,7 @@ MonoBehaviour:
         m_MethodName: set_clip
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 74d4c4a4b31be2b4e9e8db1b46fe4ee4,
+          m_ObjectArgument: {fileID: 8300000, guid: 33b0bfac0bfdaa549949642d339f0046,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -26282,7 +26282,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fb09688c052034348b55b30110e215ec, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 23fe7182b4791f943997e1ec9bf72881, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
