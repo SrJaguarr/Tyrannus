@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: religious
   title: Ira Divina
-  description: "La Iglesia est\xE1 hasta el cuello, ha decidio dejar de colaborar
+  description: "La Iglesia est\xE1 hasta el cuello, ha decidido dejar de colaborar
     con el Gobierno, as\xED como con agencias de ayuda social.\nLos pobres ser\xE1n
     los primeros en sufrir las consecuencias"
   acceptText: 

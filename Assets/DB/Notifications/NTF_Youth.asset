@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: youth
   title: Arde la red
-  description: "Los j\xF3venes saben como hacerse o\xEDr, las redes sociales arden
+  description: "Los j\xF3venes saben c\xF3mo hacerse o\xEDr, las redes sociales arden
     con insultos hacia ti, si no hacemos algo, todos los habitantes perder\xE1n la
     confianza en ti."
   acceptText: 

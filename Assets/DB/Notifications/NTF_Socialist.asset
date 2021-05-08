@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: socialists
   title: Tenemos rivales
-  description: "Los socialistas comienzan a reclutar gente, ofrecien, seg\xFAn dicen,
+  description: "Los socialistas comienzan a reclutar gente, ofrecen, seg\xFAn dicen,
     unas medidas mejores que las tuyas.\nPlanean montar un partido y quitarte de
     en medio, si no hacemos algo ya, probablemente consigan derrocarte..."
   acceptText: 

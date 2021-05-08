@@ -51,11 +51,9 @@ public class ContactsManager : MonoBehaviour
         IMG_Picture.sprite = citizen.spriteHead;
         TXT_Name.text = citizen.fullName;
         TXT_Description.text = citizen.description;
-
-        TXT_Categories.text = "                      ";
         for (int i = 0; i < citizen.socialCategories.Length; i++)
         {
-            TXT_Categories.text = TXT_Categories.text + citizen.socialCategories[i].categoryName;
+            TXT_Categories.text = citizen.socialCategories[i].categoryName;
 
             if (i < citizen.socialCategories.Length - 1)
                 TXT_Categories.text = TXT_Categories.text + ", ";

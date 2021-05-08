@@ -94,7 +94,19 @@ public class GameManager : MonoBehaviour
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
-        if(happinessManager.globalHappiness < 50)
+        Pause();
+        StartCoroutine(notificationManager.CheckHappinessThreshold());
+    }
+
+    public void NextDayBeforeCheck()
+    {
+        happinessManager.CalculateGlobalHappiness();
+        CheckLoose();
+        citizenRequest.CitizenSelector();
+        moneyManager.CalculateIncoming();
+
+
+        if (happinessManager.globalHappiness < 50)
         {
             musicManager.SetMusic("sad");
         }
@@ -103,7 +115,7 @@ public class GameManager : MonoBehaviour
             musicManager.SetMusic("happy");
         }
 
-        StartCoroutine(notificationManager.CheckHappinessThreshold());
+        Resume();
     }
 
     public void GameOver()
@@ -156,8 +168,6 @@ public class GameManager : MonoBehaviour
 
     public void CheckLoose()
     {
-        print(expulsionCounter);
-
         if(sadCounter == 3)
         {
             GameOver();

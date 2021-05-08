@@ -25,6 +25,7 @@ public class FamilyController : MonoBehaviour
     {
         familiars.Clear();
         AddFamiliar(0); //Metemos al presidente unicamente
+        AddFamiliar(1);
         AddFamiliar(2);
         AddFamiliar(3);
         AddFamiliar(4);

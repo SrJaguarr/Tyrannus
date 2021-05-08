@@ -18,10 +18,10 @@ public class ShopListController : MonoBehaviour
 
 
     [SerializeField]
-    private Transform shopListContainer;
+    private Transform shopListContainer, shopListKalinkaContainer;
 
     [SerializeField]
-    private GameObject shopListFamiliarPrefab;
+    private GameObject shopListFamiliarPrefab, shopListKalinkaPrefab;
 
     private Dictionary<Toggle, int> toggles;
     private List<Toggle> boughtNeeds;
@@ -69,8 +69,19 @@ public class ShopListController : MonoBehaviour
 
     public void AddFamiliarToShopList(Familiar familiar)
     {
-        shopListFamiliarPrefab.transform.GetChild(0).GetComponent<Image>().sprite = familiar.avatarHead;
-        familiarContainers.Add(familiar, Instantiate(shopListFamiliarPrefab, shopListContainer));
+
+        if (familiar.fullName != "Kalinka")
+        {
+            shopListFamiliarPrefab.transform.GetChild(0).GetComponent<Image>().sprite = familiar.avatarHead;
+            familiarContainers.Add(familiar, Instantiate(shopListFamiliarPrefab, shopListContainer));
+        }
+        else
+        {
+            shopListKalinkaContainer.gameObject.SetActive(true);
+            shopListKalinkaPrefab.transform.GetChild(0).GetComponent<Image>().sprite = familiar.avatarHead;
+            familiarContainers.Add(familiar, Instantiate(shopListKalinkaPrefab, shopListKalinkaContainer));
+        }
+
     }
 
     #region Salary

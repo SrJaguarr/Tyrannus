@@ -31,8 +31,6 @@ public class NotificationManager : MonoBehaviour
     {
         foreach (SociaCategory socialCategory in gameManager.socialCategoryDB.categories)
         {
-            GameManager._instance.Pause();
-
             currentNotification = GetNotificationByID(socialCategory.id);
 
             if (socialCategory.happiness <= happinessThreshold)
@@ -77,14 +75,8 @@ public class NotificationManager : MonoBehaviour
                     }
                 }
             }
-
-            GameManager._instance.Resume();
         }
-
-        happinessManager.CalculateGlobalHappiness();
-        gameManager.citizenRequest.CitizenSelector();
-        gameManager.moneyManager.CalculateIncoming();
-        gameManager.CheckLoose();
+        gameManager.NextDayBeforeCheck();
     }
 
     public void ShowNotification(string id)
