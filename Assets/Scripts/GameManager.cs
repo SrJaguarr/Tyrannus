@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
+        fxManager.PlaySound("time_up");
         requestStats.NewDay();
         loanManager.PassDay();
         CheckStateMoney();

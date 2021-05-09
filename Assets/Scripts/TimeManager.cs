@@ -18,6 +18,8 @@ public class TimeManager : MonoBehaviour
     private int dayOfWeek;
     private int day;
 
+    private bool timeEnding = false;
+
     public void NewGame()
     {
         dayOfWeek = 1;
@@ -35,6 +37,13 @@ public class TimeManager : MonoBehaviour
             if (dayRemainingTime > 0)
             {
                 UpdateTime();
+
+                if(!timeEnding && dayRemainingTime < dayTime / 4)
+                {
+                    timeEnding = true;
+                    GameManager._instance.fxManager.PlaySound("time_ending");
+                }
+
             }
             else
             {
@@ -46,7 +55,7 @@ public class TimeManager : MonoBehaviour
     private void NewDay()
     {
         dayOfWeek++;
-
+        timeEnding = false;
         if (dayOfWeek > weekDays)
         {
             GameManager._instance.Pause();

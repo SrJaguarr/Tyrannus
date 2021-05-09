@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public static class Tyrannus
 
         for (int i = 0; i < categories.Length; i++)
         {
-            int rnd = Random.Range(0, categories.Length);
+            int rnd = UnityEngine.Random.Range(0, categories.Length);
             temp = categories[rnd];
             categories[rnd] = categories[i];
             categories[i] = temp;
@@ -19,13 +20,33 @@ public static class Tyrannus
         return categories;
     }
 
+    public static Color ToColor(this string color)
+    {
+        if (color.StartsWith("#", StringComparison.InvariantCulture))
+        {
+            color = color.Substring(1); // strip #
+        }
+
+        if (color.Length == 6)
+        {
+            color += "FF"; // add alpha if missing
+        }
+
+        var hex = Convert.ToUInt32(color, 16);
+        var r = ((hex & 0xff000000) >> 0x18) / 255f;
+        var g = ((hex & 0xff0000) >> 0x10) / 255f;
+        var b = ((hex & 0xff00) >> 8) / 255f;
+        var a = ((hex & 0xff)) / 255f;
+
+        return new Color(r, g, b, a);
+    }
     public static Request[] ShuffleRequests(Request[] requests)
     {
         Request temp;
 
         for (int i = 0; i < requests.Length; i++)
         {
-            int rnd = Random.Range(0, requests.Length);
+            int rnd = UnityEngine.Random.Range(0, requests.Length);
             temp = requests[rnd];
             requests[rnd] = requests[i];
             requests[i] = temp;
@@ -40,7 +61,7 @@ public static class Tyrannus
 
         for (int i = 0; i < citizens.Length; i++)
         {
-            int rnd = Random.Range(0, citizens.Length);
+            int rnd = UnityEngine.Random.Range(0, citizens.Length);
             temp = citizens[rnd];
             citizens[rnd] = citizens[i];
             citizens[i] = temp;

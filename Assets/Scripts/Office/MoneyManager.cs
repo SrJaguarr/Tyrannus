@@ -141,11 +141,12 @@ public class MoneyManager : MonoBehaviour
     {
         if (money < 0)
         {
-            text.color = Color.red;
+
+            text.color = "B52F30".ToColor(); //RED
         }
         else
         {
-            text.color = Color.green;
+            text.color = "2C7556".ToColor(); //GREEN
         }
     }
 
