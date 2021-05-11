@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     public FamilyHappiness familyHappiness;
     public MusicManager musicManager;
     public FXManager fxManager;
+    public TutorialManager tutorialManager;
 
     [Header("Databases")]
     public RequestDB requestDB;
@@ -62,7 +63,6 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        Resume();
         requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
         happinessManager.NewGame();
         shopListController.UpdateSalary();
         statsViewerManager.UpdateStats();
+        tutorialManager.NewGame();
     }
 
     public void NextDay()
