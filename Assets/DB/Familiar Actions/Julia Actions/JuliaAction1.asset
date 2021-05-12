@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ad1f38cedac364f9cb1ad4a1e03db1, type: 3}
   m_Name: JuliaAction1
   m_EditorClassIdentifier: 
-  action: Julia 1
+  action: Hablar sobre su futuro
   timeCost: 1

@@ -41,7 +41,7 @@ public class NeedsPanel : MonoBehaviour
         }
         else
         {
-            TXT_FoodPrice.color = Color.red;
+            TXT_FoodPrice.color = "B52F30".ToColor();
             TXT_FoodPrice.text = "-" + foodPrice.ToString() + "€";
             shopListController.SetShopPrice(foodPrice);
             GameManager._instance.fxManager.PlaySound("add_item");
@@ -61,7 +61,7 @@ public class NeedsPanel : MonoBehaviour
         }
         else
         {
-            TXT_PillPrice.color = Color.red;
+            TXT_PillPrice.color = "B52F30".ToColor();
             TXT_PillPrice.text = "-" + pillPrice.ToString() + "€";
             shopListController.SetShopPrice(pillPrice);
         }

@@ -14,7 +14,7 @@ public class StatRequestButton : MonoBehaviour
     private TextMeshProUGUI TXT_Percentage, TXT_SocialCategory;
 
     [SerializeField]
-    private Image IMG_Emoji;
+    private Image IMG_Emoji, IMG_Icon;
 
     [SerializeField]
     private RectTransform statusBar;
@@ -55,6 +55,7 @@ public class StatRequestButton : MonoBehaviour
         statusBar.sizeDelta = size;
 
         IMG_Emoji.sprite = Tyrannus.GetCorrectEmoji(isApproval, request.level);
+        IMG_Icon.sprite = request.icon;
     }
 
 

@@ -13,7 +13,7 @@ public class RequestStats : MonoBehaviour
     [SerializeField] private Transform requestsLayout, categoriesLayout;
 
     [SerializeField] private TextMeshProUGUI TXT_RemainingChanges, TXT_RequestTitle, TXT_CategoryTitle, TXT_CategoryDescription, TXT_Balance, TXT_NewBalance;
-    [SerializeField] private Image SCImage;
+    [SerializeField] private Image SCImage, IMG_Icon;
     [SerializeField] private Slider requestSlider;
 
     private Request actualRequest;
@@ -65,10 +65,11 @@ public class RequestStats : MonoBehaviour
     public void ShowAffectedCategories(Request r)
     {
         newBalance = GameManager._instance.moneyManager.incoming;
-        TXT_Balance.text = newBalance.ToString();
-        TXT_NewBalance.text = newBalance.ToString();
+        TXT_Balance.text = newBalance.ToString() + "€";
+        TXT_NewBalance.text = newBalance.ToString() + "€";
 
         TXT_RequestTitle.text = r.requestName;
+        IMG_Icon.sprite = r.icon;
         TXT_RemainingChanges.text = remainingChanges.ToString();
         actualRequest = r;
         
@@ -87,7 +88,8 @@ public class RequestStats : MonoBehaviour
 
                 affectedCategories.Add(button.GetComponent<AffectedSCButton>());
             }
-        }   
+        }
+
     }
 
     public void CleanRequests()
@@ -115,7 +117,7 @@ public class RequestStats : MonoBehaviour
             if(actualRequest.costPerLevel.Length > 0)
                 newBalance = newBalance + actualRequest.costPerLevel[actualRequest.level] - actualRequest.costPerLevel[newRequestValue];
 
-            TXT_NewBalance.text = newBalance.ToString();
+            TXT_NewBalance.text = newBalance.ToString() + "€";
         }
         else
         {
@@ -130,6 +132,8 @@ public class RequestStats : MonoBehaviour
             category.UpdateLevel(newRequestValue);
         }
 
+        UpdateIncomingColor();
+
     }
 
     public void ClearChanges()
@@ -138,18 +142,39 @@ public class RequestStats : MonoBehaviour
         newRequestValue = actualRequest.level;
         
         TXT_RemainingChanges.text = remainingChanges.ToString();
+
+        UpdateIncomingColor();
     }
 
     public void ResetChanges()
     {
         remainingChanges = totalChanges;
         TXT_RemainingChanges.text = remainingChanges.ToString();
+
+        UpdateIncomingColor();
     }
 
     public void ConfirmChanges()
     {
         actualRequest.level = newRequestValue;
         remainingChanges = provisionalChanges;
+
+        UpdateIncomingColor();
+    }
+
+    private void UpdateIncomingColor()
+    {
+        TXT_NewBalance.color = Color.black;
+
+        if(newBalance < GameManager._instance.moneyManager.incoming)
+        {
+            TXT_NewBalance.color = "B52F30".ToColor();
+        }
+
+        if (newBalance > GameManager._instance.moneyManager.incoming)
+        {
+            TXT_NewBalance.color = "2C7556".ToColor();
+        }
     }
 
     public bool HasChanges() 

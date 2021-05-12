@@ -58,7 +58,7 @@ public class ShopListController : MonoBehaviour
 
         TXT_HeatingPrice.text = heatingPrice.ToString() + "€";
         TXT_RentPrice.text = rentPrice.ToString() + "€"; 
-        TXT_RentPrice.color = Color.red;
+        TXT_RentPrice.color = "B52F30".ToColor();
         TXT_RentPrice.text = "-" + rentPrice.ToString() + "€";
 
     }
@@ -92,6 +92,9 @@ public class ShopListController : MonoBehaviour
 
         TXT_Saves.text = money.ToString() + "€";
         TXT_ShopResult.text = balance.ToString() + "€";
+
+        if(balance < money)
+            TXT_ShopResult.color = "B52F30".ToColor();
     }
 
     public void CheckToggles()
@@ -146,7 +149,7 @@ public class ShopListController : MonoBehaviour
         }
         else
         {
-            TXT_HeatingPrice.color = Color.red;
+            TXT_HeatingPrice.color = "B52F30".ToColor();
             TXT_HeatingPrice.text = "-" + heatingPrice.ToString() + "€";
             IMG_HeatImage.sprite = spriteHeatOn;
             GameManager._instance.fxManager.PlaySound("fire");
