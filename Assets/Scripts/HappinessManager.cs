@@ -167,6 +167,7 @@ public class HappinessManager : MonoBehaviour
     public void AddLoanPenalty(float f)
     {
         loanPenalties.Add(f);
+        CalculateGlobalHappiness();
     }
 
     public void ClearPenalties()
@@ -231,7 +232,7 @@ public class HappinessManager : MonoBehaviour
         CalculateCityHappiness();
         familyHappiness = CalculateFamilyHappiness();
 
-        int needsAmount = Mathf.RoundToInt(GetFamiliarHappiness(president) * 0.34f);
+        int needsAmount = Mathf.RoundToInt(GetFamiliarHappiness(president) * 0.2f);
 
         if(president.daysCold == president.maxDaysCold || president.daysHungry == president.maxDaysHungry || president.daysIll == president.maxDaysIll || president.happiness <= GameManager._instance.minimumHappiness)
         {
@@ -239,10 +240,11 @@ public class HappinessManager : MonoBehaviour
             return;
         }
 
-        int familyAmount = Mathf.RoundToInt(familyHappiness * 0.33f);
-        int cityAmount = Mathf.RoundToInt(cityHappiness * 0.33f);
+        int familyAmount = Mathf.RoundToInt(familyHappiness * 0.4f);
+        int cityAmount = Mathf.RoundToInt(cityHappiness * 0.4f);
 
         globalHappiness = needsAmount + familyAmount + cityAmount;
+
 
         GameManager._instance.statsViewerManager.UpdateStats();
         UpdateHappinessLabel();

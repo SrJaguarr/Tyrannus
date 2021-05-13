@@ -30,4 +30,5 @@ MonoBehaviour:
   heat: 0
   heal: 0
   avatarHead: {fileID: 21300000, guid: 662f7136b52ef894cbae3779badcb7d3, type: 3}
+  schoolPenalty: 0
   prefab: {fileID: 8133977533862111712, guid: 3c1a8d71dba2d4341b8a073a98aeadf9, type: 3}

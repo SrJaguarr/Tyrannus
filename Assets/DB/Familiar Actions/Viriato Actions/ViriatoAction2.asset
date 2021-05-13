@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ad1f38cedac364f9cb1ad4a1e03db1, type: 3}
   m_Name: ViriatoAction2
   m_EditorClassIdentifier: 
-  action: Viritato 2
+  action: "Ense\xF1arle a andar"
   timeCost: 2

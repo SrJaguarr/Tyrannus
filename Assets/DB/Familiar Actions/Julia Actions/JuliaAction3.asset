@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67ad1f38cedac364f9cb1ad4a1e03db1, type: 3}
   m_Name: JuliaAction3
   m_EditorClassIdentifier: 
-  action: Julia 3
-  timeCost: 3
+  action: Ayudar con los deberes
+  timeCost: 1

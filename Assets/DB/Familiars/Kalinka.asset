@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kalinka
   m_EditorClassIdentifier: 
   fullName: Kalinka
-  happiness: 50
+  happiness: 0
   enjoyedCompany: 0
   actions: {fileID: 11400000, guid: 42eb30ab0a6d7284cb4b3b1d2d6179a6, type: 2}
   isHungry: 1
@@ -30,4 +30,5 @@ MonoBehaviour:
   heat: 0
   heal: 0
   avatarHead: {fileID: 21300000, guid: b66c66c733b3c79458e6bf0a0eebf80c, type: 3}
+  schoolPenalty: 0
   prefab: {fileID: 8713401565441397457, guid: 18fa1207d05711043a12ba3b42914ceb, type: 3}

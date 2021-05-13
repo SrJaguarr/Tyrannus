@@ -90,6 +90,7 @@ public class NotificationManager : MonoBehaviour
     {
         if(currentNotification != null)
         {
+            gameManager.Pause();
             TXT_Title.text = currentNotification.title;
             TXT_Description.text = currentNotification.description;
 
@@ -135,8 +136,11 @@ public class NotificationManager : MonoBehaviour
             case "ethnic_minorities":
                 gameManager.familyController.AddFamiliar(4);
                 break;
+            case "tutorial":
+                gameManager.tutorialManager.DoTutorial(true);
+                break;
         }
-        GameManager._instance.Resume();
+        gameManager.Resume();
         PNL_Notification.SetActive(false);
         answer = true;
     }
@@ -153,9 +157,12 @@ public class NotificationManager : MonoBehaviour
                 break;
             case "ethnic_minorities":
                 break;
+            case "tutorial":
+                gameManager.tutorialManager.DoTutorial(false);
+                break;
 
         }
-        GameManager._instance.Resume();
+        gameManager.Resume();
         PNL_Notification.SetActive(false);
         answer = true;
     }
@@ -217,6 +224,7 @@ public class NotificationManager : MonoBehaviour
 
         PNL_Notification.SetActive(false);
         answer = true;
+        gameManager.Resume();
     }
 
     private void PenaltyAllButMe(string myID, float penalty)

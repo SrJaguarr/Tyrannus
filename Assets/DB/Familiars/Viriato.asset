@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Viriato
   m_EditorClassIdentifier: 
   fullName: Viriato
-  happiness: 34
+  happiness: 0
   enjoyedCompany: 0
   actions: {fileID: 11400000, guid: 42eb30ab0a6d7284cb4b3b1d2d6179a6, type: 2}
   isHungry: 1
@@ -30,4 +30,5 @@ MonoBehaviour:
   heat: 0
   heal: 0
   avatarHead: {fileID: 21300000, guid: 7e0bc0ba648f456488a1c36641389d73, type: 3}
+  schoolPenalty: 0
   prefab: {fileID: 1311697877044506052, guid: 6707a93371ffe1946a2b1f6a71e62290, type: 3}

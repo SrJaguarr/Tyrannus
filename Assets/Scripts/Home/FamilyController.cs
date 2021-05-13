@@ -165,6 +165,8 @@ public class FamilyController : MonoBehaviour
                 familiarsToKill.Add(familiar);
                 Destroy(familiarToKill);
             }
+
+            familiar.enjoyedCompany = false;
         }
 
         for(int i = 0; i < familiarsToKill.Count; i++)
