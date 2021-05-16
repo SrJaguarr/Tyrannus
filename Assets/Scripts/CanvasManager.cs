@@ -94,7 +94,8 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Scene")]
     [SerializeField] private Button BTN_EndOfficeDay;
-    [SerializeField] private Button BTN_LeaveHome;
+    public Button BTN_LeaveHome;
+    [SerializeField] private Button BTN_Clock;
 
     [Header("Contacts")]
     [SerializeField] private Button BTN_OpenContacts;
@@ -287,6 +288,7 @@ public class CanvasManager : MonoBehaviour
 
         BTN_LeaveHome.onClick.AddListener(delegate { LeaveHome(); });
         BTN_EndOfficeDay.onClick.AddListener(delegate { LeaveOffice(); });
+        BTN_Clock.onClick.AddListener(delegate { gameManager.timeManager.EndDay(); });
 
         BTN_OpenShopList.onClick.AddListener(delegate { HandleShopList(); fxManager.PlaySound("paper_open"); });
         BTN_CloseShopList.onClick.AddListener(delegate { HandleShopList(); fxManager.PlaySound("paper_close"); });
@@ -541,4 +543,5 @@ public class CanvasManager : MonoBehaviour
         PNL_Timer.SetActive(true); 
         gameManager.timeManager.enabled = true;
     }
+
 }

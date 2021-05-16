@@ -40,13 +40,16 @@ public class TutorialManager : MonoBehaviour
 
     public void NewGame()
     {
-        if (firstGame)
+        currentDay = gameManager.timeManager.day;
+
+        if (firstGame || doingTutorial)
         {
             notificationManager.ShowNotification("tutorial");
         }
         else
         {
             gameManager.timeManager.enabled = true;
+            SkipTutorial();
         }
     }
 
@@ -60,9 +63,10 @@ public class TutorialManager : MonoBehaviour
     {
         gameManager.canvasManager.ShowHappinessInfo();
         gameManager.canvasManager.ShowTimer();
-
+        gameManager.canvasManager.BTN_LeaveHome.gameObject.GetComponent<Button>().interactable = true;
         IMG_Cot.SetActive(true);
         gameManager.familyController.AddFamiliar(1);
+        gameManager.familyController.GetFamiliarButton(1).GetComponent<Button>().interactable = true;
         gameManager.familyController.AddFamiliar(2);
         gameManager.familyController.AddFamiliar(3);
     }
@@ -115,17 +119,24 @@ public class TutorialManager : MonoBehaviour
                 notificationManager.ShowNotification("tuto_day4");
                 break;
             case 5:
+                gameManager.moneyManager.salary = 55;
+                gameManager.shopListController.UpdateSalary();
                 notificationManager.ShowNotification("tuto_day5");
                 gameManager.familyController.GetFamiliarButton(1).GetComponent<Button>().interactable = true;
                 break;
             case 6:
+                gameManager.moneyManager.salary = 55;
+                gameManager.shopListController.UpdateSalary();
                 notificationManager.ShowNotification("tuto_day6");
                 break;
             case 7:
+                gameManager.moneyManager.salary = 55;
+                gameManager.shopListController.UpdateSalary();
                 notificationManager.ShowNotification("tuto_day7");
                 break;
             case 8:
                 gameManager.canvasManager.ShowOffice();
+                gameManager.canvasManager.BTN_LeaveHome.gameObject.GetComponent<Button>().interactable = true;
                 notificationManager.ShowNotification("tuto_day8");
                 break;
             case 9:
@@ -150,6 +161,7 @@ public class TutorialManager : MonoBehaviour
             case 22:
                 gameManager.familyController.AddFamiliar(3);
                 notificationManager.ShowNotification("tuto_day22");
+                doingTutorial = false;
                 break;
             default:
                 gameManager.Resume();

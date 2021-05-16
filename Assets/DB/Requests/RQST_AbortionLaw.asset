@@ -18,7 +18,7 @@ MonoBehaviour:
     religioso. El bando \u2018pro-elecci\xF3n\u2019 cree que el estado no deber\xEDa
     tener derecho a decidir lo que una mujer hace con su cuerpo."
   icon: {fileID: 21300000, guid: 80126c327027f7b48991d8dccdce558c, type: 3}
-  level: 2
+  level: 1
   costPerLevel: 
   approvalRequest:
   - "Creo que las mujeres deber\xEDan poder elegir libremente si desean o no traer

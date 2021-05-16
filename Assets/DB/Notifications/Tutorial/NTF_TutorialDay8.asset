@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: NTF_TutorialDay8
   m_EditorClassIdentifier: 
   id: tuto_day8
-  title: Tu primer dia
+  title: "Tu primer d\xEDa"
   description: "Bienvenido a tu despacho, como ves, tus ciudadanos est\xE1n esperando
-    para exponerte sus propuestas, si\xE9ntete libre de acetar o rechazar las medidas
-    que veas convenientes.\nPodr\xE1s acceder a infromaci\xF3n m\xE1s detallada de
+    para exponerte sus propuestas, si\xE9ntete libre de acpetar o rechazar las medidas
+    que veas convenientes.\nPodr\xE1s acceder a informaci\xF3n m\xE1s detallada de
     los ciudadanos que conozcas utilizando tu tel\xE9fono movil.\nCuando hayas terminado,
     vuelve a casa para pasar tiempo con tu familia!"
   acceptText: 

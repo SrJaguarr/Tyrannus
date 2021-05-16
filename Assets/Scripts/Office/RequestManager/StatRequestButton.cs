@@ -47,9 +47,9 @@ public class StatRequestButton : MonoBehaviour
         Vector2 size = totalBarSize;
         size.y = (float)request.level / 5 * totalBarSize.y;
 
-        if(size.y < totalBarSize.y * 0.1)
+        if(size.y < totalBarSize.y * 0.3)
         {
-            size.y = totalBarSize.y * 0.1f;
+            size.y = totalBarSize.y * 0.3f;
         }
 
         statusBar.sizeDelta = size;

@@ -18,7 +18,7 @@ MonoBehaviour:
     aumentar\xE1 la seguridad vial, aquellos que est\xE1n en contra opinan que es
     una medida c\xEDnica."
   icon: {fileID: 21300000, guid: 71845d4934413384598ef25d5dd03597, type: 3}
-  level: 2
+  level: 3
   costPerLevel: 00000000f6ffffffecffffffddffffffceffffff
   approvalRequest:
   - "Los veh\xEDculos son un peligro para los ciudadanos, deber\xEDamos restringir

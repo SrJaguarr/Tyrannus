@@ -17,7 +17,7 @@ MonoBehaviour:
     que acaban de tener un hijo. El nivel de esta ley ofrecer\xE1 mayor o menor ayuda
     a dichos padres, pero frustrar\xE1 a los empresarios."
   icon: {fileID: 21300000, guid: 9a84c783112847346bf269e1df861529, type: 3}
-  level: 2
+  level: 1
   costPerLevel: 
   approvalRequest:
   - Las muejeres merecen poder dar a luz y no perder su trabajo por ello.

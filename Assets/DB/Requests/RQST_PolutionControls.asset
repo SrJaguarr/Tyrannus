@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "Las restricciones en que qu\xEDmicos y emisiones pueden ser expulsadas
     a la atm\xF3sfera reducir\xE1n la contaminaci\xF3n y aumentar\xE1n la salud."
   icon: {fileID: 21300000, guid: 44a4b0b32871eec4d8f6b3f24365be63, type: 3}
-  level: 2
+  level: 3
   costPerLevel: 00000000050000000a000000140000001e000000
   approvalRequest:
   - "La contaminaci\xF3n en Mynaia es excesiva, debemos poner fin a esto."

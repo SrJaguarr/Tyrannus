@@ -23,7 +23,13 @@ public class FamilyController : MonoBehaviour
 
     public void NewGame()
     {
+        foreach(KeyValuePair<Familiar, GameObject> familiar in familiars)
+        {
+            Destroy(familiar.Value);
+        }
+
         familiars.Clear();
+
         AddFamiliar(0); //Metemos al presidente unicamente
     }
 
@@ -173,6 +179,7 @@ public class FamilyController : MonoBehaviour
 
                     shopListController.FamiliarDeletion(familiar);
                     familiarPair.Value.SetActive(false);
+                    GameManager._instance.notificationManager.DeathNotification(familiarPair.Key);
                 }
 
                 familiar.enjoyedCompany = false;

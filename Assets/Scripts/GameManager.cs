@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        tutorialManager.doingTutorial = false;
+        scriptableObjectController.RestoreValues();
         requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
@@ -97,7 +97,6 @@ public class GameManager : MonoBehaviour
 
         canvasManager.CloseIgameWindows();
 
-        Pause();
         StartCoroutine(notificationManager.CheckHappinessThreshold());
         fxManager.PlaySound("time_up");
     }
@@ -122,10 +121,6 @@ public class GameManager : MonoBehaviour
         if (tutorialManager.doingTutorial)
         {
             tutorialManager.ManageDay();
-        }
-        else
-        {
-            Resume();
         }
         
     }

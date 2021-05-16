@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Kalinka
   m_EditorClassIdentifier: 
   fullName: Kalinka
-  happiness: 0
+  happiness: 100
   enjoyedCompany: 0
   actions: {fileID: 11400000, guid: 42eb30ab0a6d7284cb4b3b1d2d6179a6, type: 2}
   isHungry: 1
   daysHungry: 0
-  maxDaysHungry: 2
+  maxDaysHungry: 4
   isCold: 1
   daysCold: 0
-  maxDaysCold: 2
+  maxDaysCold: 4
   illProbability: 0.05
   isIll: 0
   daysIll: 0
-  maxDaysIll: 2
+  maxDaysIll: 4
   feed: 0
   heat: 0
   heal: 0
