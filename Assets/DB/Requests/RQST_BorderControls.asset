@@ -17,7 +17,7 @@ MonoBehaviour:
     abierta a la inmigraci\xF3n ilegal. Algunos ciudadanos sostienen que los inmigrantes
     causan cr\xEDmenes, otros, que solo buscan un trabajo del que vivir."
   icon: {fileID: 21300000, guid: fe94e4ff36d78af47abeebb37dab7554, type: 3}
-  level: 2
+  level: 3
   costPerLevel: 00000000050000000a0000000f00000014000000
   approvalRequest:
   - "Si aumentamos el la seguridad en la frontera reduciremos la inmigraci\xF3n ilegal."

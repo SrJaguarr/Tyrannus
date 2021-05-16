@@ -11,8 +11,6 @@ public class HappinessManager : MonoBehaviour
     private TextMeshProUGUI TXT_CityHappiness, TXT_FamilyHappiness, TXT_GlobalHappiness, TXT_PresidentHappiness;
     private SociaCategory[] categories;
 
-    private Familiar[] family;
-
     [SerializeField] private Image EMOJI_City, EMOJI_Family, EMOJI_Global;
 
     public int cityHappiness;
@@ -28,7 +26,6 @@ public class HappinessManager : MonoBehaviour
         loanPenalties = new List<float>();
 
         categories = GameManager._instance.socialCategoryDB.categories;
-        family = GameManager._instance.familyDB.familiars;
 
         CalculateCitizenPercentage();
     }
@@ -207,15 +204,17 @@ public class HappinessManager : MonoBehaviour
 
     public int CalculateFamilyHappiness()
     {
+        Dictionary<Familiar, GameObject> familiars = GameManager._instance.familyController.GetAllFamiliarsInGame();
+
         familyHappiness = 0;
 
-        for(int i = 1; i < family.Length; i++)
+        foreach(KeyValuePair<Familiar, GameObject> familiar in familiars)
         {
-            family[i].happiness = GetFamiliarHappiness(family[i]);
-            familyHappiness += family[i].happiness;
+            familiar.Key.happiness = GetFamiliarHappiness(familiar.Key);
+            familyHappiness += familiar.Key.happiness;
         }
 
-        familyHappiness = familyHappiness / (family.Length - 1);
+        familyHappiness = familyHappiness / (familiars.Count);
 
         return familyHappiness;
     }

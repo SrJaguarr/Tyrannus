@@ -17,7 +17,7 @@ MonoBehaviour:
     la Iglesia. Algunos creen que es un gasto necesario para preservar la fe, otros,
     que el estado no deber\xEDa intervenir en asuntos religiosos."
   icon: {fileID: 21300000, guid: 9c0f416c982376b43883e32c99fbea93, type: 3}
-  level: 2
+  level: 1
   costPerLevel: 0000000014000000280000003c00000050000000
   approvalRequest:
   - "La Iglesia es lo m\xE1s importante, el estado deber\xEDa participar en su crecimiento."

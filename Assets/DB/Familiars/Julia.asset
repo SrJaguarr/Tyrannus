@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: Julia
   m_EditorClassIdentifier: 
   fullName: Julia
-  happiness: 56
+  happiness: 87
   enjoyedCompany: 0
   actions: {fileID: 11400000, guid: c4283dd5012a7834c826a1ad12381ac5, type: 2}
   isHungry: 1
   daysHungry: 0
-  maxDaysHungry: 3
+  maxDaysHungry: 5
   isCold: 1
   daysCold: 0
-  maxDaysCold: 3
+  maxDaysCold: 5
   illProbability: 0.05
   isIll: 0
   daysIll: 0
-  maxDaysIll: 3
+  maxDaysIll: 5
   feed: 0
   heat: 0
   heal: 0

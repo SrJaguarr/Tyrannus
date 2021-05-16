@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
+  m_Name: NTF_TutorialDay1
+  m_EditorClassIdentifier: 
+  id: tuto_day1
+  title: Bienvenido a Mynaia!
+  description: "Bienvenido a tu nuevo hogar en Mynaia, he de advertirte que el coste
+    diario de la vivienda es de 20\u20AC. \nDebes de tener hambre despu\xE9s del
+    viaje, \xBFPorque no compras algo para comer? \nPodr\xE1s aquirirlo a\xF1adi\xE9ndolo
+    a tu lista de la compra, abajo a la derecha. "
+  acceptText: 
+  denyText: 
+  isDecision: 0
+  hasAppeared: 0
+  oneTimeNotification: 0

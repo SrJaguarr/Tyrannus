@@ -29,65 +29,94 @@ public class NotificationManager : MonoBehaviour
 
     public IEnumerator CheckHappinessThreshold()
     {
-        foreach (SociaCategory socialCategory in gameManager.socialCategoryDB.categories)
+        answer = false;
+
+        if(!gameManager.tutorialManager.doingTutorial || gameManager.timeManager.day > 12)
         {
-            currentNotification = GetNotificationByID(socialCategory.id);
-
-            if (socialCategory.happiness <= happinessThreshold)
+            foreach (SociaCategory socialCategory in gameManager.socialCategoryDB.categories)
             {
-                if (!currentNotification.hasAppeared)
+                currentNotification = GetNotificationByID(socialCategory.id);
+
+                if (socialCategory.happiness <= happinessThreshold)
                 {
-                    ShowNotification();
-                    currentNotification.hasAppeared = true;
-                    while (!answer)
+                    if (!currentNotification.hasAppeared)
                     {
-                        yield return null;
+                        ShowNotification();
+                        currentNotification.hasAppeared = true;
+                        while (!answer)
+                        {
+                            yield return null;
+                        }
                     }
+
+                    if (socialCategory.id == "socialists")
+                        gameManager.expulsionCounter++;
+                    
+                    answer = false;
+
                 }
-
-                if (socialCategory.id == "socialists")
-                    gameManager.expulsionCounter++;
-
-                answer = false;
-
-            }
-            else
-            {
-                if (currentNotification != null && !currentNotification.oneTimeNotification)
+                else
                 {
-                    happinessManager.RemovePenalty(socialCategory.id);
-                    currentNotification.hasAppeared = false;
-
-                    switch (currentNotification.id)
+                    if (currentNotification != null && !currentNotification.oneTimeNotification)
                     {
-                        case "retireds":
-                            gameManager.citizenRequest.canRequest = true;
-                            break;
-                        case "parents":
-                            gameManager.familyController.RemoveSchoolPenalty();
-                            break;
-                        case "liberals":
-                            gameManager.moneyManager.RemovePenalty();
-                            break;
-                        case "socialists":
-                            gameManager.expulsionCounter = 0;
-                            break;
+                        happinessManager.RemovePenalty(socialCategory.id);
+                        currentNotification.hasAppeared = false;
+
+                        switch (currentNotification.id)
+                        {
+                            case "retireds":
+                                gameManager.citizenRequest.canRequest = true;
+                                break;
+                            case "parents":
+                                gameManager.familyController.RemoveSchoolPenalty();
+                                break;
+                            case "liberals":
+                                gameManager.moneyManager.RemovePenalty();
+                                break;
+                            case "socialists":
+                                gameManager.expulsionCounter = 0;
+                                break;
+                        }
                     }
                 }
             }
         }
+
         gameManager.NextDayBeforeCheck();
+    }
+
+
+    public void DeathNotification(Familiar familiar)
+    {
+        currentNotification = GetNotificationByID("death");
+        gameManager.Pause();
+        TXT_Title.text = "Triste pérdida..";
+        TXT_Description.text = "Nos despedimos de " + familiar.fullName + "... Ojalá las cosas hubiesen sido de otra forma.";
+
+        PNL_Decision.SetActive(currentNotification.isDecision);
+        BTN_NoDecision.SetActive(!currentNotification.isDecision);
+
+        if (currentNotification.isDecision)
+        {
+            TXT_Accept.text = currentNotification.acceptText;
+            TXT_Deny.text = currentNotification.denyText;
+        }
+
+        PNL_Notification.SetActive(true);
+        
     }
 
     public void ShowNotification(string id)
     {
         currentNotification = GetNotificationByID(id);
+
         ShowNotification();
     }
 
 
     public void ShowNotification()
     {
+
         if(currentNotification != null)
         {
             gameManager.Pause();
@@ -132,16 +161,17 @@ public class NotificationManager : MonoBehaviour
                 gameManager.canvasManager.ShowRequestViewer(false);
                 gameManager.requestStats.CleanCategories();
                 gameManager.requestStats.CleanRequests();
+                PNL_Notification.SetActive(false);
                 break;
             case "ethnic_minorities":
                 gameManager.familyController.AddFamiliar(4);
+                PNL_Notification.SetActive(false);
                 break;
             case "tutorial":
                 gameManager.tutorialManager.DoTutorial(true);
                 break;
         }
         gameManager.Resume();
-        PNL_Notification.SetActive(false);
         answer = true;
     }
 
@@ -174,6 +204,8 @@ public class NotificationManager : MonoBehaviour
             case "end_week":
                 gameManager.timeManager.NewWeek();
                 break;
+
+            //PENALIZACIONES
             case "capitalists": //Add penalización del X% a todas las categorias sociales menos a la suya
                 PenaltyAllButMe(currentNotification.id, 0.8f);
                 break;
@@ -219,6 +251,14 @@ public class NotificationManager : MonoBehaviour
             case "environmentalists":
                 happinessManager.GetSocialCategoryByID("drivers").happinessPenalty.Add(currentNotification.id, 0.6f);
                 happinessManager.GetSocialCategoryByID("capitalists").happinessPenalty.Add(currentNotification.id, 0.6f);
+                break;
+
+
+            //TUTORIAL
+            case "tuto_day1":
+                gameManager.canvasManager.ShowTimer();
+                break;
+            case "tuto_day2":
                 break;
         }
 

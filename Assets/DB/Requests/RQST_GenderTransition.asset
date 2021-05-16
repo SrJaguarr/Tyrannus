@@ -18,7 +18,7 @@ MonoBehaviour:
     algo que el individuo decide, y que deber\xEDan de poder hacer con su cuerpo
     lo que consideren."
   icon: {fileID: 21300000, guid: 95356571a4859854fbbc3313fe37aefd, type: 3}
-  level: 2
+  level: 1
   costPerLevel: 000000000200000005000000080000000a000000
   approvalRequest:
   - "Creo que cada cual deber\xEDa hacer lo que se le antoje con su cuerpo."

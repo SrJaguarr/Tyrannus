@@ -36,6 +36,8 @@ public class ShopListController : MonoBehaviour
 
     private MoneyManager moneyManager;
 
+    [SerializeField] private Button BTN_Buy;
+
     private void Awake()
     {
         moneyManager = GameManager._instance.moneyManager;
@@ -94,7 +96,15 @@ public class ShopListController : MonoBehaviour
         TXT_ShopResult.text = balance.ToString() + "€";
 
         if(balance < money)
+        {
             TXT_ShopResult.color = "B52F30".ToColor();
+            BTN_Buy.interactable = true;
+        }
+        else
+        {
+            BTN_Buy.interactable = false;
+        }
+        CheckToggles();
     }
 
     public void CheckToggles()

@@ -13,19 +13,19 @@ MonoBehaviour:
   m_Name: President
   m_EditorClassIdentifier: 
   fullName: Yo
-  happiness: 67
+  happiness: 89
   enjoyedCompany: 0
-  actions: {fileID: 11400000, guid: 42eb30ab0a6d7284cb4b3b1d2d6179a6, type: 2}
+  actions: {fileID: 0}
   isHungry: 1
   daysHungry: 0
-  maxDaysHungry: 5
+  maxDaysHungry: 6
   isCold: 1
   daysCold: 0
-  maxDaysCold: 5
-  illProbability: 0.05
+  maxDaysCold: 6
+  illProbability: 0
   isIll: 0
   daysIll: 0
-  maxDaysIll: 5
+  maxDaysIll: 6
   feed: 0
   heat: 0
   heal: 0

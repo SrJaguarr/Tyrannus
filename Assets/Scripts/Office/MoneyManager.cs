@@ -14,9 +14,6 @@ public class MoneyManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI TXT_StateMoney, TXT_IncomingMoney;
 
-    [SerializeField]
-    private GameObject PNL_Warning;
-
     [SerializeField] private Image IMG_WarningIcon;
 
     public int salary;
@@ -125,7 +122,7 @@ public class MoneyManager : MonoBehaviour
 
     private void CheckWarning()
     {
-        PNL_Warning.SetActive(stateMoney < 0);
+        IMG_WarningIcon.gameObject.SetActive(stateMoney < 0);
 
         if(GameManager._instance.negativeStateMoneyCount >= 2)
         {

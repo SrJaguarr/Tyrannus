@@ -41,6 +41,8 @@ public class RequestStats : MonoBehaviour
     public void NewDay()
     {
         remainingChanges = totalChanges;
+        CleanRequests();
+        CleanCategories();
     }
 
     public void ShowRequestList(SociaCategory sc)

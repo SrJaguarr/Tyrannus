@@ -16,7 +16,7 @@ MonoBehaviour:
   description: "Una pensi\xF3n es la cantidad monetaria que garantiza el estado a
     aquellas personas que no obtienen un salario m\xEDnimo del que vivir."
   icon: {fileID: 21300000, guid: 4b93f73d9cb16c041b63db3eafe937d9, type: 3}
-  level: 2
+  level: 1
   costPerLevel: 640000007800000096000000b4000000dc000000
   approvalRequest:
   - "Los que no tenemos ingresos necesitamos ayuda para vivir nuestro d\xEDa a d\xEDa."
