@@ -132,16 +132,17 @@ public class NotificationManager : MonoBehaviour
                 gameManager.canvasManager.ShowRequestViewer(false);
                 gameManager.requestStats.CleanCategories();
                 gameManager.requestStats.CleanRequests();
+                PNL_Notification.SetActive(false);
                 break;
             case "ethnic_minorities":
                 gameManager.familyController.AddFamiliar(4);
+                PNL_Notification.SetActive(false);
                 break;
             case "tutorial":
                 gameManager.tutorialManager.DoTutorial(true);
                 break;
         }
         gameManager.Resume();
-        PNL_Notification.SetActive(false);
         answer = true;
     }
 
@@ -174,6 +175,8 @@ public class NotificationManager : MonoBehaviour
             case "end_week":
                 gameManager.timeManager.NewWeek();
                 break;
+
+            //PENALIZACIONES
             case "capitalists": //Add penalización del X% a todas las categorias sociales menos a la suya
                 PenaltyAllButMe(currentNotification.id, 0.8f);
                 break;
@@ -219,6 +222,14 @@ public class NotificationManager : MonoBehaviour
             case "environmentalists":
                 happinessManager.GetSocialCategoryByID("drivers").happinessPenalty.Add(currentNotification.id, 0.6f);
                 happinessManager.GetSocialCategoryByID("capitalists").happinessPenalty.Add(currentNotification.id, 0.6f);
+                break;
+
+
+            //TUTORIAL
+            case "tuto_day1":
+                gameManager.canvasManager.ShowTimer();
+                break;
+            case "tuto_day2":
                 break;
         }
 

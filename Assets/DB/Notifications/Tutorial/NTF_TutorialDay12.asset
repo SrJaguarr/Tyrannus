@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
-  m_Name: NTF_Tutorial
+  m_Name: NTF_TutorialDay12
   m_EditorClassIdentifier: 
-  id: tutorial
-  title: Bienvenido/a a Tyrannus!
-  description: "Parece que es tu primera partida en Tyrannus.\n\xBFDeseas iniciar
-    el tutorial?"
-  acceptText: "S\xED"
-  denyText: No
-  isDecision: 1
+  id: tuto_day12
+  title: Nuevas medidas
+  description: "Podr\xE1s modificar a tu gusto las leyes haciendo uso del panel de
+    estad\xEDsticas, a tu derecha, en la pared.\nSi\xE9ntete libre de explorarlo
+    al completo."
+  acceptText: 
+  denyText: 
+  isDecision: 0
   hasAppeared: 0
   oneTimeNotification: 0

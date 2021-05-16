@@ -10,14 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
-  m_Name: NTF_Tutorial
+  m_Name: NTF_TutorialDay10
   m_EditorClassIdentifier: 
-  id: tutorial
-  title: Bienvenido/a a Tyrannus!
-  description: "Parece que es tu primera partida en Tyrannus.\n\xBFDeseas iniciar
-    el tutorial?"
-  acceptText: "S\xED"
-  denyText: No
-  isDecision: 1
+  id: tuto_day10
+  title: La felicidad
+  description: "Si tienes problemas de dinero, podr\xEDas perder el apoyo de tus
+    ciudadanos. \nComo medida excepcional puedes convocar una derrama, lo que har\xE1
+    que tus ciudadanos se molesten bastante, pero salvar\xE1s a Mynaia de la quiebra."
+  acceptText: 
+  denyText: 
+  isDecision: 0
   hasAppeared: 0
   oneTimeNotification: 0

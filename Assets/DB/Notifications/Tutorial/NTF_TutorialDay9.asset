@@ -10,14 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
-  m_Name: NTF_Tutorial
+  m_Name: NTF_TutorialDay9
   m_EditorClassIdentifier: 
-  id: tutorial
-  title: Bienvenido/a a Tyrannus!
-  description: "Parece que es tu primera partida en Tyrannus.\n\xBFDeseas iniciar
-    el tutorial?"
-  acceptText: "S\xED"
-  denyText: No
-  isDecision: 1
+  id: tuto_day9
+  title: La felicidad
+  description: "Puedes ver tu felicidad actual en el panel de arriba a la derecha,
+    haciendo click en \xE9l, o en t\xED mismo, acceder\xE1s a los detalles para ver
+    que puede estar fallando.\nten en cuenta que tu estado an\xEDmico depende de
+    la felicidad de tu familia, tu pueblo, y tus necesidades."
+  acceptText: 
+  denyText: 
+  isDecision: 0
   hasAppeared: 0
   oneTimeNotification: 0

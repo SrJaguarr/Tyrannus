@@ -16,7 +16,7 @@ public class TimeManager : MonoBehaviour
     private float dayRemainingTime;
 
     private int dayOfWeek;
-    private int day;
+    public int day;
 
     private bool timeEnding = false;
 
@@ -26,6 +26,13 @@ public class TimeManager : MonoBehaviour
         day = 1;
 
         dayRemainingTime = dayTime;
+        TXT_Day.text = day.ToString();
+        SetWeekDay();
+    }
+
+    public void SetDay(int n)
+    {
+        day = n;
         TXT_Day.text = day.ToString();
         SetWeekDay();
     }
@@ -56,6 +63,7 @@ public class TimeManager : MonoBehaviour
     {
         dayOfWeek++;
         timeEnding = false;
+        /*
         if (dayOfWeek > weekDays)
         {
             GameManager._instance.Pause();
@@ -76,7 +84,20 @@ public class TimeManager : MonoBehaviour
             SetWeekDay();
 
             GameManager._instance.NextDay();
+        }*/
+        day++;
+        if (day > 30)
+        {
+            day = 1;
         }
+
+        dayRemainingTime = dayTime;
+        TXT_Day.text = day.ToString();
+
+        HandleColor();
+        SetWeekDay();
+
+        GameManager._instance.NextDay();
     }
 
     public void NewWeek()

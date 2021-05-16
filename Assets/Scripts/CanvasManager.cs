@@ -17,6 +17,11 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject[] pauseMenuOptions;
     [SerializeField] private GameObject[] gameOverMenuOptions;
 
+    [Header("Tutorial Hide")]
+    [SerializeField] private GameObject PNL_HappinessInfo;
+    [SerializeField] private GameObject PNL_Timer;
+    [SerializeField] private GameObject PNL_Money;
+
     [Header("Panels")]
     [SerializeField] private GameObject PNL_Office;
     [SerializeField] private GameObject PNL_Home;
@@ -35,6 +40,7 @@ public class CanvasManager : MonoBehaviour
     [SerializeField] private GameObject PNL_GameOver;
     [SerializeField] private GameObject PNL_Familiar;
     [SerializeField] private GameObject PNL_Happiness;
+    [SerializeField] private Transform PNL_IngameWindows;
 
     [Header("Main Menu")]
     [SerializeField] private Button BTN_MMC_NewGame;
@@ -461,10 +467,25 @@ public class CanvasManager : MonoBehaviour
         HandleScene();
     }
 
-    private void HandleScene()
+    public void ShowOffice()
+    {
+        PNL_Home.SetActive(false);
+        PNL_Office.SetActive(true);
+        PNL_Money.SetActive(PNL_Office.activeSelf);
+    }
+
+    public void ShowHome()
+    {
+        PNL_Home.SetActive(true);
+        PNL_Office.SetActive(false);
+        PNL_Money.SetActive(PNL_Office.activeSelf);
+    }
+
+    public void HandleScene()
     {
         PNL_Home.SetActive(!PNL_Home.activeSelf);
         PNL_Office.SetActive(!PNL_Office.activeSelf);
+        PNL_Money.SetActive(PNL_Office.activeSelf);
     }
 
     #endregion
@@ -501,4 +522,23 @@ public class CanvasManager : MonoBehaviour
 
     #endregion
 
+
+    public void CloseIgameWindows()
+    {
+        foreach(Transform child in PNL_IngameWindows)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+
+    public void ShowHappinessInfo()
+    {
+        PNL_HappinessInfo.SetActive(true);
+    }
+
+    public void ShowTimer()
+    {
+        PNL_Timer.SetActive(true); 
+        gameManager.timeManager.enabled = true;
+    }
 }

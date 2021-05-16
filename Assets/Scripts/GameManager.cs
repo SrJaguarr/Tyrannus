@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     public Familiar president;
 
     public int negativeStateMoneyCount;
-    public int currentDay = 1;
     public int minimumHappiness;
 
     private int sadCounter;
@@ -63,6 +62,7 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        tutorialManager.doingTutorial = false;
         requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
@@ -81,7 +81,6 @@ public class GameManager : MonoBehaviour
 
     public void NextDay()
     {
-        fxManager.PlaySound("time_up");
         requestStats.NewDay();
         loanManager.PassDay();
         CheckStateMoney();
@@ -96,8 +95,11 @@ public class GameManager : MonoBehaviour
         shopListController.UpdateSalary();
         shopListController.ClearBoughtNeeds();
 
+        canvasManager.CloseIgameWindows();
+
         Pause();
         StartCoroutine(notificationManager.CheckHappinessThreshold());
+        fxManager.PlaySound("time_up");
     }
 
     public void NextDayBeforeCheck()
@@ -117,7 +119,15 @@ public class GameManager : MonoBehaviour
             musicManager.SetMusic("happy");
         }
 
-        Resume();
+        if (tutorialManager.doingTutorial)
+        {
+            tutorialManager.ManageDay();
+        }
+        else
+        {
+            Resume();
+        }
+        
     }
 
     public void GameOver()

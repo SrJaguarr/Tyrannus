@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 031812dbf409c4b43a9e41649532dd2a, type: 3}
-  m_Name: NTF_Tutorial
+  m_Name: NTF_TutorialDay15
   m_EditorClassIdentifier: 
-  id: tutorial
-  title: Bienvenido/a a Tyrannus!
-  description: "Parece que es tu primera partida en Tyrannus.\n\xBFDeseas iniciar
-    el tutorial?"
-  acceptText: "S\xED"
-  denyText: No
-  isDecision: 1
+  id: tuto_day15
+  title: Julia ha vuelto!
+  description: "Julia acaba de volver de su campamento! \nPor fin nuestra familia
+    est\xE1 al completo, esperemos que Julia se adapte bien a la vida en Mynaia.."
+  acceptText: 
+  denyText: 
+  isDecision: 0
   hasAppeared: 0
   oneTimeNotification: 0
