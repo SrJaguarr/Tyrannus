@@ -15,8 +15,8 @@ MonoBehaviour:
   id: tuto_day1
   title: Bienvenido a Mynaia!
   description: "Bienvenido a tu nuevo hogar en Mynaia, he de advertirte que el coste
-    diario de la vivienda es de 20\u20AC. \nDebes de tener hambre despu\xE9s del
-    viaje, \xBFPorque no compras algo para comer? \nPodr\xE1s aquirirlo a\xF1adi\xE9ndolo
+    diario de la vivienda es de 20\u20AC. \n\nDebes de tener hambre despu\xE9s del
+    viaje, \xBFPorque no compras algo para comer? \n\nPodr\xE1s aquirirlo a\xF1adi\xE9ndolo
     a tu lista de la compra, abajo a la derecha. "
   acceptText: 
   denyText: 

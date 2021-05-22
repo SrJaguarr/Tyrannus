@@ -15,9 +15,9 @@ MonoBehaviour:
   id: ethnic_minorities
   title: Kalinka
   description: "Al llegar a casa ves una cesta tapada por una manta, te acercas para
-    descubrir que es un beb\xE9, en la cesta hay una nota.\n\"No podemos seguir en
-    Mynaia, tendremos que marchar a nuestro pa\xEDs, donde nuestro peque\xF1o Kalinka
-    no sobrevivir\xE1, por favor, cuide de \xE9l\""
+    descubrir que es un beb\xE9, en la cesta hay una nota.\n\n\"No podemos seguir
+    en Mynaia, tendremos que marchar a nuestro pa\xEDs, donde nuestro peque\xF1o
+    Kalinka no sobrevivir\xE1, por favor, cuide de \xE9l\""
   acceptText: Adoptar
   denyText: No adoptar
   isDecision: 1

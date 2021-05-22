@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tuto_day4
   title: Enfermedad
   description: "Parece que Claudia no se encuentra muy bien.. puede que sea de los
-    nervios.\nDeber\xEDas adquirir medicamentos para ello, tambi\xE9n los encontrar\xE1s
+    nervios.\n\nDeber\xEDas adquirir medicamentos para ello, tambi\xE9n los encontrar\xE1s
     en la lista de la compra."
   acceptText: 
   denyText: 

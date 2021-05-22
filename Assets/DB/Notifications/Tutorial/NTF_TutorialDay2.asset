@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tuto_day2
   title: Juntos otra vez
   description: "Por fin ha llegado tu esposa, Claudia, con el resto de cajas de la
-    mudanza! \nParece hambrienta, quiz\xE1 deberiamos prepararle algo de comer.."
+    mudanza! \n\nParece hambrienta, quiz\xE1 deberiamos prepararle algo de comer.."
   acceptText: 
   denyText: 
   isDecision: 0

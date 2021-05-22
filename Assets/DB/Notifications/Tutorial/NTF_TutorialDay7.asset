@@ -15,9 +15,9 @@ MonoBehaviour:
   id: tuto_day7
   title: Preparaos..
   description: "Claudia acaba de anunciarte que dentro de poco sere\xEDs pap\xE1s
-    de nuevo!\nMa\xF1ana ser\xE1 tu primer d\xEDa como presidente de Mynaia, deber\xEDas
-    descansar.\nPuedes irte a dormir cuando lo necesites, haciendo click en el reloj
-    rojo de la pared."
+    de nuevo!\n\nMa\xF1ana ser\xE1 tu primer d\xEDa como presidente de Mynaia, deber\xEDas
+    descansar.\n\nPuedes irte a dormir cuando lo necesites, haciendo click en el
+    reloj rojo de la pared."
   acceptText: 
   denyText: 
   isDecision: 0

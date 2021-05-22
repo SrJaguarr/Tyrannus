@@ -15,7 +15,7 @@ MonoBehaviour:
   id: tuto_day12
   title: Nuevas medidas
   description: "Podr\xE1s modificar a tu gusto las leyes haciendo uso del panel de
-    estad\xEDsticas, a tu derecha, en la pared.\nSi\xE9ntete libre de explorarlo
+    estad\xEDsticas, a tu derecha, en la pared.\n\nSi\xE9ntete libre de explorarlo
     al completo."
   acceptText: 
   denyText: 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: tuto_day15
   title: Julia ha vuelto!
-  description: "Julia acaba de volver de su campamento! \nPor fin nuestra familia
+  description: "Julia acaba de volver de su campamento! \n\nPor fin nuestra familia
     est\xE1 al completo, esperemos que Julia se adapte bien a la vida en Mynaia.."
   acceptText: 
   denyText: 

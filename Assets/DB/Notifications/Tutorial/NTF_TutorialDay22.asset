@@ -16,8 +16,9 @@ MonoBehaviour:
   title: Viriato
   description: 'Viriato ha llegado a nuestras vidas!
 
-    Ahora toca educarle y cuidarle
-    siguiendo los valores de nuestro pueblo.'
+
+    Ahora toca educarle y
+    cuidarle siguiendo los valores de nuestro pueblo.'
   acceptText: 
   denyText: 
   isDecision: 0

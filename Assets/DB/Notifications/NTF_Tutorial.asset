@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: tutorial
   title: Bienvenido/a a Tyrannus!
-  description: "Parece que es tu primera partida en Tyrannus.\n\xBFDeseas iniciar
+  description: "Parece que es tu primera partida en Tyrannus.\n\n\xBFDeseas iniciar
     el tutorial?"
   acceptText: "S\xED"
   denyText: No

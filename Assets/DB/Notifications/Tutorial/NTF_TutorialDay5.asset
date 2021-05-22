@@ -15,8 +15,9 @@ MonoBehaviour:
   id: tuto_day5
   title: "Algo de diversi\xF3n"
   description: "Claudia se ha recuperado, aunque se encuentra bien, y no tiene hambre
-    ni fr\xEDo, no parece estar muy contenta.. \nParece que necesita pasar algo m\xE1s
-    de tiempo contigo, haz clic sobre ella para abrir su panel detallado. \n"
+    ni fr\xEDo, no parece estar muy contenta.. \n\nParece que necesita pasar algo
+    m\xE1s de tiempo contigo, haz clic sobre ella para abrir su panel detallado.
+    \n"
   acceptText: 
   denyText: 
   isDecision: 0

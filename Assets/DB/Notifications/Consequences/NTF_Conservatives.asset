@@ -15,7 +15,7 @@ MonoBehaviour:
   id: conservatives
   title: Nosotras parimos, nosotras..
   description: "Los conservadores no aguantan m\xE1s, est\xE1n organizando piquetes
-    en la puerta de cl\xEDnicas m\xE9dicas donde se llevan a cabo abortos.\nPronto
+    en la puerta de cl\xEDnicas m\xE9dicas donde se llevan a cabo abortos.\n\nPronto
     notaremos el malestar de liberales, funcionarios y j\xF3venes."
   acceptText: 
   denyText: 

@@ -15,8 +15,8 @@ MonoBehaviour:
   id: tuto_day3
   title: Se acerca el invierno
   description: "Que fr\xEDo hace en esta casa.. Parece que los inviernos son m\xE1s
-    fr\xEDos en Mynaia.\nPuedes activar la calefacci\xF3n desde la lista de la compra
-    para entrar en calor."
+    fr\xEDos en Mynaia.\n\nPuedes activar la calefacci\xF3n desde la lista de la
+    compra para entrar en calor."
   acceptText: 
   denyText: 
   isDecision: 0
