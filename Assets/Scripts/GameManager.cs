@@ -62,11 +62,12 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        canvasManager.CloseIgameWindows();
         scriptableObjectController.RestoreValues();
+        loanManager.NewGame();
         requestStats.NewDay();
         musicManager.SetMusic("happy");
         moneyManager.salary = startMoney;
-        loanManager.NewGame();
         scriptableObjectController.RestoreValues();
         moneyManager.NewGame();
         timeManager.NewGame();

@@ -497,7 +497,7 @@ public class CanvasManager : MonoBehaviour
     #endregion
     #region Happiness
 
-    private void HandleHappinessPanel()
+    public void HandleHappinessPanel()
     {
         PNL_Happiness.SetActive(!PNL_Happiness.activeSelf);
     }
