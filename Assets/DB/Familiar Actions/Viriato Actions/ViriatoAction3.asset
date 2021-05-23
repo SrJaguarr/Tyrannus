@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ViriatoAction3
   m_EditorClassIdentifier: 
   action: "Cantar una canci\xF3n"
-  timeCost: 1
+  timeCost: 4

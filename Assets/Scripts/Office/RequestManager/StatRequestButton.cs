@@ -27,6 +27,8 @@ public class StatRequestButton : MonoBehaviour
         GameManager._instance.canvasManager.ShowRequestViewer(true);
         GameManager._instance.canvasManager.ShowSCategoryStats(false);
         GameManager._instance.requestStats.ShowAffectedCategories(request);
+
+        GameManager._instance.fxManager.PlaySound("paper_open");
     }
 
     public void InitializeSelf(Request r, bool b)

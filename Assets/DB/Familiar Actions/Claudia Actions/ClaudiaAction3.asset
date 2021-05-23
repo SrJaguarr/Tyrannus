@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClaudiaAction3
   m_EditorClassIdentifier: 
   action: "ver una pel\xEDcula juntos"
-  timeCost: 2
+  timeCost: 8

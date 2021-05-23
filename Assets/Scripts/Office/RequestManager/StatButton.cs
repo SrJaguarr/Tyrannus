@@ -26,6 +26,7 @@ public class StatButton : MonoBehaviour
         GameManager._instance.canvasManager.ShowSCategoryStats(true);
         GameManager._instance.canvasManager.ShowSCategoryViewer(false);
         GameManager._instance.requestStats.ShowRequestList(socialCategory);
+        GameManager._instance.fxManager.PlaySound("paper_open");
     }
 
     public void InitializeSelf(SociaCategory sc)

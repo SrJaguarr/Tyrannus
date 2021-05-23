@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ViriatoAction2
   m_EditorClassIdentifier: 
   action: "Ense\xF1arle a andar"
-  timeCost: 2
+  timeCost: 8

@@ -61,6 +61,7 @@ public class TutorialManager : MonoBehaviour
 
     private void SkipTutorial()
     {
+        gameManager.familyController.GetFamiliarButton(0).GetComponent<Button>().interactable = true;
         gameManager.canvasManager.ShowHappinessInfo();
         gameManager.canvasManager.ShowTimer();
         gameManager.canvasManager.BTN_LeaveHome.gameObject.GetComponent<Button>().interactable = true;
@@ -140,6 +141,7 @@ public class TutorialManager : MonoBehaviour
                 notificationManager.ShowNotification("tuto_day8");
                 break;
             case 9:
+                gameManager.familyController.GetFamiliarButton(0).GetComponent<Button>().interactable = true;
                 notificationManager.ShowNotification("tuto_day9");
                 gameManager.canvasManager.ShowHappinessInfo();
                 break;

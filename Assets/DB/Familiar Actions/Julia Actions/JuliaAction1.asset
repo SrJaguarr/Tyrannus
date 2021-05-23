@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JuliaAction1
   m_EditorClassIdentifier: 
   action: Hablar sobre su futuro
-  timeCost: 1
+  timeCost: 4

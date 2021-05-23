@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClaudiaAction2
   m_EditorClassIdentifier: 
   action: Tomar una cerveza
-  timeCost: 2
+  timeCost: 8

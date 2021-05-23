@@ -254,8 +254,8 @@ public class CanvasManager : MonoBehaviour
         BTN_RequestManager.onClick.AddListener(delegate { ShowSCategoryViewer(true); fxManager.PlaySound("paper_open"); });
         BTN_ConfirmChanges.onClick.AddListener(delegate { gameManager.requestStats.ConfirmChanges(); gameManager.happinessManager.CalculateCityHappiness(); BTN_CloseRequestViewer.onClick.Invoke(); gameManager.statsViewerManager.UpdateStats(); gameManager.moneyManager.CalculateIncoming(); fxManager.PlaySound("paper_close"); });
         BTN_ClearChanges.onClick.AddListener(delegate { gameManager.requestStats.ClearChanges(); fxManager.PlaySound("paper_close"); });
-        BTN_BackSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(true); ShowSCategoryStats(false); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("option_select"); });
-        BTN_BackSCStats.onClick.AddListener(delegate { ShowRequestViewer(false); ShowSCategoryStats(true); gameManager.requestStats.CleanCategories(); fxManager.PlaySound("option_select"); });
+        BTN_BackSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(true); ShowSCategoryStats(false); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("paper_close"); });
+        BTN_BackSCStats.onClick.AddListener(delegate { ShowRequestViewer(false); ShowSCategoryStats(true); gameManager.requestStats.CleanCategories(); fxManager.PlaySound("paper_close"); });
        
         BTN_CloseSCViewer.onClick.AddListener(delegate { ShowSCategoryViewer(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("paper_close"); });
         BTN_CloseSCStats.onClick.AddListener(delegate { ShowSCategoryStats(false); gameManager.requestStats.CleanCategories(); gameManager.requestStats.CleanRequests(); fxManager.PlaySound("paper_close"); });
@@ -296,8 +296,8 @@ public class CanvasManager : MonoBehaviour
 
         BTN_OpenContacts.onClick.AddListener(delegate { HandleContacts(); gameManager.contactsManager.OpenMobile(); fxManager.PlaySound("paper_open"); });
         BTN_CloseContacts.onClick.AddListener(delegate { HandleContacts(); fxManager.PlaySound("paper_close"); });
-        BTN_NextContact.onClick.AddListener(delegate { SwitchCitizen(1); });
-        BTN_PreviousContact.onClick.AddListener(delegate { SwitchCitizen(-1); });
+        BTN_NextContact.onClick.AddListener(delegate { SwitchCitizen(1); fxManager.PlaySound("option_enter"); });
+        BTN_PreviousContact.onClick.AddListener(delegate { SwitchCitizen(-1); fxManager.PlaySound("option_enter"); });
 
         BTN_NotificationAccept.onClick.AddListener(delegate { gameManager.notificationManager.Accept(); fxManager.PlaySound("paper_close"); });
         BTN_NotificationDeny.onClick.AddListener(delegate { gameManager.notificationManager.Deny(); fxManager.PlaySound("paper_close"); });

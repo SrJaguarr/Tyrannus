@@ -32,6 +32,8 @@ public class AffectedSCButton : MonoBehaviour
         GameManager._instance.canvasManager.ShowSCategoryStats(true);
         GameManager._instance.canvasManager.ShowRequestViewer(false);
         GameManager._instance.requestStats.ShowRequestList(socialCategory);
+
+        GameManager._instance.fxManager.PlaySound("paper_open");
     }
 
     public void InitializeSelf(SociaCategory sc, Request r)

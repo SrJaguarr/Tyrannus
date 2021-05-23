@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JuliaAction3
   m_EditorClassIdentifier: 
   action: Ayudar con los deberes
-  timeCost: 1
+  timeCost: 4

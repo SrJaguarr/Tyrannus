@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: JuliaAction2
   m_EditorClassIdentifier: 
   action: Jugar a la consola
-  timeCost: 2
+  timeCost: 8

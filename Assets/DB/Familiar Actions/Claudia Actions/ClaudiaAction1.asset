@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ClaudiaAction1
   m_EditorClassIdentifier: 
   action: Ayudar con las tareas
-  timeCost: 1
+  timeCost: 4
